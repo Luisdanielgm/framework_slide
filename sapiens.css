@@ -1,54 +1,68 @@
-/* sapiens.css v3.0 */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;800&family=Fira+Code&family=Merriweather:ital,wght@0,400;1,400&family=Poppins:wght@400;700&display=swap');
+/* sapiens.css v3.1 - Improved Layout & Responsive */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;800&family=Fira+Code&family=Poppins:wght@400;600;700&display=swap');
 
 :root {
-    /* Variables Default (Se sobreescriben desde el Template) */
+    /* Variables Default */
     --bg-1: #0f172a;
     --bg-2: #1e293b;
     --accent-1: #3b82f6;
     --accent-2: #06b6d4;
     --text-main: #f8fafc;
     --text-muted: #94a3b8;
+    
     --font-head: 'Poppins', sans-serif;
     --font-body: 'Inter', sans-serif;
     
-    /* Espaciado y Dimensiones */
-    --slide-p: clamp(1.5rem, 3vmin, 3rem);
-    --gap: clamp(1rem, 2vmin, 2rem);
-    --radius: 16px;
+    /* Espaciado y Dimensiones Mejorados */
+    --slide-p: clamp(2rem, 4vmin, 4rem); /* Más padding interno */
+    --gap: clamp(1.5rem, 3vmin, 2.5rem); /* Más separación entre Header/Body */
+    --radius: 24px; /* Bordes más suaves */
 }
 
 /* --- RESET & BASE --- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-    background: #000;
-    height: 100vh;
+    background: #050505;
+    min-height: 100vh;
     width: 100vw;
-    display: grid;
-    place-items: center;
     font-family: var(--font-body);
     color: var(--text-main);
-    overflow: hidden; /* Desktop fijo */
+    
+    /* Centrado para Desktop */
+    display: grid;
+    place-items: center;
+    
+    /* Importante: Permite scroll si la pantalla es muy pequeña verticalmente */
+    overflow-x: hidden;
+    overflow-y: auto; 
 }
 
 /* --- CONTENEDOR MAESTRO (Aspect Ratio Lock) --- */
 #sapiens-slide {
-    /* Fórmula mágica: Crece hasta llenar ancho o alto, manteniendo 3:2 */
-    width: min(95vw, 95vh * 1.5);
-    height: min(95vw / 1.5, 95vh);
+    /* Fórmula ajustada: Deja más aire alrededor (90vw en vez de 95vw) */
+    width: min(90vw, 1400px); 
+    /* En desktop intentamos mantener ratio, pero sin pasarnos de la pantalla */
+    height: min(90vh, 90vw / 1.6); 
+    aspect-ratio: 16/9;
     
     background: radial-gradient(circle at top left, var(--bg-1), var(--bg-2));
     position: relative;
-    overflow: hidden;
     border-radius: var(--radius);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+    
+    /* Sombra más elegante y difusa */
+    box-shadow: 
+        0 0 0 1px rgba(255, 255, 255, 0.05),
+        0 20px 60px -10px rgba(0, 0, 0, 0.8);
 
     /* GRID PRINCIPAL */
     display: grid;
     grid-template-rows: auto 1fr auto; /* Header - Body - Footer */
     padding: var(--slide-p);
     gap: var(--gap);
+    
+    /* Asegura que el contenido no se salga visualmente del borde redondeado */
+    overflow: hidden; 
 }
 
 /* --- HEADER --- */
@@ -56,23 +70,29 @@ body {
     z-index: 10;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start; /* Alinea arriba por si el título es largo */
+    gap: 20px;
 }
 .slide-header h1 {
     font-family: var(--font-head);
-    font-size: clamp(1.8rem, 5vmin, 3.5rem);
+    font-size: clamp(2rem, 5vmin, 3.5rem);
     line-height: 1.1;
-    background: linear-gradient(90deg, #fff, var(--text-muted));
+    font-weight: 700;
+    background: linear-gradient(135deg, #fff 0%, var(--text-muted) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin-bottom: 0; /* El gap del grid maneja la separación ahora */
 }
 .header-badge {
-    font-size: 0.8rem;
-    background: rgba(255,255,255,0.1);
-    padding: 4px 12px;
-    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: rgba(255,255,255,0.08);
+    padding: 6px 14px;
+    border-radius: 100px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    border: 1px solid rgba(255,255,255,0.05);
+    white-space: nowrap;
 }
 
 /* --- BODY (LAYOUT MANAGER) --- */
@@ -82,131 +102,154 @@ body {
     height: 100%;
     display: grid;
     gap: var(--gap);
+    align-content: center; /* Centra verticalmente el contenido del body */
 }
 
-/* LAYOUT 1: HERO (Texto centrado grande) */
-.layout-hero {
-    grid-template-columns: 1fr;
-    place-items: center;
-    text-align: center;
-}
-.layout-hero .card { background: transparent; border: none; box-shadow: none; }
+/* LAYOUTS */
+.layout-hero { grid-template-columns: 1fr; text-align: center; place-items: center; }
+.layout-split { grid-template-columns: 1fr 1fr; align-items: center; }
+.layout-code { grid-template-columns: 0.8fr 1.2fr; align-items: center; }
+.layout-bento { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); }
 
-/* LAYOUT 2: SPLIT (Dos columnas 50/50) */
-.layout-split {
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-}
-
-/* LAYOUT 3: CODE (Texto 40% / Código 60%) */
-.layout-code {
-    grid-template-columns: 0.8fr 1.2fr;
-    align-items: center;
-}
-
-/* LAYOUT 4: BENTO (Grid de tarjetas) */
-.layout-bento {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-}
 .layout-bento .span-row { grid-row: span 2; }
 .layout-bento .span-col { grid-column: span 2; }
 
 /* --- COMPONENTES UI --- */
 .card {
-    background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: var(--radius);
-    padding: var(--slide-p);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: calc(var(--radius) - 4px);
+    padding: clamp(1.5rem, 2.5vmin, 2.5rem);
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    transition: transform 0.3s ease;
 }
 
-.feature-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.8em;
+h2 {
+    font-family: var(--font-head);
+    font-size: clamp(1.2rem, 2.5vmin, 1.8rem);
+    margin-bottom: 1rem;
+    color: var(--text-main);
 }
+
+.feature-list { list-style: none; display: flex; flex-direction: column; gap: 1em; }
 .feature-list li {
-    font-size: clamp(1rem, 2vmin, 1.3rem);
+    font-size: clamp(0.95rem, 1.5vmin, 1.1rem);
+    line-height: 1.5;
     display: flex;
-    gap: 0.8rem;
-    align-items: flex-start;
+    gap: 1rem;
+    color: var(--text-muted);
 }
+.feature-list li strong { color: #fff; font-weight: 600; }
 .feature-list li::before {
     content: '';
-    min-width: 8px; height: 8px;
+    min-width: 10px; height: 10px;
     background: var(--accent-1);
     border-radius: 50%;
-    margin-top: 0.5em;
-    box-shadow: 0 0 10px var(--accent-1);
+    margin-top: 0.4em;
+    box-shadow: 0 0 12px var(--accent-1);
 }
 
 .code-block {
-    background: #0f1115;
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: var(--radius);
+    background: #0b0d10; /* Fondo más sólido para código */
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: calc(var(--radius) - 4px);
     font-family: 'Fira Code', monospace;
     overflow: hidden;
     height: 100%;
+    min-height: 300px; /* Altura mínima para que no colapse */
     display: flex;
     flex-direction: column;
+    box-shadow: inset 0 2px 20px rgba(0,0,0,0.5);
 }
+.code-nav { display: flex; gap: 8px; padding: 12px 16px; background: rgba(255,255,255,0.02); border-bottom: 1px solid rgba(255,255,255,0.05); }
+.dot { width: 12px; height: 12px; border-radius: 50%; }
+
 .code-block pre {
     padding: 1.5rem;
     overflow: auto;
-    font-size: clamp(0.75rem, 1.5vmin, 1rem);
+    font-size: clamp(0.8rem, 1.4vmin, 0.95rem);
+    line-height: 1.6;
     color: #a5b3ce;
+    flex-grow: 1;
 }
-.code-nav { display: flex; gap: 6px; padding: 10px; background: rgba(255,255,255,0.03); }
-.dot { width: 10px; height: 10px; border-radius: 50%; background: #333; }
 
 /* --- FOOTER --- */
 .slide-footer {
     z-index: 10;
     display: flex;
     justify-content: space-between;
-    font-size: 0.8rem;
-    opacity: 0.6;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 10px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 1.5rem;
+    margin-top: auto; /* Empuja al fondo si sobra espacio */
 }
 
 /* --- DECORACIÓN --- */
 .decorative { position: absolute; pointer-events: none; z-index: 0; }
 .orb {
-    width: 60vmin; height: 60vmin;
+    width: 50vmin; height: 50vmin;
     border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.15;
+    filter: blur(100px);
+    opacity: 0.12;
 }
-.orb-1 { top: -20%; right: -20%; background: var(--accent-1); }
-.orb-2 { bottom: -20%; left: -20%; background: var(--accent-2); }
+.orb-1 { top: -10%; right: -10%; background: var(--accent-1); }
+.orb-2 { bottom: -10%; left: -10%; background: var(--accent-2); }
 .grid-lines {
     inset: 0;
-    background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-    background-size: 50px 50px;
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(circle at center, black, transparent 80%);
 }
 
-/* --- RESPONSIVE MÓVIL (VERTICAL) --- */
-@media (max-width: 768px) {
-    body { height: auto; overflow-y: auto; padding: 1rem; }
-    #sapiens-slide {
-        width: 100%; height: auto;
-        aspect-ratio: auto;
-        display: flex; flex-direction: column;
-        overflow: visible;
+/* --- RESPONSIVE REAL (TABLET Y MOVIL) --- */
+@media (max-width: 1024px) {
+    body {
+        display: block; /* Quita el grid centering */
+        padding: 1rem; /* Padding externo para el body */
+        height: auto;
     }
-    .slide-body { display: flex; flex-direction: column; }
-    .layout-split, .layout-code, .layout-bento { grid-template-columns: 1fr; }
+
+    #sapiens-slide {
+        width: 100%;
+        height: auto; /* Altura automática */
+        aspect-ratio: auto; /* Rompe el ratio 16:9 */
+        min-height: auto;
+        overflow: visible; /* Permite ver contenido si se sale */
+        
+        /* Cambia grid a flex para control vertical */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .slide-body {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    /* Resetea los layouts complejos a columna simple */
+    .layout-split, .layout-code, .layout-bento {
+        grid-template-columns: 1fr;
+    }
+    
+    .card, .code-block {
+        min-height: auto; /* Deja que el contenido dicte la altura */
+    }
+    
+    .slide-header h1 {
+        font-size: 2rem;
+    }
 }
 
 /* ANIMACIONES */
-.animate-in { animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.animate-in { animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; opacity: 0; }
+@keyframes fadeInUp { 
+    from { opacity: 0; transform: translateY(30px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}

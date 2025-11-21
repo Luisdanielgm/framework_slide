@@ -1,3 +1,4 @@
+/* sapiens.js v3.2 - Polished */
 document.addEventListener("DOMContentLoaded", () => {
     // Animación escalonada
     const elements = document.querySelectorAll('h1, .card, li, .code-block');

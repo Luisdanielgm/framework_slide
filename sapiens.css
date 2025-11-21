@@ -1,0 +1,229 @@
+/* sapiensia.css - Motor Visual v1.0 */
+
+/* 1. Importar Fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;800&family=Fira+Code&family=Roboto:wght@400;700&display=swap');
+
+/* 2. Variables y Reset */
+:root {
+  /* Colores por defecto (Fallback) - Se sobreescriben en el HTML */
+  --bg-1: #0f172a;
+  --bg-2: #1e293b;
+  --accent-1: #3b82f6;
+  --accent-2: #06b6d4;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+
+  /* Tipografía */
+  --font-head: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-code: 'Fira Code', monospace;
+
+  /* Dimensiones y Efectos */
+  --slide-gap: clamp(1.5rem, 3vw, 3rem);
+  --card-radius: 16px;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Reset básico */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Cuerpo del navegador (Centrado del slide) */
+body {
+  background: #050505; /* Fondo negro para resaltar el slide */
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-body);
+  color: var(--text-main);
+  overflow: hidden;
+}
+
+/* --- 3. EL LIENZO PRINCIPAL (SLIDE) --- */
+#sapiensia-slide {
+  width: 100%;
+  max-width: 1400px; /* Ancho máximo en monitores grandes */
+  aspect-ratio: 3/2; /* Mantiene la proporción de diapositiva siempre */
+  background: linear-gradient(135deg, var(--bg-1), var(--bg-2));
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  
+  /* GRID SYSTEM DE 12 COLUMNAS */
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto 1fr auto; /* Header - Contenido - Footer */
+  padding: var(--slide-gap);
+  gap: var(--slide-gap);
+}
+
+/* --- 4. ÁREAS SEMÁNTICAS --- */
+
+/* Header */
+.slide-header {
+  grid-column: 1 / -1;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+}
+
+.slide-header h1 {
+  font-family: var(--font-head);
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  line-height: 1.1;
+  /* Gradiente en el texto */
+  background: linear-gradient(90deg, #fff 0%, var(--text-muted) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Footer */
+.slide-footer {
+  grid-column: 1 / -1;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px solid var(--glass-border);
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* --- 5. LAYOUTS (La magia del Grid) --- */
+
+.slide-body {
+  grid-column: 1 / -1;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  gap: var(--slide-gap);
+  z-index: 10;
+}
+
+/* Layout: Dos columnas (50% / 50%) */
+.layout-split {
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+/* Layout: Código (40% Texto / 60% Código) */
+.layout-code {
+  grid-template-columns: 1fr 1.5fr;
+  align-items: center;
+}
+
+/* Layout: Bento (Grid 2x2) */
+.layout-bento {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.layout-bento .card.featured { grid-row: span 2; }
+
+/* Layout: Hero (Centrado) */
+.layout-hero {
+  grid-template-columns: 1fr;
+  place-items: center;
+  text-align: center;
+}
+
+/* --- 6. COMPONENTES --- */
+
+/* Tarjetas (Cards) */
+.card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--card-radius);
+  padding: 2rem;
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%; /* Greedy height */
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* Listas Estilizadas */
+.feature-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  line-height: 1.5;
+}
+
+.feature-list li::before {
+  content: '';
+  display: block;
+  min-width: 10px;
+  height: 10px;
+  background: var(--accent-1);
+  border-radius: 50%;
+  margin-top: 8px;
+  box-shadow: 0 0 10px var(--accent-1);
+}
+
+/* Bloque de Código (Terminal Style) */
+.code-block {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  font-family: var(--font-code);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.code-header {
+  background: #161b22;
+  padding: 10px 16px;
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid #30363d;
+}
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.r { background: #ff5f56; } .y { background: #ffbd2e; } .g { background: #27c93f; }
+
+.code-block pre {
+  padding: 1.5rem;
+  margin: 0;
+  overflow-x: auto;
+  color: #c9d1d9;
+  font-size: clamp(0.8rem, 1.1vw, 1rem);
+}
+
+/* --- 7. DECORACIÓN --- */
+.decorative { position: absolute; pointer-events: none; z-index: 0; }
+
+.grid-bg {
+  inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+}
+
+.orb {
+  width: 50vw; height: 50vw;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.2;
+}
+.orb-1 { top: -25%; right: -15%; background: var(--accent-1); }
+.orb-2 { bottom: -25%; left: -15%; background: var(--accent-2); }
+
+/* Animaciones de entrada */
+.sapiens-fade-up { opacity: 0; transform: translateY(30px); }
+.sapiens-visible { opacity: 1; transform: translateY(0); }

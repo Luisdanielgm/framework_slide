@@ -1,8 +1,8 @@
-/* sapiens.css v3.2 - Polished */
+/* sapiens.css v3.4 - Cross-Browser Compatible */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;800&family=Fira+Code&family=Poppins:wght@400;600;700&display=swap');
 
 :root {
-    /* Variables Default */
+    /* Variables Colores */
     --bg-1: #0f172a;
     --bg-2: #1e293b;
     --accent-1: #3b82f6;
@@ -13,55 +13,53 @@
     --font-head: 'Poppins', sans-serif;
     --font-body: 'Inter', sans-serif;
     
-    /* Espaciado y Dimensiones Mejorados */
-    --slide-p: clamp(2rem, 4vmin, 4rem); /* Más padding interno */
-    --gap: clamp(1.5rem, 3vmin, 2.5rem); /* Más separación entre Header/Body */
-    --radius: 24px; /* Bordes más suaves */
+    /* Variables Dimensión (Dinámicas) */
+    --slide-p: clamp(1.5rem, 4vmin, 4rem);
+    --gap: clamp(1rem, 3vmin, 2.5rem);
+    --radius: 24px;
 }
 
 /* --- RESET & BASE --- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-    background: #050505;
+    background-color: #050505;
+    background: radial-gradient(circle at top left, var(--bg-1), var(--bg-2));
+    background-attachment: fixed;
+    
     min-height: 100vh;
     width: 100vw;
     font-family: var(--font-body);
     color: var(--text-main);
     
-    /* Centrado para Desktop */
     display: grid;
     place-items: center;
-    
-    /* Importante: Permite scroll si la pantalla es muy pequeña verticalmente */
     overflow-x: hidden;
-    overflow-y: auto; 
 }
 
-/* --- CONTENEDOR MAESTRO (Aspect Ratio Lock) --- */
+/* --- CONTENEDOR MAESTRO --- */
 #sapiens-slide {
-    /* Fórmula ajustada: Deja más aire alrededor (90vw en vez de 95vw) */
-    width: min(90vw, 1400px); 
-    /* En desktop intentamos mantener ratio, pero sin pasarnos de la pantalla */
-    height: min(90vh, 90vw / 1.6); 
+    width: min(90vw, 1400px);
+    height: min(90vh, 90vw / 1.77); 
     aspect-ratio: 16/9;
     
-    background: radial-gradient(circle at top left, var(--bg-1), var(--bg-2));
     position: relative;
     border-radius: var(--radius);
     
-    /* Sombra más elegante y difusa */
+    background: rgba(255, 255, 255, 0.02);
+    
+    /* FIX: Compatibilidad Safari/iOS para efectos de fondo */
+    -webkit-backdrop-filter: blur(0px); 
+    backdrop-filter: blur(0px);
+    
     box-shadow: 
         0 0 0 1px rgba(255, 255, 255, 0.05),
-        0 20px 60px -10px rgba(0, 0, 0, 0.8);
+        0 20px 60px -10px rgba(0, 0, 0, 0.6);
 
-    /* GRID PRINCIPAL */
     display: grid;
-    grid-template-rows: auto 1fr auto; /* Header - Body - Footer */
+    grid-template-rows: auto 1fr auto;
     padding: var(--slide-p);
     gap: var(--gap);
-    
-    /* Asegura que el contenido no se salga visualmente del borde redondeado */
     overflow: hidden; 
 }
 
@@ -70,110 +68,125 @@ body {
     z-index: 10;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Alinea arriba por si el título es largo */
-    gap: 20px;
+    align-items: flex-start;
+    gap: 1rem;
 }
 .slide-header h1 {
     font-family: var(--font-head);
-    font-size: clamp(2rem, 5vmin, 3.5rem);
+    font-size: clamp(1.8rem, 5vmin, 3.5rem);
     line-height: 1.1;
     font-weight: 700;
     background: linear-gradient(135deg, #fff 0%, var(--text-muted) 100%);
+    
+    /* FIX: Standard + Webkit para recorte de texto */
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 0; /* El gap del grid maneja la separación ahora */
+    
+    margin: 0;
+    word-break: break-word; 
 }
 .header-badge {
     font-size: 0.75rem;
     font-weight: 600;
     background: rgba(255,255,255,0.08);
-    padding: 6px 14px;
+    padding: 6px 12px;
     border-radius: 100px;
     text-transform: uppercase;
     letter-spacing: 1px;
     border: 1px solid rgba(255,255,255,0.05);
     white-space: nowrap;
+    flex-shrink: 0;
 }
 
-/* --- BODY (LAYOUT MANAGER) --- */
+/* --- BODY & LAYOUTS --- */
 .slide-body {
     z-index: 10;
     width: 100%;
     height: 100%;
     display: grid;
     gap: var(--gap);
-    align-content: center; /* Centra verticalmente el contenido del body */
+    align-content: center;
 }
 
-/* LAYOUTS */
 .layout-hero { grid-template-columns: 1fr; text-align: center; place-items: center; }
 .layout-split { grid-template-columns: 1fr 1fr; align-items: center; }
-.layout-code { grid-template-columns: 0.8fr 1.2fr; align-items: center; }
+.layout-code { grid-template-columns: 0.9fr 1.1fr; align-items: center; }
 .layout-bento { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); }
 
 .layout-bento .span-row { grid-row: span 2; }
 .layout-bento .span-col { grid-column: span 2; }
 
-/* --- COMPONENTES UI --- */
+/* --- COMPONENTES --- */
 .card {
     background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: calc(var(--radius) - 4px);
-    padding: clamp(1.5rem, 2.5vmin, 2.5rem);
+    
+    /* FIX: El blur en tarjetas necesita prefijo para Safari */
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: calc(var(--radius) - 8px);
+    padding: clamp(1.25rem, 2vmin, 2.5rem);
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    transition: transform 0.3s ease;
 }
 
 h2 {
     font-family: var(--font-head);
-    font-size: clamp(1.2rem, 2.5vmin, 1.8rem);
-    margin-bottom: 1rem;
+    font-size: clamp(1.1rem, 2.5vmin, 1.8rem);
+    margin-bottom: 0.8em;
     color: var(--text-main);
+    line-height: 1.3;
 }
 
-.feature-list { list-style: none; display: flex; flex-direction: column; gap: 1em; }
+.feature-list { list-style: none; display: flex; flex-direction: column; gap: 0.8em; }
 .feature-list li {
-    font-size: clamp(0.95rem, 1.5vmin, 1.1rem);
+    font-size: clamp(0.9rem, 1.5vmin, 1.05rem);
     line-height: 1.5;
     display: flex;
-    gap: 1rem;
+    gap: 0.8rem;
     color: var(--text-muted);
 }
-.feature-list li strong { color: #fff; font-weight: 600; }
 .feature-list li::before {
     content: '';
-    min-width: 10px; height: 10px;
+    min-width: 8px; height: 8px;
     background: var(--accent-1);
     border-radius: 50%;
-    margin-top: 0.4em;
-    box-shadow: 0 0 12px var(--accent-1);
+    margin-top: 0.5em;
+    box-shadow: 0 0 10px var(--accent-1);
 }
 
 .code-block {
-    background: #0b0d10; /* Fondo más sólido para código */
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: calc(var(--radius) - 4px);
+    background: #0b0d10;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: calc(var(--radius) - 8px);
     font-family: 'Fira Code', monospace;
     overflow: hidden;
     height: 100%;
-    min-height: 300px; /* Altura mínima para que no colapse */
+    min-height: 200px;
     display: flex;
     flex-direction: column;
-    box-shadow: inset 0 2px 20px rgba(0,0,0,0.5);
 }
-.code-nav { display: flex; gap: 8px; padding: 12px 16px; background: rgba(255,255,255,0.02); border-bottom: 1px solid rgba(255,255,255,0.05); }
-.dot { width: 12px; height: 12px; border-radius: 50%; }
+.code-nav { 
+    display: flex; gap: 8px; padding: 10px 16px; 
+    background: rgba(255,255,255,0.03); 
+    border-bottom: 1px solid rgba(255,255,255,0.05); 
+}
+.dot { width: 10px; height: 10px; border-radius: 50%; }
 
 .code-block pre {
-    padding: 1.5rem;
-    overflow: auto;
-    font-size: clamp(0.8rem, 1.4vmin, 0.95rem);
+    padding: 1.2rem;
+    overflow-x: auto;
+    font-size: clamp(0.75rem, 1.3vmin, 0.9rem);
     line-height: 1.6;
     color: #a5b3ce;
     flex-grow: 1;
+    white-space: pre;
 }
 
 /* --- FOOTER --- */
@@ -181,75 +194,64 @@ h2 {
     z-index: 10;
     display: flex;
     justify-content: space-between;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     color: var(--text-muted);
     border-top: 1px solid rgba(255,255,255,0.08);
-    padding-top: 1.5rem;
-    margin-top: auto; /* Empuja al fondo si sobra espacio */
+    padding-top: 1rem;
+    margin-top: auto;
+    opacity: 0.7;
 }
 
 /* --- DECORACIÓN --- */
 .decorative { position: absolute; pointer-events: none; z-index: 0; }
 .orb {
-    width: 50vmin; height: 50vmin;
+    width: 60vmin; height: 60vmin;
     border-radius: 50%;
-    filter: blur(100px);
-    opacity: 0.12;
+    filter: blur(120px);
+    opacity: 0.15;
 }
-.orb-1 { top: -10%; right: -10%; background: var(--accent-1); }
-.orb-2 { bottom: -10%; left: -10%; background: var(--accent-2); }
+.orb-1 { top: -20%; right: -20%; background: var(--accent-1); }
+.orb-2 { bottom: -20%; left: -20%; background: var(--accent-2); }
+
 .grid-lines {
     inset: 0;
     background-image: 
         linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
     background-size: 40px 40px;
+    
+    /* FIX: Compatibilidad total para el fade radial */
+    -webkit-mask-image: radial-gradient(circle at center, black, transparent 80%);
     mask-image: radial-gradient(circle at center, black, transparent 80%);
 }
 
-/* --- RESPONSIVE REAL (TABLET Y MOVIL) --- */
+/* --- RESPONSIVE (SIN CAMBIOS, SOLO HEREDA MEJORAS) --- */
 @media (max-width: 1024px) {
-    body {
-        display: block; /* Quita el grid centering */
-        padding: 1rem; /* Padding externo para el body */
-        height: auto;
-    }
-
+    :root { --slide-p: 2rem; --gap: 1.5rem; }
+    body { display: block; padding: 20px; }
     #sapiens-slide {
-        width: 100%;
-        height: auto; /* Altura automática */
-        aspect-ratio: auto; /* Rompe el ratio 16:9 */
-        min-height: auto;
-        overflow: visible; /* Permite ver contenido si se sale */
-        
-        /* Cambia grid a flex para control vertical */
-        display: flex;
-        flex-direction: column;
+        width: 100%; height: auto; aspect-ratio: auto; 
+        min-height: 80vh; overflow: visible; display: flex; flex-direction: column;
     }
+    .layout-split, .layout-code { grid-template-columns: 1fr; grid-template-rows: auto auto; }
+    .layout-bento { grid-template-columns: 1fr 1fr; }
+    .code-block { min-height: 300px; max-width: 100%; }
+    .orb { opacity: 0.1; width: 80vw; height: 80vw; }
+}
 
-    .slide-body {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-    }
-    
-    /* Resetea los layouts complejos a columna simple */
-    .layout-split, .layout-code, .layout-bento {
-        grid-template-columns: 1fr;
-    }
-    
-    .card, .code-block {
-        min-height: auto; /* Deja que el contenido dicte la altura */
-    }
-    
-    .slide-header h1 {
-        font-size: 2rem;
-    }
+@media (max-width: 640px) {
+    :root { --slide-p: 1.25rem; --gap: 1.25rem; --radius: 16px; }
+    body { padding: 10px; }
+    .slide-header { flex-direction: column; gap: 0.5rem; }
+    .header-badge { align-self: flex-start; font-size: 0.65rem; }
+    .layout-bento { grid-template-columns: 1fr; grid-template-rows: auto; }
+    .layout-bento .span-row, .layout-bento .span-col { grid-column: span 1; grid-row: span 1; }
+    .card { padding: 1.25rem; }
 }
 
 /* ANIMACIONES */
-.animate-in { animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; opacity: 0; }
+.animate-in { animation: fadeInUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; opacity: 0; }
 @keyframes fadeInUp { 
-    from { opacity: 0; transform: translateY(30px); } 
+    from { opacity: 0; transform: translateY(20px); } 
     to { opacity: 1; transform: translateY(0); } 
 }

@@ -81,7 +81,7 @@ Material teórico educativo sobre el tema, diseñado para estudiantes de nivel m
 <head>
   <meta charset="UTF-8">
   <title>Sapiens Slide</title>
-  <link rel="stylesheet" href="sapiens.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@5bb682cb20625aaa50d09ee97592656bd5257c07/sapiens.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -110,7 +110,7 @@ Material teórico educativo sobre el tema, diseñado para estudiantes de nivel m
       <span id="slot-footer-right"></span>
     </footer>
   </div>
-  <script src="sapiens.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@5bb682cb20625aaa50d09ee97592656bd5257c07/sapiens.js"></script>
 </body>
 </html>
 ========================================================
@@ -142,7 +142,7 @@ Respuesta:
 <head>
   <meta charset="UTF-8">
   <title>Sapiens Slide</title>
-  <link rel="stylesheet" href="sapiens.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@5bb682cb20625aaa50d09ee97592656bd5257c07/sapiens.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -188,6 +188,6 @@ Respuesta:
       <span id="slot-footer-right">10/12</span>
     </footer>
   </div>
-  <script src="sapiens.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@5bb682cb20625aaa50d09ee97592656bd5257c07/sapiens.js"></script>
 </body>
 </html>

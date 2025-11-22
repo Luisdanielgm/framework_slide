@@ -23,9 +23,13 @@
     --font-body: 'Inter', sans-serif;
 
     /* --- ESPACIADOS INTERNOS --- */
-    --slide-p: clamp(1.5rem, 3vw, 3rem);
-    --gap: clamp(1rem, 2vw, 2rem);
+    /* El padding y gap reaccionan a la altura de la ventana (vh) para compactación inteligente */
+    --slide-p: clamp(1.5rem, 4vh, 3rem);
+    --gap: clamp(0.8rem, 2.5vh, 2rem);
     --radius: 24px;
+
+    /* --- ESPACIADO EXTERNO (Padding de página) --- */
+    --page-padding: 30px;
 }
 
 /* ==================================================
@@ -58,16 +62,15 @@ body {
     display: grid;
     place-items: center;
 
-    /* Altura mínima de la ventana */
-    min-height: 100vh;
-    min-height: 100dvh;
+    /* Altura exacta de la ventana - CERO SCROLL en escritorio */
+    height: 100vh;
+    height: 100dvh;
     width: 100%;
 
     /* Padding del body: "borde" negro alrededor */
-    padding: clamp(15px, 3vw, 40px);
+    padding: var(--page-padding);
 
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow: hidden;
 }
 
 /* ==================================================
@@ -77,11 +80,14 @@ body {
 .slide-shell {
     /* Ancho responsivo */
     width: 100%;
-    max-width: 1300px;
+    max-width: 1600px;
 
-    /* Altura flexible según contenido */
-    height: auto;
-    min-height: 600px;
+    /* Altura flexible pero contenida */
+    height: 100%;
+    max-height: 100%;
+
+    /* Aspect ratio preferido */
+    aspect-ratio: 16/9;
 
     /* Estilos visuales */
     position: relative;
@@ -101,7 +107,7 @@ body {
     padding: var(--slide-p);
     gap: var(--gap);
 
-    overflow: visible;
+    overflow: hidden;
 
     /* Transición suave */
     transition: padding 0.3s ease, gap 0.3s ease;
@@ -155,6 +161,10 @@ body {
     z-index: 10;
     width: 100%;
     flex-grow: 1;
+
+    /* Habilitar Container Queries para layouts inteligentes */
+    container-type: size;
+    container-name: slideBody;
 
     display: grid;
     gap: var(--gap);
@@ -266,13 +276,8 @@ body {
    ================================================== */
 
 /* ESCRITORIO GRANDE (Ratio 16:9) */
-@media (min-width: 1200px) and (min-height: 800px) {
-
-    #sapiens-slide,
-    .slide-shell {
-        aspect-ratio: 16/9;
-        height: auto;
-    }
+@media (min-width: 1200px) {
+    /* Reglas específicas si se requieren */
 }
 
 /* TABLETS / LAPTOPS PEQUEÑOS (< 1024px) */
@@ -280,7 +285,7 @@ body {
 
     #sapiens-slide,
     .slide-shell {
-        min-height: auto;
+        /* Ajustes para tablets si es necesario */
     }
 
     .layout-split,
@@ -292,6 +297,23 @@ body {
 
 /* MÓVIL VERTICAL / TABLET PEQUEÑA (< 768px) */
 @media (max-width: 768px) {
+    body {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+        display: block;
+    }
+
+    #sapiens-slide,
+    .slide-shell {
+        height: auto;
+        min-height: 600px;
+        max-height: none;
+        aspect-ratio: unset;
+        border-radius: 24px;
+        /* Mantener borde redondeado o cambiar a 0 si se prefiere */
+    }
+
     :root {
         --slide-p: 1.5rem;
         --gap: 1rem;

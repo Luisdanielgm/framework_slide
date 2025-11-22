@@ -7,13 +7,14 @@
     <title>Sapiens Framework - Bento Layout</title>
     <!-- Sapiens Framework CSS Modular v0.5 -->
     <link rel="stylesheet" href="../sapiens-core.css">
+    <link rel="stylesheet" href="../sapiens-themes.css">
     <link rel="stylesheet" href="../sapiens-components.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body>
+<body class="theme-forest">
 
-    <div id="sapiens-slide">
+    <div id="sapiens-slide" class="surface-1 border-soft">
         <!-- Header -->
         <header class="slide-header">
             <h1>Ecosystem Overview</h1>
@@ -24,13 +25,12 @@
         <div class="slide-body layout-bento">
 
             <!-- Large Item (Span Row) -->
-            <div class="card span-row animate-in"
-                style="animation-delay: 0.1s; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05)); border-color: rgba(59, 130, 246, 0.2);">
-                <div class="icon-circle icon-md icon-magenta" style="margin-bottom: 1.5rem;">
+            <div class="card span-row card-accent animate-in delay-100">
+                <div class="icon-circle icon-md icon-magenta mb-2">
                     <i class="fa-solid fa-brain"></i>
                 </div>
                 <h2>Core Intelligence</h2>
-                <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                <p class="text-lead mb-1">
                     The central nervous system of our platform, processing millions of data points in real-time to
                     deliver actionable insights.
                 </p>
@@ -38,21 +38,21 @@
             </div>
 
             <!-- Small Item 1 -->
-            <div class="card animate-in" style="animation-delay: 0.2s;">
-                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                    <i class="fa-solid fa-shield-halved" style="font-size: 1.5rem; color: var(--accent-2);"></i>
-                    <h3 style="margin: 0; font-size: 1.2rem;">Security</h3>
+            <div class="card animate-in delay-200">
+                <div class="flex-row mb-1">
+                    <i class="fa-solid fa-shield-halved icon-inline text-accent-2"></i>
+                    <h3>Security</h3>
                 </div>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">Enterprise-grade encryption and compliance.</p>
+                <p class="text-caption">Enterprise-grade encryption and compliance.</p>
             </div>
 
             <!-- Small Item 2 -->
-            <div class="card animate-in" style="animation-delay: 0.3s;">
-                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                    <i class="fa-solid fa-bolt" style="font-size: 1.5rem; color: #ffd700;"></i>
-                    <h3 style="margin: 0; font-size: 1.2rem;">Speed</h3>
+            <div class="card animate-in delay-300">
+                <div class="flex-row mb-1">
+                    <i class="fa-solid fa-bolt icon-inline text-accent-1"></i>
+                    <h3>Speed</h3>
                 </div>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">Optimized for low-latency environments.</p>
+                <p class="text-caption">Optimized for low-latency environments.</p>
             </div>
 
         </div>

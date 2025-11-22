@@ -1,0 +1,101 @@
+/* ==================================================
+   SAPIENS FRAMEWORK - THEMES
+   Colección de temas rápidos (solo tokens)
+   ================================================== */
+
+/* Temas rápidos que solo modifican tokens; se aplican en body o contenedores */
+.theme-ocean,
+[data-theme="ocean"] {
+    --bg-1: #0b1220;
+    --bg-2: #0c1f33;
+    --accent-1: #38bdf8;
+    --accent-2: #22d3ee;
+    --text-main: #e2f3ff;
+    --text-muted: #91acc2;
+
+    --surface-0: rgba(56, 189, 248, 0.06);
+    --surface-1: rgba(56, 189, 248, 0.1);
+    --surface-2: rgba(34, 211, 238, 0.14);
+    --surface-3: rgba(34, 211, 238, 0.18);
+
+    --border-soft: rgba(226, 243, 255, 0.16);
+    --border-strong: rgba(34, 211, 238, 0.32);
+
+    --accent-strong: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+    --accent-soft: linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--accent-1) 70%, transparent),
+        color-mix(in srgb, var(--accent-2) 50%, transparent)
+    );
+
+    --glow-1: 0 10px 30px rgba(34, 211, 238, 0.32);
+    --glow-2: 0 16px 50px rgba(34, 189, 248, 0.45);
+
+    --badge-bg: rgba(56, 189, 248, 0.14);
+    --pill-bg: rgba(34, 211, 238, 0.18);
+    --pill-shadow: 0 10px 30px rgba(34, 211, 238, 0.35);
+}
+
+.theme-sunset,
+[data-theme="sunset"] {
+    --bg-1: #1c0f1c;
+    --bg-2: #361a2f;
+    --accent-1: #f97316;
+    --accent-2: #fb7185;
+    --text-main: #fff3e6;
+    --text-muted: #f5c6b8;
+
+    --surface-0: rgba(251, 113, 133, 0.06);
+    --surface-1: rgba(249, 115, 22, 0.1);
+    --surface-2: rgba(251, 113, 133, 0.14);
+    --surface-3: rgba(251, 113, 133, 0.18);
+
+    --border-soft: rgba(255, 243, 230, 0.2);
+    --border-strong: rgba(251, 113, 133, 0.32);
+
+    --accent-strong: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+    --accent-soft: linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--accent-1) 70%, transparent),
+        color-mix(in srgb, var(--accent-2) 50%, transparent)
+    );
+
+    --glow-1: 0 10px 30px rgba(251, 113, 133, 0.3);
+    --glow-2: 0 16px 50px rgba(249, 115, 22, 0.4);
+
+    --badge-bg: rgba(251, 113, 133, 0.16);
+    --pill-bg: rgba(249, 115, 22, 0.2);
+    --pill-shadow: 0 10px 30px rgba(251, 113, 133, 0.35);
+}
+
+.theme-forest,
+[data-theme="forest"] {
+    --bg-1: #0f1a14;
+    --bg-2: #13251b;
+    --accent-1: #22c55e;
+    --accent-2: #4ade80;
+    --text-main: #e8ffef;
+    --text-muted: #9dd0ae;
+
+    --surface-0: rgba(34, 197, 94, 0.06);
+    --surface-1: rgba(34, 197, 94, 0.1);
+    --surface-2: rgba(74, 222, 128, 0.14);
+    --surface-3: rgba(74, 222, 128, 0.18);
+
+    --border-soft: rgba(232, 255, 239, 0.16);
+    --border-strong: rgba(74, 222, 128, 0.32);
+
+    --accent-strong: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+    --accent-soft: linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--accent-1) 70%, transparent),
+        color-mix(in srgb, var(--accent-2) 50%, transparent)
+    );
+
+    --glow-1: 0 10px 30px rgba(34, 197, 94, 0.3);
+    --glow-2: 0 16px 50px rgba(74, 222, 128, 0.42);
+
+    --badge-bg: rgba(34, 197, 94, 0.16);
+    --pill-bg: rgba(74, 222, 128, 0.2);
+    --pill-shadow: 0 10px 30px rgba(34, 197, 94, 0.35);
+}

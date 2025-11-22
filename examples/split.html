@@ -7,13 +7,14 @@
     <title>Sapiens Framework - Split Layout</title>
     <!-- Sapiens Framework CSS Modular v0.5 -->
     <link rel="stylesheet" href="../sapiens-core.css">
+    <link rel="stylesheet" href="../sapiens-themes.css">
     <link rel="stylesheet" href="../sapiens-components.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body>
+<body class="theme-forest">
 
-    <div id="sapiens-slide">
+    <div id="sapiens-slide" class="surface-1 border-soft">
         <!-- Header -->
         <header class="slide-header">
             <h1>Market Analysis</h1>
@@ -24,9 +25,9 @@
         <div class="slide-body layout-split">
 
             <!-- Left Column: Text -->
-            <div class="animate-in" style="animation-delay: 0.1s;">
+            <div class="animate-in delay-100">
                 <h2>Dominating the Sector</h2>
-                <p style="color: var(--text-muted); margin-bottom: 2rem; line-height: 1.6;">
+                <p class="text-lead mb-2">
                     Our latest product line has outperformed all competitors in the premium segment, capturing 45%
                     market share in just 6 months.
                 </p>
@@ -38,29 +39,21 @@
                     <li>Expanded to 12 New Countries</li>
                 </ul>
 
-                <div style="margin-top: 2rem;">
+                <div class="mt-2">
                     <div class="badge badge-primary">Record Breaking</div>
                 </div>
             </div>
 
             <!-- Right Column: Visual/Card -->
-            <div class="card animate-in"
-                style="animation-delay: 0.3s; padding: 0; overflow: hidden; min-height: 400px;">
-                <div
-                    style="height: 100%; background: linear-gradient(135deg, var(--bg-2), #0f172a); display: flex; align-items: center; justify-content: center; position: relative;">
+            <div class="card animate-in delay-300 media-card">
+                <div class="visual-panel">
                     <!-- Decorative Chart Representation -->
-                    <div style="display: flex; align-items: flex-end; gap: 1rem; height: 200px;">
-                        <div
-                            style="width: 40px; height: 40%; background: var(--accent-2); border-radius: 8px 8px 0 0; opacity: 0.5;">
-                        </div>
-                        <div
-                            style="width: 40px; height: 60%; background: var(--accent-2); border-radius: 8px 8px 0 0; opacity: 0.7;">
-                        </div>
-                        <div
-                            style="width: 40px; height: 100%; background: var(--accent-1); border-radius: 8px 8px 0 0; box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);">
-                        </div>
+                    <div class="mini-chart">
+                        <div class="chart-bar sm"></div>
+                        <div class="chart-bar md"></div>
+                        <div class="chart-bar lg"></div>
                     </div>
-                    <div class="watermark" style="font-size: 5rem; opacity: 0.1;">GROWTH</div>
+                    <div class="watermark watermark-soft">GROWTH</div>
                 </div>
             </div>
 

@@ -2,10 +2,11 @@
 
 ## 📋 Visión General
 
-El framework Sapiens se ha dividido en **dos archivos CSS principales** para mejorar la mantenibilidad y escalabilidad:
+El framework Sapiens se ha dividido en **tres archivos CSS principales** para mejorar la mantenibilidad y escalabilidad:
 
 ```
 sapiens-core.css        → Base estructural (NO modificar frecuentemente)
+sapiens-themes.css      → Temas rápidos basados en tokens (Opcional)
 sapiens-components.css  → Componentes UI (Evolutivo)
 ```
 
@@ -33,6 +34,18 @@ sapiens-components.css  → Componentes UI (Evolutivo)
 
 ---
 
+### **sapiens-themes.css** (temas predefinidos)
+**Propósito:** Paquete independiente con clases de tema (`theme-ocean`, `theme-sunset`, `theme-forest`) que reescriben el contrato completo de tokens sin tocar componentes.
+
+**Contenido:**
+- ✅ Temas rápidos basados en tokens (solo custom properties)
+
+**Cuándo modificar:**
+- ✅ Añadir nuevos temas curados o ajustar paletas
+- ✅ Mantener paridad con el contrato de tokens de `sapiens-core.css`
+
+---
+
 ### **sapiens-components.css** (~900 líneas)
 **Propósito:** Componentes UI que pueden evolucionar y expandirse según necesidades.
 
@@ -44,6 +57,13 @@ sapiens-components.css  → Componentes UI (Evolutivo)
 - ✅ Decoraciones creativas
 - ✅ Animaciones
 - ✅ Componentes adicionales
+
+**Posible división futura (opcional):**
+- `sapiens-tokens.css` → Paletas, temas y utilidades base (como `surface-*`, `pill`, `text-accent`).
+- `sapiens-utilities.css` → Clases atómicas de spacing, tipografía y alineación.
+- `sapiens-layouts.css` → Patrones de layout prearmados.
+
+> Hoy se mantiene en un solo archivo para facilidad de adopción, pero la separación anterior es compatible si el proyecto crece.
 
 **Cuándo modificar:**
 - ✅ Agregar nuevos componentes
@@ -61,6 +81,7 @@ sapiens-components.css  → Componentes UI (Evolutivo)
 <head>
     <!-- Framework CSS Modular -->
     <link rel="stylesheet" href="sapiens-core.css">
+    <link rel="stylesheet" href="sapiens-themes.css"> <!-- Opcional: temas rápidos -->
     <link rel="stylesheet" href="sapiens-components.css">
 </head>
 ```
@@ -70,6 +91,8 @@ sapiens-components.css  → Componentes UI (Evolutivo)
 <head>
     <!-- Core (versión estable) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@main/sapiens-core.css">
+    <!-- Temas rápidos (opcional) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@main/sapiens-themes.css">
     
     <!-- Components (versión actualizable) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@main/sapiens-components.css">

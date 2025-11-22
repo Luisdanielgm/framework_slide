@@ -3,6 +3,26 @@
    Componentes UI y elementos decorativos (Evolucionan)
    ================================================== */
 
+/* Utilidades de superficie y color basadas en tokens */
+.surface-0 { background: var(--surface-0); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+.surface-1 { background: var(--surface-1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.surface-2 { background: var(--surface-2); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.surface-3 { background: var(--surface-3); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+
+.border-soft { border: 1px solid var(--border-soft); }
+.border-strong { border: 1px solid var(--border-strong); }
+
+.text-strong { color: var(--text-main); }
+.text-subtle { color: var(--text-muted); }
+.text-accent { background: var(--accent-strong); background-clip: text; -webkit-background-clip: text; color: transparent; }
+
+.pill { background: var(--pill-bg); border-radius: 999px; padding: 0.45rem 0.9rem; box-shadow: var(--pill-shadow); display: inline-flex; gap: 0.5rem; align-items: center; border: 1px solid var(--border-soft); }
+.pill-sm { padding: 0.35rem 0.75rem; font-size: 0.85rem; }
+
+.card-accent { background: var(--surface-2); border: 1px solid var(--border-strong); box-shadow: var(--glow-2); }
+.bg-accent-soft { background: var(--accent-soft); border: 1px solid color-mix(in srgb, var(--accent-1) 40%, transparent); }
+.badge-glow { background: var(--badge-bg); border: 1px solid var(--border-soft); box-shadow: 0 10px 30px color-mix(in srgb, var(--accent-2) 30%, transparent); }
+
 /* ==================================================
    COMPONENTES BASE
    ================================================== */
@@ -90,6 +110,13 @@
     background: #27c93f;
 }
 
+.code-filename {
+    margin-left: auto;
+    font-size: 0.85rem;
+    color: #64748b;
+    letter-spacing: 0.2px;
+}
+
 .code-block pre {
     padding: 1.2rem;
     overflow-x: auto;
@@ -98,6 +125,10 @@
     color: #a5b3ce;
     flex-grow: 1;
     white-space: pre;
+}
+
+.code-block code {
+    color: #e2e8f0;
 }
 
 /* ==================================================
@@ -563,6 +594,60 @@
 }
 
 /* ==================================================
+   UTILIDADES DE TEXTO Y ESPACIADO
+   ================================================== */
+.text-muted { color: var(--text-muted); }
+
+.text-lead {
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.text-caption {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.text-hero {
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.text-center { text-align: center; }
+
+.max-w-800 { max-width: 800px; }
+.max-w-220 { max-width: 220px; }
+
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+.mt-2 { margin-top: 2rem; }
+
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+.flex-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.justify-center { justify-content: center; }
+.align-end { align-items: flex-end; }
+
+.text-accent-1 { color: var(--accent-1); }
+.text-accent-2 { color: var(--accent-2); }
+
+.icon-inline { font-size: 1.5rem; }
+
+/* ==================================================
    ELEMENTOS DE CONEXIÓN
    ================================================== */
 .connector-line {
@@ -601,6 +686,82 @@
 }
 
 /* ==================================================
+   RESPONSIVE DESIGN HELPERS
+   Ajustes para layouts complejos en pantallas pequeñas
+   ================================================== */
+@media (max-width: 900px) {
+    /* Timeline: apilar eventos y usar conectores verticales */
+    .layout-timeline { flex-direction: column; gap: 1.5rem; }
+    .timeline-container { flex-direction: column; gap: 1.25rem; align-items: stretch; }
+    .timeline-item { align-items: flex-start; text-align: left; }
+    .timeline-connector { width: 4px; height: clamp(40px, 14vw, 80px); align-self: center; }
+
+    /* Comparison: evitar overflow de la columna central */
+    .layout-comparison { grid-template-columns: 1fr; gap: 1.25rem; }
+    .comparison-divider {
+        width: 100%;
+        height: 2px;
+        min-height: unset;
+        background: linear-gradient(90deg, transparent, var(--accent-1), transparent);
+    }
+    .comparison-divider::after { position: static; display: inline-flex; transform: none; margin: 0 auto; }
+
+    /* Circular diagram: degradar a lista flexible */
+    .layout-circular { min-height: 0; }
+    .circular-nodes { position: static; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; }
+    .circular-node { position: static; transform: none; flex-direction: row; align-items: center; justify-content: flex-start; }
+    .circular-node:nth-child(n) { left: auto; top: auto; }
+    .node-label { white-space: normal; }
+}
+
+/* --------------------------------------------------
+   Superficies y helpers visuales
+   -------------------------------------------------- */
+.card-accent {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05));
+    border-color: rgba(59, 130, 246, 0.2);
+}
+
+.media-card {
+    padding: 0;
+    overflow: hidden;
+    min-height: 400px;
+}
+
+.visual-panel {
+    height: 100%;
+    background: linear-gradient(135deg, var(--bg-2), #0f172a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.mini-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+    height: 200px;
+}
+
+.chart-bar {
+    width: 40px;
+    border-radius: 8px 8px 0 0;
+    background: var(--accent-2);
+    opacity: 0.7;
+}
+
+.chart-bar.sm { height: 40%; opacity: 0.5; }
+.chart-bar.md { height: 60%; }
+.chart-bar.lg {
+    height: 100%;
+    background: var(--accent-1);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+.badge-center { justify-content: center; }
+
+/* ==================================================
    DECORACIONES CREATIVAS
    ================================================== */
 .watermark {
@@ -616,11 +777,20 @@
     z-index: 0;
 }
 
+.watermark-soft {
+    font-size: clamp(3rem, 8vw, 5rem);
+    opacity: 0.1;
+}
+
 .decorative-shape {
     position: absolute;
     pointer-events: none;
     z-index: 1;
 }
+
+.shape-spot-1 { top: 15%; left: 10%; }
+.shape-spot-2 { bottom: 20%; right: 15%; }
+.shape-spot-3 { top: 30%; right: 25%; }
 
 .shape-star {
     width: 30px;
@@ -702,6 +872,31 @@
 
 .badge-item.cyan {
     background: linear-gradient(135deg, #00bfff, #5fd4ff);
+}
+
+.bg-magenta {
+    background: linear-gradient(135deg, #ff1493, #ff69b4);
+    box-shadow: 0 10px 30px rgba(255, 20, 147, 0.25);
+}
+
+.bg-purple {
+    background: linear-gradient(135deg, #8b00ff, #b548ff);
+    box-shadow: 0 10px 30px rgba(139, 0, 255, 0.25);
+}
+
+.bg-cyan {
+    background: linear-gradient(135deg, #00bfff, #5fd4ff);
+    box-shadow: 0 10px 30px rgba(0, 191, 255, 0.25);
+}
+
+.bg-orange {
+    background: linear-gradient(135deg, #ff6b35, #ff9466);
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.25);
+}
+
+.bg-teal {
+    background: linear-gradient(135deg, #00b894, #55efc4);
+    box-shadow: 0 10px 30px rgba(0, 184, 148, 0.25);
 }
 
 .number-bubble {
@@ -1022,6 +1217,16 @@
 .animate-slide-up {
     animation: slideUp 0.5s ease-out forwards;
 }
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-700 { animation-delay: 0.7s; }
+.delay-800 { animation-delay: 0.8s; }
+.delay-900 { animation-delay: 0.9s; }
 
 /* ==================================================
    SMART GRID LAYOUT (Generic Component)

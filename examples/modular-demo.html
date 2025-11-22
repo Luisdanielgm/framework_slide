@@ -10,24 +10,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Framework CSS Modular v0.5 -->
-    <link rel="stylesheet" href="sapiens-core.css">
-    <link rel="stylesheet" href="sapiens-components.css">
+    <link rel="stylesheet" href="../sapiens-core.css">
+    <link rel="stylesheet" href="../sapiens-themes.css">
+    <link rel="stylesheet" href="../sapiens-components.css">
 
     <!-- Personalización de tema (opcional) -->
     <style>
-        :root {
-            --bg-1: #1a0b2e;
-            --bg-2: #2e1065;
-            --accent-1: #7c3aed;
-            --accent-2: #a855f7;
+        body.theme-forest {
             --font-head: 'Poppins', sans-serif;
             --font-body: 'Inter', sans-serif;
         }
     </style>
 </head>
 
-<body>
-    <div id="sapiens-slide" class="slide-shell">
+<body class="theme-forest">
+    <div id="sapiens-slide" class="slide-shell surface-1 border-soft">
 
         <!-- Decoraciones de fondo -->
         <div class="decorative grid-lines"></div>
@@ -65,7 +62,7 @@
                         <i class="fa-solid fa-shield"></i> Estable
                     </span>
                 </div>
-                <p style="margin-top: 1.5rem; color: var(--text-muted);">
+                <p class="text-lead mt-2">
                     La base permanece intacta mientras los componentes evolucionan según las necesidades del proyecto.
                 </p>
             </div>

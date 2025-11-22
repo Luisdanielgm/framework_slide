@@ -20,6 +20,7 @@ Toda diapositiva sigue esta estructura HTML actualizada:
     
     <!-- Framework CSS Modular -->
     <link rel="stylesheet" href="sapiens-core.css">       <!-- Base estructural -->
+    <link rel="stylesheet" href="sapiens-themes.css">     <!-- Temas rápidos (tokens) -->
     <link rel="stylesheet" href="sapiens-components.css"> <!-- Componentes UI -->
     
     <!-- Font Awesome para iconos (opcional) -->
@@ -66,6 +67,7 @@ Toda diapositiva sigue esta estructura HTML actualizada:
 framework_slide/
 ├── index.html              # ✨ PUNTO DE ENTRADA (Galería de ejemplos)
 ├── sapiens-core.css        # ✨ Base estructural (Estable)
+├── sapiens-themes.css      # 🎨 Temas rápidos (solo tokens)
 ├── sapiens-components.css  # ✨ Componentes UI (Evolutivo)
 ├── sapiens.js              # Animaciones básicas
 │
@@ -163,6 +165,31 @@ Edita las variables en la sección `:root` de `sapiens-core.css`.
 --accent-1: #ff6b35;
 --accent-2: #ff9466;
 ```
+
+### Opción 3: Temas rápidos por clases (sin CSS adicional)
+
+Incluye `sapiens-themes.css` y aplica la clase en `body` o en tu wrapper.
+
+Usa las clases listas (`theme-ocean`, `theme-sunset`, `theme-forest`) sobre `body` o `#sapiens-slide`. También puedes combinar utilidades de superficie para acentos rápidos.
+
+```html
+<link rel="stylesheet" href="sapiens-themes.css">
+...
+<body class="theme-ocean">
+    <div id="sapiens-slide" class="surface-2 border-soft">
+        ...
+    </div>
+</body>
+```
+
+El set completo de tokens ya viene inicializado en `:root` desde `sapiens-core.css` (fondos, acentos, superficies, bordes, pills y tipografías) **y cada tema (`theme-ocean`, `theme-sunset`, `theme-forest`) redefine todo el contrato**. Puedes combinar un tema con un `<style>` que redefina cualquier token (`--bg-*`, `--accent-*`, `--text-*`, `--border-*`, `--surface-*`, `--font-*`).
+Los tokens declarados manualmente ganan por cascada sobre la clase de tema. Consulta `docs/THEMING.md` para ver el contrato completo.
+
+Ejemplos listos:
+- Clase de tema en `<body>`: `bento.html`, `circular-diagram.html`, `creative-intro.html`, `hero.html`, `modular-demo.html`, `split.html`, `timeline.html`.
+- Tokens inyectados (sin tema): `code.html` y `stats.html` (puedes borrar el `<style>` y usar `class="theme-ocean"`).
+
+Consulta `docs/THEMING.md` para ver todos los tokens y cómo crear tu propio tema sin tocar el CSS base.
 
 ---
 

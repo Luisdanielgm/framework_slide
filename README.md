@@ -1,14 +1,14 @@
-# 📖 Guía de Uso - Sapiens Slide Framework
+# 📖 Guía de Uso - Sapiens Slide Framework (v0.5 Modular)
 
-> Framework moderno para crear presentaciones web impactantes, 100% responsive y fácil de usar.
+> Framework moderno para crear presentaciones web impactantes, 100% responsive y fácil de usar. Ahora con **Arquitectura Modular**.
 
 ## 🚀 Inicio Rápido
 
-> **Tip:** Para ver todos los layouts en acción, abre el archivo `gallery.html` en tu navegador.
+> **Tip:** Para ver todos los layouts en acción, abre el archivo `index.html` en tu navegador.
 
-### Estructura Básica
+### Estructura Básica (Modular)
 
-Toda diapositiva sigue esta estructura HTML:
+Toda diapositiva sigue esta estructura HTML actualizada:
 
 ```html
 <!DOCTYPE html>
@@ -18,8 +18,9 @@ Toda diapositiva sigue esta estructura HTML:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Presentación</title>
     
-    <!-- Framework CSS -->
-    <link rel="stylesheet" href="sapiens.css">
+    <!-- Framework CSS Modular -->
+    <link rel="stylesheet" href="sapiens-core.css">       <!-- Base estructural -->
+    <link rel="stylesheet" href="sapiens-components.css"> <!-- Componentes UI -->
     
     <!-- Font Awesome para iconos (opcional) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -59,9 +60,45 @@ Toda diapositiva sigue esta estructura HTML:
 
 ---
 
+## 📦 Estructura de Archivos
+
+```
+framework_slide/
+├── index.html              # ✨ PUNTO DE ENTRADA (Galería de ejemplos)
+├── sapiens-core.css        # ✨ Base estructural (Estable)
+├── sapiens-components.css  # ✨ Componentes UI (Evolutivo)
+├── sapiens.js              # Animaciones básicas
+│
+├── examples/               # Carpeta con 9 ejemplos
+│   ├── modular-demo.html   # ⭐ Demo arquitectura modular
+│   ├── hero.html
+│   ├── split.html
+│   ├── code.html
+│   ├── bento.html
+│   ├── timeline.html
+│   ├── circular-diagram.html
+│   ├── stats.html
+│   └── creative-intro.html
+│
+├── legacy/                 # 📦 Versiones antiguas
+│   └── sapiens.css         # (Deprecated) Versión monolítica
+│
+├── docs/
+│   └── ARCHITECTURE.md     # 📚 Documentación técnica
+│
+├── prompts/                # 🔒 Privado (ignorado por git)
+│   ├── prompts_plan.md
+│   ├── prompts_template.md
+│   └── prompts_slide.md
+│
+└── README.md               # Esta guía
+```
+
+---
+
 ## 📐 Layouts Disponibles
 
-El framework incluye **8 layouts** principales (4 clásicos y 4 creativos) para cubrir todas tus necesidades:
+El framework incluye **9 ejemplos** principales para cubrir todas tus necesidades:
 
 ### 🏛️ Layouts Base (Clásicos)
 
@@ -80,8 +117,9 @@ El framework incluye **8 layouts** principales (4 clásicos y 4 creativos) para 
 | **Circular** | Diagrama radial con nodo central | `examples/circular-diagram.html` |
 | **Stats** | Tarjetas de estadísticas de alto impacto | `examples/stats.html` |
 | **Intro** | Portada creativa con decoraciones | `examples/creative-intro.html` |
+| **Modular** | Demo de arquitectura y badges | `examples/modular-demo.html` |
 
-> **💡 Tip:** Abre el archivo `gallery.html` en tu navegador para ver un menú visual con todos estos ejemplos.
+> **💡 Tip:** Abre el archivo `index.html` en tu navegador para ver un menú visual con todos estos ejemplos.
 
 ---
 
@@ -93,7 +131,7 @@ Cada diapositiva puede tener su propia paleta de colores:
 
 ```html
 <style>
-    #sapiens-slide {
+    :root {
         --bg-1: #13132b;       /* Fondo oscuro */
         --bg-2: #22223d;       /* Fondo medio */
         --accent-1: #ff4d8c;   /* Color primario */
@@ -102,20 +140,9 @@ Cada diapositiva puede tener su propia paleta de colores:
 </style>
 ```
 
-### Opción 2: Modificar sapiens.css
+### Opción 2: Modificar sapiens-core.css
 
-Edita las variables en la línea 4-11 de `sapiens.css`:
-
-```css
-:root {
-    --bg-1: #0f172a;
-    --bg-2: #1e293b;
-    --accent-1: #3b82f6;
-    --accent-2: #06b6d4;
-    --text-main: #f8fafc;
-    --text-muted: #94a3b8;
-}
-```
+Edita las variables en la sección `:root` de `sapiens-core.css`.
 
 ### Paletas Predefinidas
 
@@ -207,13 +234,6 @@ El framework es **100% responsive** automáticamente:
 | **Tablet** (768-1024px) | Split/Code → 1 columna, altura flexible |
 | **Móvil** (<768px) | Todo en 1 columna, padding reducido |
 
-### Comportamiento Específico por Layout
-
-- **Timeline**: Horizontal en desktop → Vertical en móvil
-- **Circular Diagram**: Nodos reposicionados y más pequeños en móvil
-- **Stats**: 4 columnas → 2 columnas → 1 columna
-- **Bento**: Grid 2x2 → Lista vertical
-
 ---
 
 ## 🎭 Decoraciones
@@ -231,39 +251,11 @@ El framework es **100% responsive** automáticamente:
 <div class="decorative grid-lines"></div>
 ```
 
-### Fondos Especiales
-
-```html
-<!-- Fondo blueprint (azul técnico con cuadrícula) -->
-<div id="sapiens-slide" style="background-color: #5a7ba8; background-image: linear-gradient(rgba(255,255,255,0.08) 2px, transparent 2px), linear-gradient(90deg, rgba(255,255,255,0.08) 2px, transparent 2px); background-size: 40px 40px;">
-
-<!-- Fondo con puntos -->
-<div style="background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 20px 20px;">
-```
-
 ### Marca de Agua
 
 ```html
 <div class="watermark">CONFIDENCIAL</div>
 ```
-
----
-
-## 🔧 Ejemplos Completos
-
-Todos los ejemplos están en la carpeta `examples/`:
-
-### Layouts Originales
-- `hero.html` - Portada centrada
-- `split.html` - Dos columnas
-- `code.html` - Presentación de código
-- `bento.html` - Grid de tarjetas
-
-### Layouts Creativos
-- `timeline.html` - Timeline horizontal
-- `circular-diagram.html` - Diagrama radial
-- `stats.html` - Tarjetas de estadísticas
-- `creative-intro.html` - Intro con decoraciones
 
 ---
 
@@ -283,7 +275,7 @@ Usa flexbox en el slide-body:
 
 ### 2. Animaciones Personalizadas
 
-Agrega clases `.animate-in` anivel de elemento:
+Agrega clases `.animate-in` a nivel de elemento:
 
 ```html
 <div class="card animate-in" style="animation-delay: 0.2s;">
@@ -295,38 +287,6 @@ Agrega clases `.animate-in` anivel de elemento:
 
 ```html
 <footer class="slide-footer" style="display: none;"></footer>
-```
-
-### 4. Cambiar Fuente
-
-```html
-<style>
-    #sapiens-slide {
-        --font-head: 'Roboto', sans-serif;
-        --font-body: 'Open Sans', sans-serif;
-    }
-</style>
-```
-
----
-
-## 📦 Estructura de Archivos
-
-```
-framework_slide/
-├── sapiens.css         # Framework CSS consolidado (v4.0)
-├── sapiens.js          # Animaciones básicas
-├── gallery.html        # Galería/Menú principal
-├── examples/           # Carpeta con los 8 ejemplos
-│   ├── hero.html
-│   ├── split.html
-│   ├── code.html
-│   ├── bento.html
-│   ├── timeline.html
-│   ├── circular-diagram.html
-│   ├── stats.html
-│   └── creative-intro.html
-└── README.md           # Esta guía
 ```
 
 ---
@@ -341,8 +301,7 @@ framework_slide/
 - Asegúrate de incluir: `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
 
 ### Los colores no cambian
-- Verifica que las variables CSS estén dentro de `#sapiens-slide { }`
-- Asegúrate de usar `--accent-1` y `--accent-2` correctamente
+- Verifica que las variables CSS estén definidas en `:root` o dentro de `#sapiens-slide`
 
 ---
 
@@ -360,4 +319,8 @@ Framework Sapiens - Libre para uso personal y comercial.
 
 ---
 
-**¿Necesitas ayuda?** Revisa los ejemplos en `examples/` o consulta la documentación completa.
+**¿Necesitas ayuda?** Revisa los ejemplos en `examples/` o consulta la documentación completa en `docs/ARCHITECTURE.md`.
+
+---
+
+**Versión:** 0.5 | **Última actualización:** 2025-11-22

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapiens Slide - Arquitectura Modular</title>
+
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Framework CSS Modular v0.5 -->
+    <link rel="stylesheet" href="sapiens-core.css">
+    <link rel="stylesheet" href="sapiens-components.css">
+
+    <!-- Personalización de tema (opcional) -->
+    <style>
+        :root {
+            --bg-1: #1a0b2e;
+            --bg-2: #2e1065;
+            --accent-1: #7c3aed;
+            --accent-2: #a855f7;
+            --font-head: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="sapiens-slide" class="slide-shell">
+
+        <!-- Decoraciones de fondo -->
+        <div class="decorative grid-lines"></div>
+        <div class="decorative orb orb-1"></div>
+        <div class="decorative orb orb-2"></div>
+
+        <!-- Header -->
+        <header class="slide-header">
+            <h1>Arquitectura Modular CSS</h1>
+            <span class="header-badge">Framework v0.5</span>
+        </header>
+
+        <!-- Contenido Principal -->
+        <main class="slide-body layout-split">
+            <div class="card">
+                <h2><i class="fa-solid fa-layer-group"></i> Estructura Dividida</h2>
+                <ul class="feature-list">
+                    <li><strong>sapiens-core.css:</strong> Base estructural y responsiva</li>
+                    <li><strong>sapiens-components.css:</strong> Componentes UI evolutivos</li>
+                    <li>Mejor mantenibilidad y escalabilidad</li>
+                    <li>Actualizaciones seguras sin romper la base</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2><i class="fa-solid fa-rocket"></i> Beneficios</h2>
+                <div class="badge-group">
+                    <span class="badge-item magenta">
+                        <i class="fa-solid fa-check"></i> Modular
+                    </span>
+                    <span class="badge-item purple">
+                        <i class="fa-solid fa-code"></i> Limpio
+                    </span>
+                    <span class="badge-item cyan">
+                        <i class="fa-solid fa-shield"></i> Estable
+                    </span>
+                </div>
+                <p style="margin-top: 1.5rem; color: var(--text-muted);">
+                    La base permanece intacta mientras los componentes evolucionan según las necesidades del proyecto.
+                </p>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="slide-footer">
+            <span>Sapiens Framework Modular</span>
+            <span>01 / 01</span>
+        </footer>
+
+    </div>
+
+    <script src="sapiens.js"></script>
+</body>
+
+</html>

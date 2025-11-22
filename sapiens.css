@@ -1,4 +1,4 @@
-/* sapiens.css v3.4 - Cross-Browser Compatible */
+/* sapiens.css v3.5 - Responsive Fluid Fix */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;800&family=Fira+Code&family=Poppins:wght@400;600;700&display=swap');
 
 :root {
@@ -13,9 +13,9 @@
     --font-head: 'Poppins', sans-serif;
     --font-body: 'Inter', sans-serif;
     
-    /* Variables Dimensión (Dinámicas) */
-    --slide-p: clamp(1.5rem, 4vmin, 4rem);
-    --gap: clamp(1rem, 3vmin, 2.5rem);
+    /* AJUSTE: Paddings más suaves para evitar que "coman" espacio en tablet */
+    --slide-p: clamp(1.25rem, 3.5vmin, 3.5rem); 
+    --gap: clamp(1rem, 2.5vmin, 2rem);
     --radius: 24px;
 }
 
@@ -26,29 +26,28 @@ body {
     background-color: #050505;
     background: radial-gradient(circle at top left, var(--bg-1), var(--bg-2));
     background-attachment: fixed;
-    
     min-height: 100vh;
     width: 100vw;
     font-family: var(--font-body);
     color: var(--text-main);
     
-    display: grid;
-    place-items: center;
+    /* Centrado (Flexbox es más seguro que grid para scroll en móvil) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Espacio externo de seguridad */
     overflow-x: hidden;
 }
 
 /* --- CONTENEDOR MAESTRO --- */
 #sapiens-slide {
-    width: min(90vw, 1400px);
-    height: min(90vh, 90vw / 1.77); 
-    aspect-ratio: 16/9;
-    
+    width: 100%;
+    max-width: 1400px;
     position: relative;
     border-radius: var(--radius);
-    
     background: rgba(255, 255, 255, 0.02);
     
-    /* FIX: Compatibilidad Safari/iOS para efectos de fondo */
+    /* Compatibilidad Filtros */
     -webkit-backdrop-filter: blur(0px); 
     backdrop-filter: blur(0px);
     
@@ -60,32 +59,43 @@ body {
     grid-template-rows: auto 1fr auto;
     padding: var(--slide-p);
     gap: var(--gap);
+    
+    /* IMPORTANTE: Overflow hidden evita que el badge salga visualmente si hay error de cálculo */
     overflow: hidden; 
+    
+    /* POR DEFECTO (Escritorio Grande): Mantiene 16:9 */
+    aspect-ratio: 16/9;
+    height: auto; 
 }
 
-/* --- HEADER --- */
+/* --- HEADER (CORREGIDO) --- */
 .slide-header {
     z-index: 10;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: flex-start; /* Alineación superior */
     gap: 1rem;
+    
+    /* SOLUCIÓN BADGE: Permite que caiga si no hay espacio */
+    flex-wrap: wrap; 
 }
+
 .slide-header h1 {
     font-family: var(--font-head);
-    font-size: clamp(1.8rem, 5vmin, 3.5rem);
+    font-size: clamp(1.8rem, 4.5vmin, 3.5rem);
     line-height: 1.1;
     font-weight: 700;
     background: linear-gradient(135deg, #fff 0%, var(--text-muted) 100%);
-    
-    /* FIX: Standard + Webkit para recorte de texto */
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    
     margin: 0;
-    word-break: break-word; 
+    
+    /* Asegura que el título no empuje infinitamente */
+    flex: 1 1 300px; 
+    min-width: 0; /* Permite al flex item encogerse bajo su contenido mínimo */
 }
+
 .header-badge {
     font-size: 0.75rem;
     font-weight: 600;
@@ -96,7 +106,12 @@ body {
     letter-spacing: 1px;
     border: 1px solid rgba(255,255,255,0.05);
     white-space: nowrap;
-    flex-shrink: 0;
+    
+    /* Evita que se deforme */
+    flex-shrink: 0; 
+    
+    /* Ajuste visual si hace wrap */
+    margin-top: 4px; 
 }
 
 /* --- BODY & LAYOUTS --- */
@@ -120,11 +135,8 @@ body {
 /* --- COMPONENTES --- */
 .card {
     background: rgba(255, 255, 255, 0.03);
-    
-    /* FIX: El blur en tarjetas necesita prefijo para Safari */
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
-    
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: calc(var(--radius) - 8px);
     padding: clamp(1.25rem, 2vmin, 2.5rem);
@@ -133,7 +145,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    transition: transform 0.3s ease;
 }
 
 h2 {
@@ -178,7 +189,6 @@ h2 {
     border-bottom: 1px solid rgba(255,255,255,0.05); 
 }
 .dot { width: 10px; height: 10px; border-radius: 50%; }
-
 .code-block pre {
     padding: 1.2rem;
     overflow-x: auto;
@@ -219,34 +229,80 @@ h2 {
         linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
     background-size: 40px 40px;
-    
-    /* FIX: Compatibilidad total para el fade radial */
     -webkit-mask-image: radial-gradient(circle at center, black, transparent 80%);
     mask-image: radial-gradient(circle at center, black, transparent 80%);
 }
 
-/* --- RESPONSIVE (SIN CAMBIOS, SOLO HEREDA MEJORAS) --- */
-@media (max-width: 1024px) {
-    :root { --slide-p: 2rem; --gap: 1.5rem; }
-    body { display: block; padding: 20px; }
+/* =========================================
+   RESPONSIVE LOGIC (El Fix Principal)
+   ========================================= */
+
+/* 1. TABLET / PANTALLAS MEDIANAS (Menos de 1200px) */
+/* Aquí es donde ocurría el padding excesivo. */
+@media (max-width: 1200px) {
     #sapiens-slide {
-        width: 100%; height: auto; aspect-ratio: auto; 
-        min-height: 80vh; overflow: visible; display: flex; flex-direction: column;
+        /* ROMPEMOS EL ASPECT RATIO FIJO */
+        aspect-ratio: auto; 
+        /* Dejamos que la altura crezca según el contenido */
+        min-height: 60vh; 
+        height: auto;
+        
+        /* Maximizamos el ancho disponible */
+        width: 100%;
     }
-    .layout-split, .layout-code { grid-template-columns: 1fr; grid-template-rows: auto auto; }
-    .layout-bento { grid-template-columns: 1fr 1fr; }
-    .code-block { min-height: 300px; max-width: 100%; }
-    .orb { opacity: 0.1; width: 80vw; height: 80vw; }
+    
+    /* Hacemos que el grid de contenido se adapte si hay poco espacio vertical */
+    .layout-split, .layout-code {
+        /* Si la pantalla es muy "cuadrada" (tablet portrait), pasamos a columna */
+        /* Usamos una media query anidada o flex-wrap logic */
+    }
 }
 
-@media (max-width: 640px) {
-    :root { --slide-p: 1.25rem; --gap: 1.25rem; --radius: 16px; }
+/* 2. MÓVIL / TABLET PORTRAIT (Menos de 900px) */
+@media (max-width: 900px) {
+    :root {
+        /* Reducimos el padding dramáticamente para ganar espacio */
+        --slide-p: 1.5rem; 
+        --gap: 1.5rem;
+    }
+
+    #sapiens-slide {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Layouts a columna única */
+    .layout-split, .layout-code {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    
+    /* Bento 2 columnas todavía en tablets pequeñas */
+    .layout-bento {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    /* Header badge adjustment */
+    .slide-header {
+        flex-wrap: wrap; 
+    }
+}
+
+/* 3. MÓVIL PEQUEÑO (Menos de 600px) */
+@media (max-width: 600px) {
+    :root {
+        --slide-p: 1.25rem;
+        --gap: 1rem;
+        --radius: 16px;
+    }
+    
     body { padding: 10px; }
-    .slide-header { flex-direction: column; gap: 0.5rem; }
-    .header-badge { align-self: flex-start; font-size: 0.65rem; }
-    .layout-bento { grid-template-columns: 1fr; grid-template-rows: auto; }
+
+    /* Bento a 1 columna */
+    .layout-bento { grid-template-columns: 1fr; }
     .layout-bento .span-row, .layout-bento .span-col { grid-column: span 1; grid-row: span 1; }
-    .card { padding: 1.25rem; }
+
+    .slide-header h1 { font-size: 1.75rem; }
 }
 
 /* ANIMACIONES */

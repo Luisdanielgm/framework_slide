@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapiens Framework - Split Layout</title>
+    <link rel="stylesheet" href="../sapiens.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div id="sapiens-slide">
+        <!-- Header -->
+        <header class="slide-header">
+            <h1>Market Analysis</h1>
+            <div class="header-badge">Q3 Report</div>
+        </header>
+
+        <!-- Body: Split Layout -->
+        <div class="slide-body layout-split">
+
+            <!-- Left Column: Text -->
+            <div class="animate-in" style="animation-delay: 0.1s;">
+                <h2>Dominating the Sector</h2>
+                <p style="color: var(--text-muted); margin-bottom: 2rem; line-height: 1.6;">
+                    Our latest product line has outperformed all competitors in the premium segment, capturing 45%
+                    market share in just 6 months.
+                </p>
+
+                <ul class="feature-list">
+                    <li>45% Market Share in Premium Segment</li>
+                    <li>+200% Revenue Growth YoY</li>
+                    <li>98% Customer Satisfaction Score</li>
+                    <li>Expanded to 12 New Countries</li>
+                </ul>
+
+                <div style="margin-top: 2rem;">
+                    <div class="badge badge-primary">Record Breaking</div>
+                </div>
+            </div>
+
+            <!-- Right Column: Visual/Card -->
+            <div class="card animate-in"
+                style="animation-delay: 0.3s; padding: 0; overflow: hidden; min-height: 400px;">
+                <div
+                    style="height: 100%; background: linear-gradient(135deg, var(--bg-2), #0f172a); display: flex; align-items: center; justify-content: center; position: relative;">
+                    <!-- Decorative Chart Representation -->
+                    <div style="display: flex; align-items: flex-end; gap: 1rem; height: 200px;">
+                        <div
+                            style="width: 40px; height: 40%; background: var(--accent-2); border-radius: 8px 8px 0 0; opacity: 0.5;">
+                        </div>
+                        <div
+                            style="width: 40px; height: 60%; background: var(--accent-2); border-radius: 8px 8px 0 0; opacity: 0.7;">
+                        </div>
+                        <div
+                            style="width: 40px; height: 100%; background: var(--accent-1); border-radius: 8px 8px 0 0; box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);">
+                        </div>
+                    </div>
+                    <div class="watermark" style="font-size: 5rem; opacity: 0.1;">GROWTH</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="slide-footer">
+            <span>Sales Department</span>
+            <span>Confidential</span>
+        </footer>
+
+        <!-- Decoración -->
+        <div class="decorative orb orb-1"></div>
+        <div class="decorative orb orb-2"></div>
+        <div class="decorative grid-lines"></div>
+    </div>
+
+    <script src="../sapiens.js"></script>
+</body>
+
+</html>

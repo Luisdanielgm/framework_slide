@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapiens Framework - Code Layout</title>
+    <link rel="stylesheet" href="../sapiens.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div id="sapiens-slide">
+        <!-- Header -->
+        <header class="slide-header">
+            <h1>API Implementation</h1>
+            <div class="header-badge">v2.0 Endpoint</div>
+        </header>
+
+        <!-- Body: Code Layout -->
+        <div class="slide-body layout-code">
+
+            <!-- Left Column: Explanation -->
+            <div class="animate-in" style="animation-delay: 0.1s;">
+                <h2>Seamless Integration</h2>
+                <p style="color: var(--text-muted); margin-bottom: 2rem; line-height: 1.6;">
+                    Connect to our neural network with just a few lines of code. Our Python SDK handles authentication,
+                    data serialization, and error management automatically.
+                </p>
+
+                <div class="badge-group">
+                    <div class="badge-item cyan">
+                        <i class="fa-brands fa-python"></i> Python SDK
+                    </div>
+                    <div class="badge-item purple">
+                        <i class="fa-solid fa-bolt"></i> Async Support
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Code Block -->
+            <div class="code-block animate-in" style="animation-delay: 0.3s;">
+                <div class="code-nav">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <span style="margin-left: auto; font-size: 0.8rem; color: #64748b;">example.py</span>
+                </div>
+                <pre><code style="color: #e2e8f0;">import sapiens_ai
+
+# Initialize the client
+client = sapiens_ai.Client(api_key="sk_live_...")
+
+# Create a prediction task
+response = await client.predict(
+    model="neural-v2",
+    input={
+        "type": "analysis",
+        "data": dataset_matrix
+    }
+)
+
+print(f"Confidence Score: {response.confidence}")
+# Output: Confidence Score: 0.98</code></pre>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="slide-footer">
+            <span>Engineering Docs</span>
+            <span>Page 42</span>
+        </footer>
+
+        <!-- Decoración -->
+        <div class="decorative orb orb-1"></div>
+        <div class="decorative orb orb-2"></div>
+        <div class="decorative grid-lines"></div>
+    </div>
+
+    <script src="../sapiens.js"></script>
+</body>
+
+</html>

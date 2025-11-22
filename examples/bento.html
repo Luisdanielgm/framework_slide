@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapiens Framework - Bento Layout</title>
+    <link rel="stylesheet" href="../sapiens.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div id="sapiens-slide">
+        <!-- Header -->
+        <header class="slide-header">
+            <h1>Ecosystem Overview</h1>
+            <div class="header-badge">Integrated Suite</div>
+        </header>
+
+        <!-- Body: Bento Layout -->
+        <div class="slide-body layout-bento">
+
+            <!-- Large Item (Span Row) -->
+            <div class="card span-row animate-in"
+                style="animation-delay: 0.1s; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05)); border-color: rgba(59, 130, 246, 0.2);">
+                <div class="icon-circle icon-md icon-magenta" style="margin-bottom: 1.5rem;">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+                <h2>Core Intelligence</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                    The central nervous system of our platform, processing millions of data points in real-time to
+                    deliver actionable insights.
+                </p>
+                <div class="badge badge-primary">Flagship</div>
+            </div>
+
+            <!-- Small Item 1 -->
+            <div class="card animate-in" style="animation-delay: 0.2s;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <i class="fa-solid fa-shield-halved" style="font-size: 1.5rem; color: var(--accent-2);"></i>
+                    <h3 style="margin: 0; font-size: 1.2rem;">Security</h3>
+                </div>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">Enterprise-grade encryption and compliance.</p>
+            </div>
+
+            <!-- Small Item 2 -->
+            <div class="card animate-in" style="animation-delay: 0.3s;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <i class="fa-solid fa-bolt" style="font-size: 1.5rem; color: #ffd700;"></i>
+                    <h3 style="margin: 0; font-size: 1.2rem;">Speed</h3>
+                </div>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">Optimized for low-latency environments.</p>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="slide-footer">
+            <span>Product Architecture</span>
+            <span>Confidential</span>
+        </footer>
+
+        <!-- Decoración -->
+        <div class="decorative orb orb-1"></div>
+        <div class="decorative orb orb-2"></div>
+        <div class="decorative grid-lines"></div>
+    </div>
+
+    <script src="../sapiens.js"></script>
+</body>
+
+</html>

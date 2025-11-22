@@ -1,0 +1,364 @@
+/* sapiens.css v3.9 - Symmetry & Grid Stability */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;800&family=Fira+Code&family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    /* --- VARIABLES DE COLOR --- */
+    --bg-1: #0f172a;
+    --bg-2: #1e293b;
+    --accent-1: #3b82f6;
+    --accent-2: #06b6d4;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    
+    /* --- FUENTES --- */
+    --font-head: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* --- ESPACIADOS INTERNOS (Dentro de la tarjeta) --- */
+    /* Ajustado para que no sea gigante en tablet */
+    --slide-p: clamp(1.5rem, 3vw, 3rem); 
+    --gap: clamp(1rem, 2vw, 2rem);
+    --radius: 24px;
+}
+
+/* --- RESET GLOBAL --- */
+*, *::before, *::after { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+html {
+    height: -webkit-fill-available; /* Fix suave para iOS */
+}
+
+/* --- BODY: El Contenedor de la Pantalla --- */
+body {
+    background-color: #050505;
+    background: radial-gradient(circle at top left, var(--bg-1), var(--bg-2));
+    background-attachment: fixed;
+    
+    font-family: var(--font-body);
+    color: var(--text-main);
+    
+    /* FIX SIMETRÍA: Usamos Grid en lugar de Flex. 
+       Grid centra matemáticamente mejor en ambos ejes */
+    display: grid;
+    place-items: center; 
+    
+    /* Altura mínima de la ventana */
+    min-height: 100vh;
+    min-height: 100dvh; /* Altura dinámica real móvil */
+    width: 100%;
+    
+    /* PADDING DEL BODY: Este es el "borde" negro alrededor de la diapositiva.
+       Es igual en los 4 lados (clamp calcula el tamaño ideal) */
+    padding: clamp(15px, 3vw, 40px);
+    
+    overflow-x: hidden; /* Evitamos scroll horizontal */
+    overflow-y: auto;   /* Scroll vertical natural */
+}
+
+/* --- SAPIENS SLIDE: La Tarjeta Principal --- */
+#sapiens-slide {
+    /* 1. ANCHO: Ocupa todo el ancho disponible (restando el padding del body) */
+    width: 100%;
+    
+    /* 2. LIMITE: Nunca será más ancha que 1300px (estética) */
+    max-width: 1300px;
+    
+    /* 3. ALTURA: 
+       - Auto: Crece según el contenido (vital para móvil/tablet).
+       - Min-height: Evita que se vea aplastada si hay poco texto. */
+    height: auto;
+    min-height: 600px; 
+
+    /* Estilos Visuales */
+    position: relative;
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.02);
+    
+    -webkit-backdrop-filter: blur(0px); 
+    backdrop-filter: blur(0px);
+    
+    box-shadow: 
+        0 0 0 1px rgba(255, 255, 255, 0.05),
+        0 20px 60px -10px rgba(0, 0, 0, 0.6);
+
+    /* Layout Interno */
+    display: flex;
+    flex-direction: column;
+    
+    padding: var(--slide-p);
+    gap: var(--gap);
+    
+    /* IMPORTANTE: Visible para que tooltips o sombras no se corten,
+       pero controlamos el contenido con 'overflow-x: hidden' en el body */
+    overflow: visible; 
+    
+    /* Transición suave al cambiar tamaños */
+    transition: padding 0.3s ease, gap 0.3s ease;
+}
+
+/* --- HEADER --- */
+.slide-header {
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.slide-header h1 {
+    font-family: var(--font-head);
+    /* Tamaño de fuente fluido para no romper en vertical */
+    font-size: clamp(1.75rem, 5vw, 3.2rem);
+    line-height: 1.1;
+    font-weight: 700;
+    background: linear-gradient(135deg, #fff 0%, var(--text-muted) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+    
+    flex: 1; /* Toma el espacio disponible */
+    min-width: 200px; 
+}
+
+.header-badge {
+    /* El botón/badge de la esquina */
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: rgba(255,255,255,0.08);
+    padding: 6px 12px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid rgba(255,255,255,0.05);
+    white-space: nowrap;
+    flex-shrink: 0; /* No se aplasta */
+    margin-top: 6px;
+}
+
+/* --- BODY CONTENT (La grilla interna) --- */
+.slide-body {
+    z-index: 10;
+    width: 100%;
+    flex-grow: 1; /* Empuja el footer hacia abajo */
+    
+    display: grid;
+    gap: var(--gap);
+    align-content: center; /* Centra contenido verticalmente si sobra espacio */
+}
+
+/* --- DEFINICIÓN DE LAYOUTS (Restaurados completos) --- */
+/* 1. Hero: Texto centrado */
+.layout-hero { 
+    grid-template-columns: 1fr; 
+    text-align: center; 
+    place-items: center; 
+}
+
+/* 2. Split: Texto izq, Imagen/Code der */
+.layout-split { 
+    grid-template-columns: 1fr 1fr; 
+    align-items: center; 
+}
+
+/* 3. Code: Texto pequeño izq, Código ancho der */
+.layout-code { 
+    grid-template-columns: 0.9fr 1.1fr; 
+    align-items: center; 
+}
+
+/* 4. Bento: Grilla 2x2 */
+.layout-bento { 
+    grid-template-columns: repeat(2, 1fr); 
+    grid-auto-rows: minmax(auto, 1fr);
+}
+.layout-bento .span-row { grid-row: span 2; }
+.layout-bento .span-col { grid-column: span 2; }
+
+
+/* --- COMPONENTES UI --- */
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: calc(var(--radius) - 8px);
+    padding: clamp(1.2rem, 2vw, 2.5rem);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h2 {
+    font-family: var(--font-head);
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    margin-bottom: 0.8em;
+    color: var(--text-main);
+    line-height: 1.3;
+}
+
+/* Listas con puntos brillantes */
+.feature-list { list-style: none; display: flex; flex-direction: column; gap: 0.8em; }
+.feature-list li {
+    font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+    line-height: 1.5;
+    display: flex;
+    gap: 0.8rem;
+    color: var(--text-muted);
+    align-items: baseline; /* Alineación perfecta texto-punto */
+}
+.feature-list li::before {
+    content: '';
+    display: inline-block;
+    min-width: 8px; height: 8px;
+    background: var(--accent-1);
+    border-radius: 50%;
+    transform: translateY(-1px); /* Ajuste óptico */
+    box-shadow: 0 0 10px var(--accent-1);
+}
+
+/* Bloques de código */
+.code-block {
+    background: #0b0d10;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: calc(var(--radius) - 8px);
+    font-family: 'Fira Code', monospace;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* Sombra interna sutil */
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+}
+.code-nav { 
+    display: flex; gap: 8px; padding: 10px 16px; 
+    background: rgba(255,255,255,0.03); 
+    border-bottom: 1px solid rgba(255,255,255,0.05); 
+}
+.dot { width: 10px; height: 10px; border-radius: 50%; background: #333; }
+.dot:nth-child(1) { background: #ff5f56; }
+.dot:nth-child(2) { background: #ffbd2e; }
+.dot:nth-child(3) { background: #27c93f; }
+
+.code-block pre {
+    padding: 1.2rem;
+    overflow-x: auto;
+    font-size: clamp(0.75rem, 1.3vw, 0.9rem);
+    line-height: 1.6;
+    color: #a5b3ce;
+    flex-grow: 1;
+    white-space: pre;
+}
+
+/* --- FOOTER --- */
+.slide-footer {
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 1rem;
+    margin-top: auto;
+    opacity: 0.7;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* --- DECORACIÓN DE FONDO --- */
+.decorative { position: absolute; pointer-events: none; z-index: 0; }
+.orb {
+    width: 60vmin; height: 60vmin;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.15;
+}
+.orb-1 { top: -20%; right: -20%; background: var(--accent-1); }
+.orb-2 { bottom: -20%; left: -20%; background: var(--accent-2); }
+
+.grid-lines {
+    inset: 0;
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    -webkit-mask-image: radial-gradient(circle at center, black, transparent 80%);
+    mask-image: radial-gradient(circle at center, black, transparent 80%);
+}
+
+/* =========================================
+   MEDIA QUERIES: LÓGICA RESPONSIVA
+   ========================================= */
+
+/* 1. ESCRITORIO GRANDE (Mantener ratio 16:9 si hay espacio) */
+@media (min-width: 1200px) and (min-height: 800px) {
+    #sapiens-slide {
+        aspect-ratio: 16/9; 
+        /* Forzamos altura para que se vea como presentación */
+        height: auto; 
+    }
+}
+
+/* 2. TABLETS / LAPTOPS PEQUEÑOS (< 1024px) */
+@media (max-width: 1024px) {
+    #sapiens-slide {
+        min-height: auto; /* Liberamos la altura mínima estricta */
+    }
+    
+    .layout-split, .layout-code {
+        grid-template-columns: 1fr; /* Columna simple */
+        text-align: left;
+    }
+    
+    .layout-hero {
+        /* En tablet el hero puede mantenerse centrado, se ve bien */
+    }
+}
+
+/* 3. MÓVIL VERTICAL / TABLET PEQUEÑA (< 768px) */
+@media (max-width: 768px) {
+    :root {
+        /* Reducimos padding interno para ganar espacio de contenido */
+        --slide-p: 1.5rem; 
+        --gap: 1rem;
+    }
+
+    /* HEADER: Badge encima del título */
+    .slide-header {
+        flex-direction: column-reverse;
+        gap: 0.5rem;
+    }
+    .header-badge {
+        align-self: flex-start;
+        margin-top: 0;
+    }
+    
+    /* BENTO: Se convierte en lista */
+    .layout-bento { 
+        grid-template-columns: 1fr; 
+    }
+    .layout-bento .span-row, .layout-bento .span-col { 
+        grid-column: span 1; grid-row: span 1; 
+    }
+    
+    /* FOOTER: Centrado */
+    .slide-footer {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* ANIMACIONES DE ENTRADA */
+.animate-in { animation: fadeInUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; opacity: 0; }
+@keyframes fadeInUp { 
+    from { opacity: 0; transform: translateY(20px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}

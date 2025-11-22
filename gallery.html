@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapiens Framework - Examples Gallery</title>
+    <link rel="stylesheet" href="sapiens.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom styles for the gallery index */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            width: 100%;
+        }
+
+        .gallery-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .gallery-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: var(--accent-1);
+            transform: translateY(-5px);
+        }
+
+        .gallery-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-title {
+            font-family: var(--font-head);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .gallery-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .section-title {
+            grid-column: 1 / -1;
+            font-family: var(--font-head);
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="sapiens-slide" style="height: auto; min-height: 100vh;">
+        <!-- Header -->
+        <header class="slide-header">
+            <h1>Sapiens Framework</h1>
+            <div class="header-badge">v4.0 Gallery</div>
+        </header>
+
+        <!-- Body -->
+        <div class="slide-body" style="display: block;">
+
+            <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem; max-width: 800px;">
+                A collection of responsive, creative layouts built with the Sapiens Framework.
+                Click any card to view the live example.
+            </p>
+
+            <div class="gallery-grid">
+
+                <!-- Section: Creative Layouts -->
+                <div class="section-title">Creative Layouts</div>
+
+                <a href="examples/creative-intro.html" class="gallery-card">
+                    <div class="gallery-icon" style="background: linear-gradient(135deg, #ff6b35, #ff9466);">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <div class="gallery-title">Creative Intro</div>
+                    <div class="gallery-desc">A visually rich introduction slide with custom decorations and torn paper
+                        effect.</div>
+                </a>
+
+                <a href="examples/timeline.html" class="gallery-card">
+                    <div class="gallery-icon" style="background: linear-gradient(135deg, #ff1493, #ff69b4);">
+                        <i class="fa-solid fa-timeline"></i>
+                    </div>
+                    <div class="gallery-title">Timeline</div>
+                    <div class="gallery-desc">Horizontal process timeline with connected steps and animated drawing
+                        effects.</div>
+                </a>
+
+                <a href="examples/circular-diagram.html" class="gallery-card">
+                    <div class="gallery-icon" style="background: linear-gradient(135deg, #8b00ff, #b548ff);">
+                        <i class="fa-solid fa-circle-nodes"></i>
+                    </div>
+                    <div class="gallery-title">Circular Diagram</div>
+                    <div class="gallery-desc">Radial layout with a central hub and satellite nodes, perfect for
+                        ecosystems.</div>
+                </a>
+
+                <a href="examples/stats.html" class="gallery-card">
+                    <div class="gallery-icon" style="background: linear-gradient(135deg, #ffd700, #ffed4e);">
+                        <i class="fa-solid fa-chart-simple"></i>
+                    </div>
+                    <div class="gallery-title">Stats Highlights</div>
+                    <div class="gallery-desc">High-impact statistical cards with gradient numbers and hover effects.
+                    </div>
+                </a>
+
+                <!-- Section: Core Layouts -->
+                <div class="section-title">Core Layouts</div>
+
+                <a href="examples/hero.html" class="gallery-card">
+                    <div class="gallery-icon">
+                        <i class="fa-solid fa-heading"></i>
+                    </div>
+                    <div class="gallery-title">Hero Center</div>
+                    <div class="gallery-desc">Classic centered layout for main titles and impactful statements.</div>
+                </a>
+
+                <a href="examples/split.html" class="gallery-card">
+                    <div class="gallery-icon">
+                        <i class="fa-solid fa-columns"></i>
+                    </div>
+                    <div class="gallery-title">Split Screen</div>
+                    <div class="gallery-desc">50/50 split for text and media/visuals side by side.</div>
+                </a>
+
+                <a href="examples/code.html" class="gallery-card">
+                    <div class="gallery-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <div class="gallery-title">Code Block</div>
+                    <div class="gallery-desc">Syntax-highlighted code snippets with explanatory text.</div>
+                </a>
+
+                <a href="examples/bento.html" class="gallery-card">
+                    <div class="gallery-icon">
+                        <i class="fa-solid fa-table-cells-large"></i>
+                    </div>
+                    <div class="gallery-title">Bento Grid</div>
+                    <div class="gallery-desc">Modern grid layout with spanning cells for feature overviews.</div>
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="slide-footer">
+            <span>© 2025 Sapiens Framework</span>
+            <span>System Ready</span>
+        </footer>
+
+        <!-- Decoración -->
+        <div class="decorative orb orb-1"></div>
+        <div class="decorative orb orb-2"></div>
+        <div class="decorative grid-lines"></div>
+    </div>
+
+    <script src="sapiens.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,599 @@
+[
+    {
+        "categoria": "Inspiradas en la Naturaleza",
+        "combos": [
+            {
+                "colores": [
+                    "Verde follaje vibrante",
+                    "Coral brillante"
+                ],
+                "justificacion": "La combinación de un verde follaje vibrante con un coral brillante evoca la primavera y logra un diseño fresco que sobresale:contentReference[oaicite:0]{index=0}.",
+                "implementado": true,
+                "clase_css": "theme-nature-spring"
+            },
+            {
+                "colores": [
+                    "Ciruela oscura",
+                    "Naranja rojizo"
+                ],
+                "justificacion": "Tonos profundos de ciruela combinados con un naranja rojizo apagado reflejan los contrastes de un paisaje desértico, ofreciendo una paleta menos llamativa pero igualmente impactante:contentReference[oaicite:1]{index=1}.",
+                "implementado": true,
+                "clase_css": "theme-nature-desert"
+            },
+            {
+                "colores": [
+                    "Verde hoja",
+                    "Marrón tierra"
+                ],
+                "justificacion": "Mezclar verdes hoja con tonos marrón tierra produce una paleta ideal para temáticas de medio ambiente y naturaleza, transmitiendo frescura y sostenibilidad:contentReference[oaicite:2]{index=2}.",
+                "implementado": true,
+                "clase_css": "theme-nature-earth"
+            },
+            {
+                "colores": [
+                    "Azules fríos monocromáticos"
+                ],
+                "justificacion": "Una paleta de azules fríos en varios matices funciona de forma muy versátil, pudiendo usarse prácticamente en cualquier proyecto por su efecto calmante y neutro:contentReference[oaicite:3]{index=3}.",
+                "implementado": true,
+                "clase_css": "theme-nature-ice"
+            },
+            {
+                "colores": [
+                    "Verde lima",
+                    "Morado intenso"
+                ],
+                "justificacion": "Aunque poco habitual, un verde lima vibrante contrastando con morado intenso puede crear un diseño único y memorable; esta inusual pareja de colores produce un contraste sorprendente y memorable:contentReference[oaicite:4]{index=4}.",
+                "implementado": true,
+                "clase_css": "theme-nature-exotic"
+            },
+            {
+                "colores": [
+                    "Azul cielo",
+                    "Marrón bosque"
+                ],
+                "justificacion": "Una gama de azules combinada con marrones naturales constituye una paleta atractiva que evoca el cielo y la tierra, transmitiendo sensaciones de permanencia, transparencia y fiabilidad:contentReference[oaicite:5]{index=5}.",
+                "implementado": true,
+                "clase_css": "theme-nature-horizon"
+            },
+            {
+                "colores": [
+                    "Oliva",
+                    "Café oscuro"
+                ],
+                "justificacion": "Los tonos marrón y oliva son perfectos para temas de sostenibilidad y lo orgánico; esta combinación terrenal conecta con la moda de lo ecológico y añade un carácter natural al diseño:contentReference[oaicite:6]{index=6}.",
+                "implementado": true,
+                "clase_css": "theme-nature-organic"
+            },
+            {
+                "colores": [
+                    "Azul glaciar",
+                    "Gris cálido",
+                    "Coral claro"
+                ],
+                "justificacion": "Contrastar grises cálidos con un azul hielo y añadir un matiz coral pálido produce una combinación dinámica mucho más interesante que el típico esquema monótono de azul y gris, manteniendo la paleta moderada pero fresca:contentReference[oaicite:7]{index=7}.",
+                "implementado": true,
+                "clase_css": "theme-nature-arctic"
+            }
+        ]
+    },
+    {
+        "categoria": "Paletas Pastel y Suaves",
+        "combos": [
+            {
+                "colores": [
+                    "Rosa pastel",
+                    "Azul claro",
+                    "Naranja suave"
+                ],
+                "justificacion": "Una paleta de rosa pastel limpio con azul y toques de naranja puede crear un diseño divertido, brillante y atractivo. Al usar colores pastel es importante equilibrarlos con suficiente espacio en blanco para mantener una apariencia fresca y ligera:contentReference[oaicite:8]{index=8}.",
+                "implementado": true,
+                "clase_css": "theme-pastel-playful"
+            },
+            {
+                "colores": [
+                    "Tonos pastel variados"
+                ],
+                "justificacion": "Las paletas en tonos pastel evocan sensaciones delicadas. Su uso suele asociarse con temáticas de primavera, Pascua, bebés o fiestas de té, donde esos colores suaves y dulces refuerzan un ambiente bonito y ligero:contentReference[oaicite:9]{index=9}.",
+                "implementado": true,
+                "clase_css": "theme-pastel-dream"
+            },
+            {
+                "colores": [
+                    "Verde menta suave",
+                    "Azul spa",
+                    "Frambuesa claro"
+                ],
+                "justificacion": "Relajantes verdes y azules estilo \"spa\" cobran más vida con un toque de frambuesa como color de acento. Añadir un acento ligeramente más intenso a una paleta suave es una buena técnica para avivar una combinación pastel sin perder su esencia tranquila:contentReference[oaicite:10]{index=10}.",
+                "implementado": true,
+                "clase_css": "theme-pastel-spa"
+            },
+            {
+                "colores": [
+                    "Lavanda",
+                    "Turquesa suave",
+                    "Naranja melón"
+                ],
+                "justificacion": "Una mezcla de lavandas y turquesas con un toque de naranja claro puede evocar la atmósfera apacible de una tarde de playa veraniega. Estos tonos suaves y atenuados transmiten una sensación relajada y acogedora sin dejar de ser únicos:contentReference[oaicite:11]{index=11}.",
+                "implementado": true,
+                "clase_css": "theme-pastel-sunset"
+            },
+            {
+                "colores": [
+                    "Durazno pastel",
+                    "Salmón claro",
+                    "Crema cálida"
+                ],
+                "justificacion": "Muchos pueblos costeros mediterráneos están pintados en colores pastel cálidos. Imitar esos matices (durazno, salmón, crema) ayuda a crear un efecto soleado, acogedor y con un toque de estilo \"vintage\" italiano en el diseño:contentReference[oaicite:12]{index=12}.",
+                "implementado": true,
+                "clase_css": "theme-pastel-mediterranean"
+            },
+            {
+                "colores": [
+                    "Gris azulado",
+                    "Celeste claro",
+                    "Coral pálido"
+                ],
+                "justificacion": "Contrastar grises cálidos con un azul hielo y añadir un matiz coral pálido produce una combinación dinámica mucho más interesante que el típico esquema monótono de azul y gris, manteniendo la paleta moderada pero fresca:contentReference[oaicite:13]{index=13}.",
+                "implementado": true,
+                "clase_css": "theme-pastel-cool"
+            }
+        ]
+    },
+    {
+        "categoria": "Paletas Vibrantes y Neón",
+        "combos": [
+            {
+                "colores": [
+                    "Negro intenso",
+                    "Fucsia neón",
+                    "Azul eléctrico",
+                    "Morado neón"
+                ],
+                "justificacion": "Usar un fondo negro profundo con colores de acento neón (fucsias, azules eléctricos, morados) crea un contraste llamativo y audaz, logrando un efecto visual de gran impacto:contentReference[oaicite:14]{index=14}.",
+                "implementado": true,
+                "clase_css": "theme-neon-cyber"
+            },
+            {
+                "colores": [
+                    "Rojo saturado",
+                    "Amarillo vivo",
+                    "Azul marino oscuro",
+                    "Blanco"
+                ],
+                "justificacion": "Una combinación de rojo, amarillo, azul marino (casi negro) y blanco resulta clásica pero, al usar tonalidades bien saturadas, deja de ser aburrida y se vuelve intensa. Esta paleta básica e intensa hace una declaración fuerte sin recurrir a colores inusuales:contentReference[oaicite:15]{index=15}.",
+                "implementado": true,
+                "clase_css": "theme-neon-intense"
+            },
+            {
+                "colores": [
+                    "Magenta",
+                    "Cian",
+                    "Amarillo",
+                    "Negro"
+                ],
+                "justificacion": "Los colores de tinta CMYK (cian, magenta, amarillo y negro) juntos forman una combinación vibrante por sí mismos, similar a los letreros de neón de una gran ciudad nocturna:contentReference[oaicite:16]{index=16}.",
+                "implementado": true,
+                "clase_css": "theme-neon-cmyk"
+            },
+            {
+                "colores": [
+                    "Rosa intenso",
+                    "Verde lima",
+                    "Azul turquesa",
+                    "Amarillo brillante"
+                ],
+                "justificacion": "Una paleta con colores altamente saturados —rosa vibrante, verde lima, turquesa y amarillo intenso— transmite diversión, energía y emoción juvenil. Es un conjunto impactante y nada discreto, ideal si se busca hacer una declaración visual atrevida:contentReference[oaicite:17]{index=17}.",
+                "implementado": true,
+                "clase_css": "theme-neon-youth"
+            },
+            {
+                "colores": [
+                    "Varios tonos \"dulce\""
+                ],
+                "justificacion": "Un conjunto de tonos vibrantes dignos de una dulcería (inspirado en grafiti urbano) aporta mucha energía juvenil. Esta paleta es deliberadamente chillona y nada discreta: está pensada para destacar y llamar la atención de inmediato:contentReference[oaicite:18]{index=18}.",
+                "implementado": true,
+                "clase_css": "theme-neon-candy"
+            },
+            {
+                "colores": [
+                    "Fucsia oscuro",
+                    "Violeta profundo",
+                    "Naranja brillante"
+                ],
+                "justificacion": "La combinación de un fucsia oscuro con violeta intenso más un naranja suave logra una paleta colorida y vibrante que transmite energía y calidez, evocando un cielo al atardecer lleno de vida:contentReference[oaicite:19]{index=19}.",
+                "implementado": true,
+                "clase_css": "theme-neon-sunset"
+            },
+            {
+                "colores": [
+                    "Rojo complementario",
+                    "Verde complementario"
+                ],
+                "justificacion": "Un rojo y verde opuestos en la rueda de color ofrecen un contraste marcado. Atenuando ligeramente ambos (evitando la saturación extrema tipo \"Navidad\"), se obtiene un giro más fresco y moderno de esta pareja complementaria tradicional:contentReference[oaicite:20]{index=20}.",
+                "implementado": true,
+                "clase_css": "theme-neon-complementary"
+            },
+            {
+                "colores": [
+                    "Morado intenso",
+                    "Verde lima"
+                ],
+                "justificacion": "La intensa profundidad del morado contrasta sorprendentemente con la vivacidad del verde lima. Aunque inusual, esta pareja demuestra que colores fuera de lo común pueden combinarse exitosamente para lograr diseños únicos y memorables:contentReference[oaicite:21]{index=21}.",
+                "implementado": true,
+                "clase_css": "theme-neon-lime-purple"
+            },
+            {
+                "colores": [
+                    "Tonos de bayas variadas"
+                ],
+                "justificacion": "Una paleta inspirada en frutas del bosque permite usar múltiples colores brillantes (como rojos, morados y azules tipo \"berries\") en un mismo diseño o en subconjuntos. Por ejemplo, es posible elegir tres tonalidades cercanas para un efecto monocromático o usarlas todas para lograr un diseño llamativo y lleno de color:contentReference[oaicite:22]{index=22}.",
+                "implementado": true,
+                "clase_css": "theme-neon-berry"
+            },
+            {
+                "colores": [
+                    "Café chocolate",
+                    "Toques púrpura rojizo"
+                ],
+                "justificacion": "Incluso un color neutro como el café oscuro puede volverse intenso: agregando sutiles subtonos rojos y violetas se obtiene una paleta rica e intensa que atrae la vista casi de forma adictiva, como un postre de chocolate irresistible:contentReference[oaicite:23]{index=23}.",
+                "implementado": true,
+                "clase_css": "theme-neon-chocolate"
+            },
+            {
+                "colores": [
+                    "Negro",
+                    "Rojos encendidos"
+                ],
+                "justificacion": "Incluir negro junto a una gama de rojos intensos genera una combinación dramática. Este esquema, inspirado en un paisaje volcánico, es ideal para diseños de marketing que buscan captar la atención del público de forma inmediata:contentReference[oaicite:24]{index=24}.",
+                "implementado": true,
+                "clase_css": "theme-neon-volcanic"
+            },
+            {
+                "colores": [
+                    "Cian brillante",
+                    "Rojo vibrante"
+                ],
+                "justificacion": "Mezclar azules/cianes fuertes con un rojo intenso produce una combinación única y versátil. Usando diferentes dosis de estos colores se puede lograr desde un estilo profesional de tonos fríos hasta una creación muy enérgica y dinámica para proyectos modernos:contentReference[oaicite:25]{index=25}.",
+                "implementado": true,
+                "clase_css": "theme-neon-cyan-red"
+            }
+        ]
+    },
+    {
+        "categoria": "Estilo Retro y Vintage",
+        "combos": [
+            {
+                "colores": [
+                    "Naranja vintage",
+                    "Amarillo pálido",
+                    "Azul apagado"
+                ],
+                "justificacion": "Una paleta de colores cálidos y ligeramente desaturados (como naranjas y amarillos muy pálidos) puede canalizar una estética retro auténtica. Por ejemplo, usar un amarillo crema en lugar de blanco ayuda a acentuar el efecto clásico de mitad de siglo:contentReference[oaicite:26]{index=26}.",
+                "implementado": true,
+                "clase_css": "theme-retro-warm"
+            },
+            {
+                "colores": [
+                    "Rojo tierra",
+                    "Verde salvia",
+                    "Gris claro"
+                ],
+                "justificacion": "Combinar un rojo terroso, un verde fresco apagado y grises claros aporta un encanto antiguo y sofisticado. Esta paleta, inspirada en diseños web vintage, transmite elegancia y un aire \"antiguo\" sin dejar de ser sencilla y limpia:contentReference[oaicite:27]{index=27}.",
+                "implementado": true,
+                "clase_css": "theme-retro-earthy"
+            },
+            {
+                "colores": [
+                    "Azul retro",
+                    "Naranja clásico",
+                    "Cian intenso",
+                    "Amarillo suave"
+                ],
+                "justificacion": "Una combinación única de azul desaturado con anaranjado, complementada por un cian vibrante y amarillo suave, genera un aspecto retro clásico que evoca nostalgia y cierto glamour de los años 50:contentReference[oaicite:28]{index=28}.",
+                "implementado": true,
+                "clase_css": "theme-retro-classic"
+            },
+            {
+                "colores": [
+                    "Colores pop vintage"
+                ],
+                "justificacion": "Los colores vintage brillantes e impactantes (inspirados en ilustraciones antiguas) pueden usarse todos a la vez manteniendo cohesión. Incluso con muchos colores saturados simultáneos, es posible lograr un diseño unificado si comparten un estilo retro común:contentReference[oaicite:29]{index=29}.",
+                "implementado": true,
+                "clase_css": "theme-retro-pop"
+            },
+            {
+                "colores": [
+                    "Café oscuro",
+                    "Cuero",
+                    "Beige ahumado"
+                ],
+                "justificacion": "Tonos como madera oscura, cuero envejecido y beige grisáceo evocan espacios vintage como tabernas inglesas o clubes antiguos. Una combinación de cafés intensos equilibrada con un neutro nebuloso añade sofisticación clásica y un ambiente vintage refinado al diseño:contentReference[oaicite:30]{index=30}.",
+                "implementado": true,
+                "clase_css": "theme-retro-leather"
+            },
+            {
+                "colores": [
+                    "Borgoña",
+                    "Dorado viejo",
+                    "Crema"
+                ],
+                "justificacion": "Tonos ricos como borgoña junto con matices dorados y crema pueden recordar estilos de épocas pasadas (por ejemplo, la estética de restaurantes o bares antiguos). Estos colores aportan calidez, lujo y un atractivo nostálgico al proyecto:contentReference[oaicite:31]{index=31}.",
+                "implementado": true,
+                "clase_css": "theme-retro-luxury"
+            }
+        ]
+    },
+    {
+        "categoria": "Neutrales y Minimalistas",
+        "combos": [
+            {
+                "colores": [
+                    "Gris pizarra",
+                    "Bronce claro"
+                ],
+                "justificacion": "Una paleta basada en neutros (diferentes tonos de gris y bronce) resulta muy versátil y combinable con casi cualquier otro color. Incluso usando solo neutros se puede lograr un diseño refinado: por ejemplo, un contexto corporativo elegante o la atmósfera acogedora de una cafetería urbana:contentReference[oaicite:32]{index=32}.",
+                "implementado": true,
+                "clase_css": "theme-neutral-slate"
+            },
+            {
+                "colores": [
+                    "Negro",
+                    "Blanco",
+                    "Azul cobalto"
+                ],
+                "justificacion": "El negro, blanco y gris son colores básicos aceptables en cualquier diseño. Pero al añadir un acento de azul cobalto vibrante, esos neutros cobran vida como base de una paleta moderna y atractiva, aplicable tanto en estilos corporativos sobrios como en composiciones contemporáneas más creativas:contentReference[oaicite:33]{index=33}.",
+                "implementado": true,
+                "clase_css": "theme-neutral-cobalt"
+            },
+            {
+                "colores": [
+                    "Negro",
+                    "Blanco",
+                    "Rojo oscuro",
+                    "Turquesa brillante"
+                ],
+                "justificacion": "Para renovar la clásica combinación de blanco y negro, se pueden introducir acentos de color inesperados. Por ejemplo, un rojo profundo junto con un turquesa brillante le dan un giro fresco a esta dupla familiar, manteniendo el contraste pero agregando interés visual:contentReference[oaicite:34]{index=34}.",
+                "implementado": true,
+                "clase_css": "theme-neutral-modern"
+            },
+            {
+                "colores": [
+                    "Dorado apagado",
+                    "Marfil",
+                    "Negro"
+                ],
+                "justificacion": "Una paleta minimalista de dorados muy suaves y marfil contrastados con negro puede crear un contraste increíble y elegante. Usar tonos metálicos apagados contra negro logra un estilo simple, moderno y a la vez lujoso en cualquier proyecto:contentReference[oaicite:35]{index=35}.",
+                "implementado": true,
+                "clase_css": "theme-neutral-luxe"
+            },
+            {
+                "colores": [
+                    "Gris frío",
+                    "Celeste pálido"
+                ],
+                "justificacion": "Colores apagados y poco saturados combinados con grises fríos generan un aspecto atemporal y elegante. Al seleccionar imágenes con tonos fríos y desaturados y combinarlas con grises suaves, se consigue una estética minimalista y sofisticada:contentReference[oaicite:36]{index=36}.",
+                "implementado": true,
+                "clase_css": "theme-neutral-cool"
+            },
+            {
+                "colores": [
+                    "Azul acero",
+                    "Gris perla",
+                    "Beige arena"
+                ],
+                "justificacion": "Tonos náuticos ligeramente desteñidos como azul acero, combinados con colores arena y toques verde-agua, brindan una paleta sutil que no encasilla el diseño en un estilo específico. Son colores versátiles y suaves que aportan frescura sin sobrecargar la composición:contentReference[oaicite:37]{index=37}.",
+                "implementado": true,
+                "clase_css": "theme-neutral-nautical"
+            },
+            {
+                "colores": [
+                    "Gris cálido",
+                    "Amarillo dorado"
+                ],
+                "justificacion": "Grises cálidos con un leve matiz dorado generan una combinación pulida y acogedora muy usada en interiorismo. Es una paleta mayormente neutra que transmite confort gracias a la calidez del gris, y el toque de amarillo le inyecta alegría y energía sin perder la sofisticación:contentReference[oaicite:38]{index=38}.",
+                "implementado": true,
+                "clase_css": "theme-neutral-warm"
+            }
+        ]
+    },
+    {
+        "categoria": "Elegantes y Profesionales",
+        "combos": [
+            {
+                "colores": [
+                    "Azul marino",
+                    "Dorado"
+                ],
+                "justificacion": "El azul oscuro combinado con dorado es una dupla atemporal que se observa desde invitaciones de gala hasta los colores oficiales de escuelas y equipos deportivos de élite. Esta combinación de alto contraste evoca clase y elegancia, ideal para darle un toque distinguido a cualquier diseño:contentReference[oaicite:39]{index=39}.",
+                "implementado": true,
+                "clase_css": "theme-elegant-navy-gold"
+            },
+            {
+                "colores": [
+                    "Azul conservador",
+                    "Rojo ladrillo",
+                    "Gris topo"
+                ],
+                "justificacion": "En branding corporativo es común usar azul y rojo por buenas razones: el azul transmite tranquilidad y confianza, mientras el rojo comunica seguridad y poder. Usar un azul conservador y gris neutro como base con un acento de rojo ladrillo aporta sobriedad con un toque de energía profesional, perfecto para contextos empresariales serios:contentReference[oaicite:40]{index=40}.",
+                "implementado": true,
+                "clase_css": "theme-elegant-corporate"
+            },
+            {
+                "colores": [
+                    "Gris cálido",
+                    "Oro suave"
+                ],
+                "justificacion": "Una paleta neutra cálida se puede realzar con un matiz de amarillo dorado. Por ejemplo, combinar grises cálidos (que dan una sensación reconfortante) con toques dorados aporta un refinamiento alegre pero no estridente, manteniendo el diseño sofisticado sin volverse demasiado conservador:contentReference[oaicite:41]{index=41}.",
+                "implementado": true,
+                "clase_css": "theme-elegant-warm-grey"
+            },
+            {
+                "colores": [
+                    "Negro",
+                    "Blanco",
+                    "Accento azul"
+                ],
+                "justificacion": "El esquema clásico en blanco y negro gana personalidad con un pequeño acento de color. Un toque de azul, por ejemplo, sobre un fondo neutro transforma esos tonos comunes en parte de una paleta moderna que funciona igual de bien en un diseño corporativo formal como en uno de estilo actual:contentReference[oaicite:42]{index=42}.",
+                "implementado": true,
+                "clase_css": "theme-elegant-classic-accent"
+            },
+            {
+                "colores": [
+                    "Cremas neutras",
+                    "Vino tinto"
+                ],
+                "justificacion": "Inspirada en la gastronomía italiana, combinar tonos rojo vino con un neutro cremoso de fondo permite equilibrar calidez y sobriedad. El color crema sirve como base sutil mientras uno o dos colores rojo intenso funcionan como detalles distinguidos, añadiendo riqueza sin perder la elegancia del conjunto:contentReference[oaicite:43]{index=43}.",
+                "implementado": true,
+                "clase_css": "theme-elegant-cream-wine"
+            },
+            {
+                "colores": [
+                    "Rojo festivo",
+                    "Gris violeta"
+                ],
+                "justificacion": "Una alternativa sofisticada a la típica paleta navideña es combinar rojos intensos con grises matizados de violeta. Estos colores evocan las bayas invernales bajo un cielo nevado y logran un aire festivo pero refinado, aportando elegancia clásica a diseños de temporada:contentReference[oaicite:44]{index=44}.",
+                "implementado": true,
+                "clase_css": "theme-elegant-festive"
+            }
+        ]
+    },
+    {
+        "categoria": "Tecnología y Futurismo",
+        "combos": [
+            {
+                "colores": [
+                    "Azul eléctrico",
+                    "Morado digital",
+                    "Cian brillante",
+                    "Gris grafito"
+                ],
+                "justificacion": "Azules y morados intensos combinados con cian y gris oscuro evocan interfaces futuristas y productos tecnológicos avanzados.",
+                "implementado": true,
+                "clase_css": "theme-tech-future-neon"
+            },
+            {
+                "colores": [
+                    "Azul ultramar",
+                    "Verde neón suave",
+                    "Gris claro"
+                ],
+                "justificacion": "Un azul profundo con acentos verde neón y gris claro transmite innovación pero mantiene una base profesional y legible.",
+                "implementado": true,
+                "clase_css": "theme-tech-innovative"
+            },
+            {
+                "colores": [
+                    "Azul violeta",
+                    "Rojo energía",
+                    "Antracita"
+                ],
+                "justificacion": "El contraste entre azul violáceo y rojo intenso sobre fondos oscuros comunica dinamismo y alta tecnología.",
+                "implementado": true,
+                "clase_css": "theme-tech-dynamic"
+            }
+        ]
+    },
+    {
+        "categoria": "Dark Mode e Interfaces Nocturnas",
+        "combos": [
+            {
+                "colores": [
+                    "Negro carbón",
+                    "Gris humo",
+                    "Azul petróleo"
+                ],
+                "justificacion": "Fondos muy oscuros con grises suaves y un azul petróleo mejoran la legibilidad en modo oscuro manteniendo una estética sobria.",
+                "implementado": true,
+                "clase_css": "theme-dark-carbon"
+            },
+            {
+                "colores": [
+                    "Gris antracita",
+                    "Azul acero",
+                    "Turquesa de acento"
+                ],
+                "justificacion": "Una base gris antracita con toques de azul acero y turquesa crea interfaces nocturnas modernas con puntos de foco claros.",
+                "implementado": true,
+                "clase_css": "theme-dark-anthracite"
+            },
+            {
+                "colores": [
+                    "Negro profundo",
+                    "Morado neón",
+                    "Verde lima brillante"
+                ],
+                "justificacion": "Sobre negro, detalles en morado y verde lima logran un modo oscuro de estilo gamer o ciberpunk muy llamativo.",
+                "implementado": true,
+                "clase_css": "theme-dark-gamer"
+            }
+        ]
+    },
+    {
+        "categoria": "Startups y Fintech",
+        "combos": [
+            {
+                "colores": [
+                    "Azul royal",
+                    "Morado fintech",
+                    "Verde menta",
+                    "Blanco marfil"
+                ],
+                "justificacion": "Azul y morado transmiten confianza e innovación financiera, mientras el verde menta y el blanco suavizan la paleta para un look digital amigable.",
+                "implementado": true,
+                "clase_css": "theme-fintech-trust"
+            },
+            {
+                "colores": [
+                    "Azul degradado",
+                    "Cian intenso",
+                    "Violeta suave"
+                ],
+                "justificacion": "Una gama de azules con transición a violeta crea el efecto de gradiente moderno que muchas empresas fintech usan en sus interfaces.",
+                "implementado": true,
+                "clase_css": "theme-fintech-gradient"
+            },
+            {
+                "colores": [
+                    "Azul petróleo",
+                    "Verde esmeralda",
+                    "Gris cálido"
+                ],
+                "justificacion": "Azul petróleo y verde esmeralda se asocian con estabilidad y crecimiento, ideales para productos financieros y de inversión.",
+                "implementado": true,
+                "clase_css": "theme-fintech-growth"
+            }
+        ]
+    },
+    {
+        "categoria": "Datos y Analítica",
+        "combos": [
+            {
+                "colores": [
+                    "Azul profundo",
+                    "Turquesa",
+                    "Naranja",
+                    "Gris claro"
+                ],
+                "justificacion": "Una paleta de datos clásica con azules para valores principales, naranja para destacar y gris como neutro. Excelente contraste para gráficos."
+            },
+            {
+                "colores": [
+                    "Verde",
+                    "Rojo",
+                    "Amarillo",
+                    "Gris neutro"
+                ],
+                "justificacion": "Colores semafóricos tradicionales (verde = positivo, rojo = negativo, amarillo = advertencia) útiles para dashboards y métricas."
+            },
+            {
+                "colores": [
+                    "Morado",
+                    "Verde azulado",
+                    "Coral",
+                    "Índigo"
+                ],
+                "justificacion": "Una paleta de datos moderna que evita los colores semafóricos tradicionales, ideal para aplicaciones que buscan diferenciarse."
+            }
+        ]
+    }
+]

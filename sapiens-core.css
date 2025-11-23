@@ -27,6 +27,9 @@
     --border-soft: rgba(255, 255, 255, 0.08);
     --border-strong: rgba(255, 255, 255, 0.14);
 
+    /* Superficie de contenido (cards intro/hero) basada en tokens, sin color fijo */
+    --content-surface: color-mix(in srgb, var(--bg-2) 80%, var(--text-main) 20%);
+
     /* --- DEGRADADOS Y SOMBRAS BASADOS EN ACENTOS --- */
     --accent-strong: linear-gradient(135deg, var(--accent-1), var(--accent-2));
     --accent-soft: linear-gradient(

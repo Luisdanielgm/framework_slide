@@ -71,15 +71,17 @@ Cuándo tocarlo:
 
 ### Local (core + themes + components)
 ```html
-<link rel="stylesheet" href="sapiens-core.css">
-<link rel="stylesheet" href="sapiens-themes.css"><!-- opcional, temas -->
-<link rel="stylesheet" href="sapiens-components.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@master/sapiens-core.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@master/sapiens-themes.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@master/sapiens-components.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 ```
 
 ### Core estable por CDN + components locales
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@v0.5/sapiens-core.css">
-<link rel="stylesheet" href="sapiens-components.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@master/sapiens-core.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@master/sapiens-themes.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@master/sapiens-components.css">
 ```
 
 ---

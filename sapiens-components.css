@@ -976,6 +976,65 @@
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
+/* Separar el bloque destacado del header solo en intros/hero con content-box */
+.layout-hero > .content-box,
+.layout-intro > .content-box {
+    margin-top: clamp(1.25rem, 3vh, 2.75rem);
+}
+
+/* Compactar el hero/intro cuando hay poca altura disponible para no pisar footer */
+@container slideBody (height < 650px) {
+    .layout-hero > .content-box,
+    .layout-intro > .content-box {
+        margin-top: clamp(0.75rem, 2vh, 1.5rem);
+        padding: clamp(2rem, 3vw, 2.75rem);
+    }
+
+    .layout-hero .icon-lg,
+    .layout-intro .icon-lg {
+        width: 100px;
+        height: 100px;
+        font-size: 2.5rem;
+    }
+}
+
+@container slideBody (height < 520px) {
+    .layout-hero > .content-box,
+    .layout-intro > .content-box {
+        padding: clamp(1.5rem, 3vw, 2.25rem);
+        margin-top: clamp(0.5rem, 1.5vh, 1rem);
+    }
+
+    .content-box h2 {
+        margin-bottom: 1rem;
+    }
+
+    .content-box p {
+        margin-bottom: 1.25rem;
+    }
+}
+
+/* Fondos y remates reutilizables */
+.bg-blueprint {
+    background-color: var(--bg-1);
+    background-image:
+        linear-gradient(color-mix(in srgb, var(--accent-1) 25%, transparent) 1px, transparent 1px),
+        linear-gradient(90deg, color-mix(in srgb, var(--accent-2) 25%, transparent) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.torn-edge {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%23ff7a5c'/%3E%3C/svg%3E");
+    transform: rotate(180deg);
+    z-index: var(--layer-decor);
+    pointer-events: none;
+}
+
 .content-box h2 {
     color: #1e293b;
     font-size: clamp(2rem, 4vw, 3rem);

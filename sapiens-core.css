@@ -55,6 +55,12 @@
 
     /* --- ESPACIADO EXTERNO (Padding de página) --- */
     --page-padding: 30px;
+
+    /* --- CAPAS DE PINTADO (evita que decoraciones tapen contenido) --- */
+    --layer-base: 0;
+    --layer-decor: 1;
+    --layer-content: 5;
+    --layer-chrome: 10;
 }
 
 /* ==================================================
@@ -136,13 +142,15 @@ body {
 
     /* Transición suave */
     transition: padding 0.3s ease, gap 0.3s ease;
+    isolation: isolate;
 }
 
 /* ==================================================
    HEADER: Título y badge
    ================================================== */
 .slide-header {
-    z-index: 10;
+    position: relative;
+    z-index: var(--layer-chrome);
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -183,7 +191,8 @@ body {
    BODY CONTENT: Grilla interna principal
    ================================================== */
 .slide-body {
-    z-index: 10;
+    position: relative;
+    z-index: var(--layer-content);
     width: 100%;
     flex-grow: 1;
 
@@ -244,7 +253,8 @@ body {
    FOOTER: Información inferior
    ================================================== */
 .slide-footer {
-    z-index: 10;
+    position: relative;
+    z-index: var(--layer-chrome);
     display: flex;
     justify-content: space-between;
     font-size: 0.75rem;
@@ -263,7 +273,7 @@ body {
 .decorative {
     position: absolute;
     pointer-events: none;
-    z-index: 0;
+    z-index: var(--layer-decor);
 }
 
 .orb {

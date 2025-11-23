@@ -1,353 +1,149 @@
-# 📖 Guía de Uso - Sapiens Slide Framework (v0.5 Modular)
+# Guía de Uso - Sapiens Slide Framework (v0.5 Modular)
 
-> Framework moderno para crear presentaciones web impactantes, 100% responsive y fácil de usar. Ahora con **Arquitectura Modular**.
-
-## 🚀 Inicio Rápido
-
-> **Tip:** Para ver todos los layouts en acción, abre el archivo `index.html` en tu navegador.
-
-### Estructura Básica (Modular)
-
-Toda diapositiva sigue esta estructura HTML actualizada:
-
-```html
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Presentación</title>
-    
-    <!-- Framework CSS Modular -->
-    <link rel="stylesheet" href="sapiens-core.css">       <!-- Base estructural -->
-    <link rel="stylesheet" href="sapiens-themes.css">     <!-- Temas rápidos (tokens) -->
-    <link rel="stylesheet" href="sapiens-components.css"> <!-- Componentes UI -->
-    
-    <!-- Font Awesome para iconos (opcional) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
-<body>
-    <div id="sapiens-slide">
-        
-        <!-- Decoraciones de fondo (opcional) -->
-        <div class="decorative grid-lines"></div>
-        <div class="decorative orb orb-1"></div>
-        <div class="decorative orb orb-2"></div>
-
-        <!-- Header -->
-        <header class="slide-header">
-            <h1>Título de la Diapositiva</h1>
-            <span class="header-badge">Categoría</span>
-        </header>
-
-        <!-- Contenido Principal -->
-        <main class="slide-body layout-TIPO">
-            <!-- Tu contenido aquí -->
-        </main>
-
-        <!-- Footer -->
-        <footer class="slide-footer">
-            <span>Sección 1</span>
-            <span>01 / 10</span>
-        </footer>
-
-    </div>
-
-    <!-- Framework JS -->
-    <script src="sapiens.js"></script>
-</body>
-</html>
-```
+Framework moderno para crear presentaciones web responsivas. Arquitectura modular: core estable, temas por tokens y componentes evolutivos.
 
 ---
 
-## 📦 Estructura de Archivos
-
-```
-framework_slide/
-├── index.html              # ✨ PUNTO DE ENTRADA (Galería de ejemplos)
-├── sapiens-core.css        # ✨ Base estructural (Estable)
-├── sapiens-themes.css      # 🎨 Temas rápidos (solo tokens)
-├── sapiens-components.css  # ✨ Componentes UI (Evolutivo)
-├── sapiens.js              # Animaciones básicas
-│
-├── examples/               # Carpeta con 9 ejemplos
-│   ├── modular-demo.html   # ⭐ Demo arquitectura modular
-│   ├── hero.html
-│   ├── split.html
-│   ├── code.html
-│   ├── bento.html
-│   ├── timeline.html
-│   ├── circular-diagram.html
-│   ├── stats.html
-│   └── creative-intro.html
-│
-├── legacy/                 # 📦 Versiones antiguas
-│   └── sapiens.css         # (Deprecated) Versión monolítica
-│
-├── docs/
-│   └── ARCHITECTURE.md     # 📚 Documentación técnica
-│
-├── prompts/                # 🔒 Privado (ignorado por git)
-│   ├── prompts_plan.md
-│   ├── prompts_template.md
-│   └── prompts_slide.md
-│
-└── README.md               # Esta guía
-```
-
----
-
-## 📐 Layouts Disponibles
-
-El framework incluye **9 ejemplos** principales para cubrir todas tus necesidades:
-
-### 🏛️ Layouts Base (Clásicos)
-
-| Layout | Uso | Archivo Ejemplo |
-|--------|-----|-----------------|
-| **Hero** | Título centrado, ideal para portadas | `examples/hero.html` |
-| **Split** | Dos columnas (texto + imagen/código) | `examples/split.html` |
-| **Code** | Columna pequeña texto + columna ancha código | `examples/code.html` |
-| **Bento** | Grid 2x2 para múltiples tarjetas | `examples/bento.html` |
-
-### 🎨 Layouts Creativos (Nuevos)
-
-| Layout | Uso | Archivo Ejemplo |
-|--------|-----|-----------------|
-| **Timeline** | Línea de tiempo horizontal con conectores | `examples/timeline.html` |
-| **Circular** | Diagrama radial con nodo central | `examples/circular-diagram.html` |
-| **Stats** | Tarjetas de estadísticas de alto impacto | `examples/stats.html` |
-| **Intro** | Portada creativa con decoraciones | `examples/creative-intro.html` |
-| **Modular** | Demo de arquitectura y badges | `examples/modular-demo.html` |
-
-> **💡 Tip:** Abre el archivo `index.html` en tu navegador para ver un menú visual con todos estos ejemplos.
-
----
-
-## 🎨 Personalización de Colores
-
-### Opción 1: Variables CSS en el HTML
-
-Cada diapositiva puede tener su propia paleta de colores:
+## Inicio rápido
 
 ```html
-<style>
-    :root {
-        --bg-1: #13132b;       /* Fondo oscuro */
-        --bg-2: #22223d;       /* Fondo medio */
-        --accent-1: #ff4d8c;   /* Color primario */
-        --accent-2: #5e72e4;   /* Color secundario */
-    }
-</style>
+<link rel="stylesheet" href="sapiens-core.css">
+<link rel="stylesheet" href="sapiens-themes.css"><!-- opcional, temas -->
+<link rel="stylesheet" href="sapiens-components.css">
 ```
 
-### Opción 2: Modificar sapiens-core.css
-
-Edita las variables en la sección `:root` de `sapiens-core.css`.
-
-### Paletas Predefinidas
-
-```css
-/* Paleta Magenta */
---accent-1: #ff1493;
---accent-2: #ff69b4;
-
-/* Paleta Púrpura */
---accent-1: #8b00ff;
---accent-2: #b548ff;
-
-/* Paleta Cyan */
---accent-1: #00bfff;
---accent-2: #5fd4ff;
-
-/* Paleta Naranja */
---accent-1: #ff6b35;
---accent-2: #ff9466;
-```
-
-### Opción 3: Temas rápidos por clases (sin CSS adicional)
-
-Incluye `sapiens-themes.css` y aplica la clase en `body` o en tu wrapper.
-
-Usa las clases listas (`theme-ocean`, `theme-sunset`, `theme-forest`) sobre `body` o `#sapiens-slide`. También puedes combinar utilidades de superficie para acentos rápidos.
-
+Estructura mínima:
 ```html
-<link rel="stylesheet" href="sapiens-themes.css">
-...
 <body class="theme-ocean">
-    <div id="sapiens-slide" class="surface-2 border-soft">
-        ...
-    </div>
+  <div id="sapiens-slide" class="surface-1 border-soft">
+    <div class="decorative grid-lines"></div>
+    <header class="slide-header">
+      <h1>Título de la Diapositiva</h1>
+      <span class="header-badge">Categoría</span>
+    </header>
+    <main class="slide-body layout-hero">...</main>
+    <footer class="slide-footer">...</footer>
+  </div>
 </body>
 ```
 
-El set completo de tokens ya viene inicializado en `:root` desde `sapiens-core.css` (fondos, acentos, superficies, bordes, pills y tipografías) **y cada tema (`theme-ocean`, `theme-sunset`, `theme-forest`) redefine todo el contrato**. Puedes combinar un tema con un `<style>` que redefina cualquier token (`--bg-*`, `--accent-*`, `--text-*`, `--border-*`, `--surface-*`, `--font-*`).
-Los tokens declarados manualmente ganan por cascada sobre la clase de tema. Consulta `docs/THEMING.md` para ver el contrato completo.
+---
 
-Ejemplos listos:
-- Clase de tema en `<body>`: `bento.html`, `circular-diagram.html`, `creative-intro.html`, `hero.html`, `modular-demo.html`, `split.html`, `timeline.html`.
-- Tokens inyectados (sin tema): `code.html` y `stats.html` (puedes borrar el `<style>` y usar `class="theme-ocean"`).
+## Archivos
 
-Consulta `docs/THEMING.md` para ver todos los tokens y cómo crear tu propio tema sin tocar el CSS base.
+```
+sapiens-core.css        -> Base estructural (estable)
+sapiens-themes.css      -> Temas rápidos (tokens)
+sapiens-components.css  -> Componentes UI (evolutivo)
+sapiens.js              -> Animaciones básicas
+examples/               -> 9+ slides de ejemplo
+docs/                   -> Arquitectura y theming
+legacy/                 -> Versión monolítica (deprecated)
+```
 
 ---
 
-## 🧩 Componentes UI
+## Layouts disponibles
 
-### Tarjetas (Cards)
+- Hero, Split, Code, Bento
+- Timeline, Circular diagram, Stats, Intro, Modular demo
 
+Abre `index.html` para ver la galería.
+
+---
+
+## Temas y tokens
+
+Temas listos (clase o `data-theme`, ver `sapiens-themes.css`):
+- Base: `theme-ocean`, `theme-sunset`, `theme-forest`.
+- Nature: `theme-nature-spring`, `theme-nature-desert`, `theme-nature-earth`, `theme-nature-ice`, `theme-nature-exotic`, `theme-nature-horizon`, `theme-nature-organic`, `theme-nature-arctic`.
+- Pastel: `theme-pastel-playful`, `theme-pastel-dream`, `theme-pastel-spa`, `theme-pastel-sunset`, `theme-pastel-mediterranean`, `theme-pastel-cool`.
+- Neon: `theme-neon-cyber`, `theme-neon-intense`, `theme-neon-cmyk`, `theme-neon-youth`, `theme-neon-candy`, `theme-neon-sunset`, `theme-neon-complementary`, `theme-neon-lime-purple`, `theme-neon-berry`, `theme-neon-chocolate`, `theme-neon-volcanic`, `theme-neon-cyan-red`.
+- Retro: `theme-retro-warm`, `theme-retro-earthy`, `theme-retro-classic`, `theme-retro-pop`, `theme-retro-leather`, `theme-retro-luxury`.
+- Neutral: `theme-neutral-slate`, `theme-neutral-cobalt`, `theme-neutral-modern`, `theme-neutral-luxe`, `theme-neutral-cool`, `theme-neutral-nautical`, `theme-neutral-warm`.
+- Elegant: `theme-elegant-navy-gold`, `theme-elegant-corporate`, `theme-elegant-warm-grey`, `theme-elegant-classic-accent`, `theme-elegant-cream-wine`, `theme-elegant-festive`.
+- Tech/Dark: `theme-tech-future-neon`, `theme-tech-innovative`, `theme-tech-dynamic`, `theme-dark-carbon`, `theme-dark-anthracite`, `theme-dark-gamer`.
+- Fintech/Special: `theme-fintech-trust`, `theme-fintech-gradient`, `theme-fintech-growth`, `theme-nebula-code`, `theme-cyan-stats`.
+
+Contrato de tokens (definido en core, reescrito por temas):
+`--bg-*`, `--accent-*`, `--text-*`, `--surface-*`, `--border-*`, `--accent-strong`, `--accent-soft`, `--badge-bg`, `--pill-*`, `--glow-*`, `--font-body`, `--font-head`.
+
+Puedes redefinirlos en un `<style>`; la cascada respeta el valor más cercano.
+
+Componentes sensibles a tokens:
+- Header `h1` usa degradado basado en `--text-main`/`--text-muted`.
+- `code-block` y `content-box` usan fondos/textos derivados de tokens de tema.
+- Superficies/bordes/pills/badges dependen de sus tokens.
+
+---
+
+## Utilidades y decoraciones
+
+- Superficies: `.surface-0` a `.surface-3`
+- Bordes: `.border-soft`, `.border-strong`
+- Texto: `.text-strong`, `.text-subtle`, `.text-accent`
+- Chips/badges: `.pill`, `.pill-sm`, `.badge`, `.badge-primary`, `.badge-gradient`, `.badge-glow`
+- Fondos/remates: `.bg-accent-soft`, `.card-accent`, `.bg-blueprint`, `.torn-edge`
+- Decorativos: `.orb`, `.grid-lines`, `.watermark`, `.decorative-shape`
+
+---
+
+## Ejemplos
+
+- Con clase de tema (sin CSS inline): `bento.html`, `circular-diagram.html`, `creative-intro.html`, `hero.html`, `modular-demo.html`, `split.html`, `timeline.html`, `code.html`, `stats.html`.
+- Tokens manuales: opcional; puedes sustituir un tema por un bloque `<style>` con el contrato completo.
+
+---
+
+## Responsive
+
+- Desktop: ratio 16:9, sin scroll
+- Tablet (<1024px): layouts Split/Code a 1 columna
+- Móvil (<768px): altura flexible, padding reducido
+- Hero/Intro ajustan padding y tamaños con container queries para no tapar footer
+
+---
+
+## Componentes rápidos
+
+Card:
 ```html
 <div class="card">
-    <h2>Título de la Tarjeta</h2>
-    <ul class="feature-list">
-        <li>Punto 1 con bala brillante</li>
-        <li>Punto 2 con bala brillante</li>
-        <li>Punto 3 con bala brillante</li>
-    </ul>
+  <h2>Título</h2>
+  <ul class="feature-list"><li>Item</li></ul>
 </div>
 ```
 
-### Bloques de Código
-
+Código:
 ```html
 <div class="code-block">
-    <div class="code-nav">
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-    </div>
-    <pre><code>// Tu código aquí
-const mensaje = "Hola Mundo";
-console.log(mensaje);</code></pre>
+  <div class="code-nav"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+  <pre><code>// tu código</code></pre>
 </div>
 ```
 
-### Iconos Circulares
-
+Icono circular:
 ```html
-<!-- Icono default (azul) -->
-<div class="icon-circle icon-md">
-    <i class="fas fa-rocket"></i>
-</div>
-
-<!-- Icono magenta grande -->
-<div class="icon-circle icon-magenta icon-lg">
-    <i class="fas fa-heart"></i>
-</div>
-```
-
-**Tamaños disponibles**: `.icon-sm` (50px), `.icon-md` (80px), `.icon-lg` (120px), `.icon-xl` (160px)
-
-**Colores disponibles**: `.icon-magenta`, `.icon-yellow`, `.icon-purple`, `.icon-cyan`, `.icon-orange`
-
-### Badges
-
-```html
-<span class="badge">Default</span>
-<span class="badge badge-primary">Primario</span>
-<span class="badge badge-gradient">Gradiente</span>
+<div class="icon-circle icon-lg icon-orange"><i class="fa-solid fa-pen-ruler"></i></div>
 ```
 
 ---
 
-## 📱 Responsive
+## Notas de implementación recientes
 
-El framework es **100% responsive** automáticamente:
-
-| Breakpoint | Comportamiento |
-|------------|----------------|
-| **Desktop** (>1200px) | Ratio 16:9, todos los layouts en columnas |
-| **Tablet** (768-1024px) | Split/Code → 1 columna, altura flexible |
-| **Móvil** (<768px) | Todo en 1 columna, padding reducido |
+- El degradado del título del header usa los tokens de texto del tema (evita títulos lavados en fondos claros).
+- `code-block` y `content-box` ahora toman colores de tokens (`--bg-1`, `--text-main`, `--text-muted`, `--border-strong`).
+- Nuevas utilidades decorativas: `.bg-blueprint`, `.torn-edge`.
+- Nuevos temas: `theme-nebula-code`, `theme-cyan-stats`.
 
 ---
 
-## 🎭 Decoraciones
+## Contribuir
 
-### Orbs de Fondo (Luces difusas)
-
-```html
-<div class="decorative orb orb-1"></div>  <!-- Esquina superior derecha -->
-<div class="decorative orb orb-2"></div>  <!-- Esquina inferior izquierda -->
-```
-
-### Grid Lines (Cuadrícula)
-
-```html
-<div class="decorative grid-lines"></div>
-```
-
-### Marca de Agua
-
-```html
-<div class="watermark">CONFIDENCIAL</div>
-```
+1) Nuevos componentes → `sapiens-components.css` + ejemplo en `examples/`.
+2) Nuevos temas → `sapiens-themes.css`.
+3) No modificar `sapiens-core.css` salvo cambios estructurales.
 
 ---
 
-## ⚡ Tips y Trucos
-
-### 1. Centrar Contenido Verticalmente
-
-Usa flexbox en el slide-body:
-
-```css
-.slide-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-```
-
-### 2. Animaciones Personalizadas
-
-Agrega clases `.animate-in` a nivel de elemento:
-
-```html
-<div class="card animate-in" style="animation-delay: 0.2s;">
-    <!-- contenido -->
-</div>
-```
-
-### 3. Ocultar Footer
-
-```html
-<footer class="slide-footer" style="display: none;"></footer>
-```
-
----
-
-## 🆘 Solución de Problemas
-
-### Los iconos no aparecen
-- Verifica que Font Awesome esté cargado en el `<head>`
-- Usa clases correctas: `fas fa-nombre-icono`
-
-### El slide no es responsive
-- Asegúrate de incluir: `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
-
-### Los colores no cambian
-- Verifica que las variables CSS estén definidas en `:root` o dentro de `#sapiens-slide`
-
----
-
-## 📚 Recursos
-
-- [Font Awesome Icons](https://fontawesome.com/icons) - Librería de iconos
-- [Google Fonts](https://fonts.google.com/) - Fuentes personalizadas
-- [Coolors](https://coolors.co/) - Generador de paletas de colores
-
----
-
-## 📄 Licencia
-
-Framework Sapiens - Libre para uso personal y comercial.
-
----
-
-**¿Necesitas ayuda?** Revisa los ejemplos en `examples/` o consulta la documentación completa en `docs/ARCHITECTURE.md`.
-
----
-
-**Versión:** 0.5 | **Última actualización:** 2025-11-22
+Versión: 0.5 | Última actualización: 2025-11-23

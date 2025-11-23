@@ -164,7 +164,11 @@ body {
     font-size: clamp(1.75rem, 5vw, 3.2rem);
     line-height: 1.1;
     font-weight: 700;
-    background: linear-gradient(135deg, #fff 0%, var(--text-muted) 100%);
+    background: linear-gradient(
+        135deg,
+        var(--text-main) 0%,
+        color-mix(in srgb, var(--text-main) 30%, var(--text-muted) 70%) 100%
+    );
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

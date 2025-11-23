@@ -340,7 +340,7 @@
 
 .theme-pastel-playful,
 [data-theme="pastel-playful"] {
-    --bg-1: #fef2f2;
+    --bg-1: #fef2f2; 
     --bg-2: #fee2e2;
     --accent-1: #fbcfe8;
     --accent-2: #fed7aa;

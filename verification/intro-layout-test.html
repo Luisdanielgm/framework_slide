@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sapiens Framework - Intro Layout Test</title>
+  <link rel="stylesheet" href="../sapiens-core.css">
+  <link rel="stylesheet" href="../sapiens-themes.css">
+  <link rel="stylesheet" href="../sapiens-components.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    /* Start with only the overflow slide visible */
+    #sapiens-slide-intro-underflow {
+      display: none;
+    }
+  </style>
+</head>
+<body class="theme-corporate-sunrise">
+
+  <!-- Test Case 1: Overflowing Intro Slide -->
+  <div id="sapiens-slide-intro-overflow" class="surface-1 border-soft">
+    <header class="slide-header">
+      <h1>Project Kick-off</h1>
+      <div class="header-badge">OVERFLOW TEST</div>
+    </header>
+    <main class="slide-body layout-intro">
+      <div class="content-box">
+        <div class="icon-circle icon-lg icon-blue mx-auto mb-2">
+          <i class="fa-solid fa-flag-checkered"></i>
+        </div>
+        <h2>Project Goals & Ambitious Objectives</h2>
+        <p>This document outlines the comprehensive goals for the upcoming project cycle. Our primary objective is to redefine the user experience by introducing a suite of innovative features. We will be conducting extensive market research to ensure our product aligns with the evolving needs of our customers. This strategic initiative will involve multiple phases, starting with foundational discovery and user interviews. The second phase will focus on rapid prototyping and iterative design, allowing us to gather feedback early and often. The third phase will be dedicated to robust development and rigorous quality assurance. Finally, we will execute a phased rollout with detailed monitoring to ensure a seamless launch. Our success will be measured by key performance indicators, including user engagement, satisfaction, and adoption rates. We have assembled a dedicated team of experts to drive this project forward and are confident in our ability to deliver exceptional results that will solidify our position as a market leader.</p>
+        <ul class="feature-list">
+          <li><span class="number-bubble">1</span> Phase 1: In-depth research, stakeholder mapping, and priority hypothesis generation.</li>
+          <li><span class="number-bubble">2</span> Phase 2: Experience design, incremental development, and continuous quality assurance cycles.</li>
+          <li><span class="number-bubble">3</span> Phase 3: Controlled pilot programs, strategic use of feature flags, and weekly feedback loops.</li>
+          <li><span class="number-bubble">4</span> Phase 4: Full-scale launch, performance monitoring, and post-launch optimization efforts.</li>
+          <li><span class="number-bubble">5</span> Phase 5: Post-launch analysis, user feedback consolidation, and planning for the next iteration.</li>
+          <li><span class="number-bubble">6</span> Phase 6: Long-term support, maintenance, and strategic planning for future enhancements.</li>
+        </ul>
+      </div>
+    </main>
+    <footer class="slide-footer">
+      <span>Project Management Office</span>
+      <span>Status: Planning</span>
+    </footer>
+  </div>
+
+  <!-- Test Case 2: Underflowing Intro Slide -->
+  <div id="sapiens-slide-intro-underflow" class="surface-1 border-soft">
+    <header class="slide-header">
+      <h1>Welcome</h1>
+      <div class="header-badge">UNDERFLOW TEST</div>
+    </header>
+    <main class="slide-body layout-intro">
+      <div class="content-box">
+        <div class="icon-circle icon-lg icon-green mx-auto mb-2">
+          <i class="fa-solid fa-hand-spock"></i>
+        </div>
+        <h2>Minimal Content</h2>
+        <p>This slide has very little content.</p>
+      </div>
+    </main>
+    <footer class="slide-footer">
+      <span>Team Intro</span>
+      <span>Q4</span>
+    </footer>
+  </div>
+
+  <script src="../sapiens.js"></script>
+</body>
+</html>

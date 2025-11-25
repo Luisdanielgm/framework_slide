@@ -1585,3 +1585,31 @@
         font-size: 1.5rem;
     }
 }
+
+/* ==================================================
+   INTELLIGENT LAYOUT CORRECTIONS
+   ================================================== */
+
+/* --- Overflow Adjustments --- */
+/* When content overflows, switch the slide body to a block layout
+   and create a 2-column layout for the content. */
+.slide-shell.is-overflowing .slide-body {
+    display: block; /* Override flex/grid to allow columns */
+    column-count: 2;
+    column-gap: 40px;
+}
+
+/* --- Underflow Adjustments --- */
+/* If there's extra space, center the content vertically and increase font size. */
+.slide-shell.has-extra-space .slide-body {
+    justify-content: center; /* Center content vertically */
+}
+
+.slide-shell.has-extra-space .slide-body h1,
+.slide-shell.has-extra-space .slide-body h2 {
+    font-size: 3.5rem; /* Enlarge titles */
+}
+
+.slide-shell.has-extra-space .slide-body p {
+    font-size: 1.25rem; /* Enlarge text */
+}

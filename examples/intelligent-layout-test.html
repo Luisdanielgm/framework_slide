@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapiens Framework - Intelligent Layout Test</title>
+    <link rel="stylesheet" href="../sapiens-core.css">
+    <link rel="stylesheet" href="../sapiens-themes.css">
+    <link rel="stylesheet" href="../sapiens-components.css">
+</head>
+<body>
+
+    <!-- Slide 1: Test Case for Overflow -->
+    <div id="sapiens-slide-overflow" class="slide-shell theme-dark">
+        <div class="slide-header">
+            <h1>Intelligent Content Adaptation</h1>
+            <div class="header-badge">Overflow Test</div>
+        </div>
+
+        <div class="slide-body layout-hero">
+            <div class="content-box">
+                <h2>Feature-Packed Solution</h2>
+                <ul class="feature-list">
+                    <li>Automated Content Resizing</li>
+                    <li>Dynamic Layout Adjustments</li>
+                    <li>Intelligent Padding Reduction</li>
+                    <li>Vertical Space Optimization</li>
+                    <li>Multi-Column Transformation</li>
+                    <li>Header/Footer Safe Area</li>
+                    <li>Prevents Element Overlap</li>
+                    <li>Ensures Readability</li>
+                    <li>Maintains Visual Balance</li>
+                    <li>No Manual Tweaks Needed</li>
+                    <li>Perfect for Exporting</li>
+                    <li>Another Feature for Overflow</li>
+                    <li>And One More to be Sure</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span>Advanced Features</span>
+            <span>Q4 Roadmap</span>
+        </div>
+    </div>
+
+    <!-- Slide 2: Test Case for Underflow (Extra Space) -->
+    <div id="sapiens-slide-underflow" class="slide-shell theme-light-blue" style="display: none;">
+        <div class="slide-header">
+            <h1>Balanced Layout</h1>
+            <div class="header-badge">Underflow Test</div>
+        </div>
+
+        <div class="slide-body layout-hero">
+            <div class="content-box">
+                <h2>Minimal Content</h2>
+                <p>This slide has very little content, causing empty space at the bottom.</p>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span>Design Principles</span>
+            <span>Clarity & Simplicity</span>
+        </div>
+    </div>
+
+    <script src="../sapiens.js"></script>
+    <script>
+        // Simple navigation to switch between test slides
+        let currentSlide = 0;
+        const slides = [
+            document.getElementById('sapiens-slide-overflow'),
+            document.getElementById('sapiens-slide-underflow')
+        ];
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = (i === index) ? 'flex' : 'none';
+            });
+            // Rerun layout logic on slide change if needed
+            if (window.Sapiens) {
+                window.Sapiens.updateLayout();
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            } else if (e.key === 'ArrowLeft') {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            }
+        });
+    </script>
+
+</body>
+</html>

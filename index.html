@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sapiens Framework - Examples Gallery</title>
     <!-- Sapiens Framework CSS Modular v0.5 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@master/sapiens-core.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@master/sapiens-themes.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@master/sapiens-components.css">
+    <link rel="stylesheet" href="sapiens-core.css">
+    <link rel="stylesheet" href="sapiens-themes.css">
+    <link rel="stylesheet" href="sapiens-components.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body class="theme-ocean">
+<body class="theme-ocean gallery-page">
 
     <div id="sapiens-slide" class="surface-1 border-soft">
         <!-- Header -->
@@ -29,13 +29,54 @@
                 Click any card to view the live example.
             </p>
 
+            <!-- ÚNICA sección con estilos locales; el resto debe usar clases del framework -->
+            <style>
+                .gallery-page .slide-body {
+                    align-content: flex-start;
+                    overflow-y: auto;
+                    max-height: calc(100% - 80px);
+                    padding-right: 0.25rem;
+                }
+
+                .gallery-page .filter-bar {
+                    display: flex;
+                    gap: 0.6rem;
+                    flex-wrap: wrap;
+                    margin-bottom: 0.75rem;
+                }
+
+                .gallery-page .filter-btn {
+                    background: var(--surface-2);
+                    border: 1px solid var(--border-soft);
+                    color: var(--text-main);
+                    padding: 0.45rem 0.9rem;
+                    border-radius: 999px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all 0.2s ease;
+                }
+
+                .gallery-page .filter-btn.is-active {
+                    background: var(--accent-strong);
+                    color: var(--text-on-accent, #fff);
+                    border-color: transparent;
+                }
+            </style>
+
+            <div class="filter-bar">
+                <button class="filter-btn is-active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="layout">Layouts</button>
+                <button class="filter-btn" data-filter="intro">Intros</button>
+                <button class="filter-btn" data-filter="component">Component Demos</button>
+            </div>
+
             <!-- Using Generic Framework Classes -->
             <div class="layout-smart-grid">
 
                 <!-- Section: Creative Layouts -->
                 <div class="heading-section">Creative Layouts</div>
 
-                <a href="examples/creative-intro.html" class="card-interactive">
+                <a href="examples/creative-intro.html" class="card-interactive" data-category="intro">
                     <div class="icon-box bg-orange">
                         <i class="fa-solid fa-wand-magic-sparkles"></i>
                     </div>
@@ -44,7 +85,7 @@
                         effect.</div>
                 </a>
 
-                <a href="examples/timeline.html" class="card-interactive">
+                <a href="examples/timeline.html" class="card-interactive" data-category="layout">
                     <div class="icon-box bg-magenta">
                         <i class="fa-solid fa-timeline"></i>
                     </div>
@@ -53,7 +94,7 @@
                         effects.</div>
                 </a>
 
-                <a href="examples/circular-diagram.html" class="card-interactive">
+                <a href="examples/circular-diagram.html" class="card-interactive" data-category="layout">
                     <div class="icon-box bg-purple">
                         <i class="fa-solid fa-circle-nodes"></i>
                     </div>
@@ -62,15 +103,7 @@
                         ecosystems.</div>
                 </a>
 
-                <a href="examples/stats.html" class="card-interactive">
-                    <div class="icon-box bg-teal">
-                        <i class="fa-solid fa-chart-pie"></i>
-                    </div>
-                    <div class="text-title">Hero Center</div>
-                    <div class="text-desc">Classic centered layout for main titles and impactful statements.</div>
-                </a>
-
-                <a href="examples/split.html" class="card-interactive">
+                <a href="examples/split.html" class="card-interactive" data-category="layout">
                     <div class="icon-box">
                         <i class="fa-solid fa-columns"></i>
                     </div>
@@ -78,7 +111,7 @@
                     <div class="text-desc">50/50 split for text and media/visuals side by side.</div>
                 </a>
 
-                <a href="examples/code.html" class="card-interactive">
+                <a href="examples/code.html" class="card-interactive" data-category="component">
                     <div class="icon-box">
                         <i class="fa-solid fa-code"></i>
                     </div>
@@ -86,12 +119,86 @@
                     <div class="text-desc">Syntax-highlighted code snippets with explanatory text.</div>
                 </a>
 
-                <a href="examples/bento.html" class="card-interactive">
+                <a href="examples/bento.html" class="card-interactive" data-category="layout">
                     <div class="icon-box">
                         <i class="fa-solid fa-table-cells-large"></i>
                     </div>
                     <div class="text-title">Bento Grid</div>
                     <div class="text-desc">Modern grid layout with spanning cells for feature overviews.</div>
+                </a>
+
+                <a href="examples/hero.html" class="card-interactive" data-category="layout">
+                    <div class="icon-box bg-teal">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <div class="text-title">Hero Center</div>
+                    <div class="text-desc">Headline centrado y mensaje principal con icono destacado.</div>
+                </a>
+
+                <a href="examples/stats.html" class="card-interactive" data-category="component">
+                    <div class="icon-box bg-teal">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <div class="text-title">Stats Highlights</div>
+                    <div class="text-desc">Grid de tarjetas de KPI con acentos dinámicos y responsive.</div>
+                </a>
+
+                <a href="examples/modular-demo.html" class="card-interactive" data-category="component">
+                    <div class="icon-box bg-cyan">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <div class="text-title">Modular Demo</div>
+                    <div class="text-desc">Sección modular combinando múltiples bloques en una misma slide.</div>
+                </a>
+
+                <div class="heading-section">Creative Intros</div>
+
+                <a href="examples/creative-intro.html" class="card-interactive" data-category="intro">
+                    <div class="icon-box bg-orange">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <div class="text-title">Intro Creativa</div>
+                    <div class="text-desc">Presentación creativa con badges y tono festivo.</div>
+                </a>
+
+                <a href="examples/creative-intro-innovation.html" class="card-interactive" data-category="intro">
+                    <div class="icon-box bg-cyan">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+                    <div class="text-title">Intro Innovación</div>
+                    <div class="text-desc">Propuesta omnicanal con grid de features y badges.</div>
+                </a>
+
+                <a href="examples/creative-intro-product.html" class="card-interactive" data-category="intro">
+                    <div class="icon-box bg-purple">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <div class="text-title">Intro Producto</div>
+                    <div class="text-desc">Oferta de producto con tarjetas interactivas y pills.</div>
+                </a>
+
+                <a href="examples/creative-intro-roadmap.html" class="card-interactive" data-category="intro">
+                    <div class="icon-box bg-teal">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <div class="text-title">Intro Roadmap</div>
+                    <div class="text-desc">Fases clave del programa con steps numerados.</div>
+                </a>
+
+                <a href="examples/creative-intro-stats.html" class="card-interactive" data-category="intro">
+                    <div class="icon-box bg-magenta">
+                        <i class="fa-solid fa-wave-square"></i>
+                    </div>
+                    <div class="text-title">Intro Métricas</div>
+                    <div class="text-desc">Métricas en tiempo real con stats cards.</div>
+                </a>
+
+                <a href="examples/creative-intro-workshop.html" class="card-interactive" data-category="intro">
+                    <div class="icon-box bg-orange">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <div class="text-title">Intro Workshop</div>
+                    <div class="text-desc">Sesión técnica con checklist y bloque de código.</div>
                 </a>
 
             </div>
@@ -111,6 +218,23 @@
     </div>
 
     <script src="sapiens.js"></script>
+    <script>
+        const buttons = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.card-interactive');
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                buttons.forEach(b => b.classList.remove('is-active'));
+                btn.classList.add('is-active');
+                const filter = btn.dataset.filter;
+                cards.forEach(card => {
+                    const cat = card.dataset.category || 'all';
+                    const match = filter === 'all' || cat === filter;
+                    card.style.display = match ? '' : 'none';
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sapiens Framework - Intro Workshop</title>
+  <link rel="stylesheet" href="../sapiens-core.css">
+  <link rel="stylesheet" href="../sapiens-themes.css">
+  <link rel="stylesheet" href="../sapiens-components.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="theme-neutral-cobalt bg-blueprint">
+  <div id="sapiens-slide" class="surface-1 border-soft">
+    <div class="decorative grid-lines"></div>
+    <div class="decorative orb orb-1"></div>
+    <div class="decorative orb orb-2"></div>
+
+    <header class="slide-header">
+      <h1>Workshop Técnico</h1>
+      <div class="header-badge">Hands-on</div>
+    </header>
+
+    <main class="slide-body layout-hero">
+      <div class="content-box animate-in delay-100">
+        <div class="icon-circle icon-lg icon-purple mx-auto mb-2">
+          <i class="fa-solid fa-code"></i>
+        </div>
+        <h2>API y Tokens en acción</h2>
+        <p>Sesión práctica para implementar el framework con componentes, temas y despliegue listo para producción.</p>
+
+        <div class="layout-smart-grid">
+          <div class="card card-accent">
+            <div class="text-title">Checklist</div>
+            <ul class="feature-list">
+              <li>Instalar dependencias y fuentes.</li>
+              <li>Configurar tokens en <code>:root</code> o <code>data-theme</code>.</li>
+              <li>Armar slides con layouts hero/split/timeline.</li>
+            </ul>
+          </div>
+          <div class="code-block">
+            <div class="code-nav">
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              <span class="code-filename">tokens.css</span>
+            </div>
+            <pre><code>:root {
+  --bg-1: #0f172a;
+  --accent-1: #38bdf8;
+  --text-main: #e2e8f0;
+}</code></pre>
+          </div>
+        </div>
+
+        <div class="badge-group badge-center mt-2">
+          <span class="badge">Live Coding</span>
+          <span class="badge">Playbook CI</span>
+          <span class="badge">QA Visual</span>
+        </div>
+      </div>
+    </main>
+
+    <footer class="slide-footer">
+      <span>Dev Team</span>
+      <span>Duración: 90 min</span>
+    </footer>
+  </div>
+
+  <script src="../sapiens.js"></script>
+</body>
+</html>

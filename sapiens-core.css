@@ -1,4 +1,4 @@
-/* ==================================================
+﻿/* ==================================================
    SAPIENS FRAMEWORK - CORE v0.5
    Base estructural y responsiva (NO MODIFICAR)
    ================================================== */
@@ -18,7 +18,7 @@
     --text-main: #f8fafc;
     --text-muted: #94a3b8;
 
-    /* --- CAPAS DE SUPERFICIE Y BORDES (Contrato mínimo) --- */
+    /* --- CAPAS DE SUPERFICIE Y BORDES (Contrato mÃ­nimo) --- */
     --surface-0: rgba(255, 255, 255, 0.02);
     --surface-1: rgba(255, 255, 255, 0.04);
     --surface-2: rgba(255, 255, 255, 0.07);
@@ -27,8 +27,9 @@
     --border-soft: rgba(255, 255, 255, 0.08);
     --border-strong: rgba(255, 255, 255, 0.14);
 
-    /* Superficie de contenido (cards intro/hero) basada en tokens, sin color fijo */
-    --content-surface: color-mix(in srgb, var(--bg-2) 80%, var(--text-main) 20%);
+    /* Superficies derivadas de tokens (evitan colores fijos) */
+    --panel-surface: color-mix(in srgb, var(--bg-2) 80%, var(--text-main) 20%);
+    --content-surface: var(--panel-surface);
 
     /* --- DEGRADADOS Y SOMBRAS BASADOS EN ACENTOS --- */
     --accent-strong: linear-gradient(135deg, var(--accent-1), var(--accent-2));
@@ -50,13 +51,16 @@
     --font-head: 'Poppins', sans-serif;
     --font-body: 'Inter', sans-serif;
 
+    /* Texto sobre acento */
+    --text-on-accent: #ffffff;
+
     /* --- ESPACIADOS INTERNOS --- */
-    /* El padding y gap reaccionan a la altura de la ventana (vh) para compactación inteligente */
+    /* El padding y gap reaccionan a la altura de la ventana (vh) para compactaciÃ³n inteligente */
     --slide-p: clamp(1.5rem, 4vh, 3rem);
     --gap: clamp(0.8rem, 2.5vh, 2rem);
     --radius: 24px;
 
-    /* --- ESPACIADO EXTERNO (Padding de página) --- */
+    /* --- ESPACIADO EXTERNO (Padding de pÃ¡gina) --- */
     --page-padding: 30px;
 
     /* --- CAPAS DE PINTADO (evita que decoraciones tapen contenido) --- */
@@ -85,7 +89,7 @@ html {
    BODY: Contenedor de la pantalla
    ================================================== */
 body {
-    background-color: #050505;
+    background-color: var(--bg-1, #050505);
     background: radial-gradient(circle at top left, var(--bg-1), var(--bg-2));
     background-attachment: fixed;
 
@@ -143,13 +147,13 @@ body {
 
     overflow: hidden;
 
-    /* Transición suave */
+    /* TransiciÃ³n suave */
     transition: padding 0.3s ease, gap 0.3s ease;
     isolation: isolate;
 }
 
 /* ==================================================
-   HEADER: Título y badge
+   HEADER: TÃ­tulo y badge
    ================================================== */
 .slide-header {
     position: relative;
@@ -213,7 +217,7 @@ body {
 }
 
 /* ==================================================
-   LAYOUTS: Definición de grids principales
+   LAYOUTS: DefiniciÃ³n de grids principales
    ================================================== */
 
 /* 1. Hero: Texto centrado */
@@ -229,7 +233,7 @@ body {
     align-items: center;
 }
 
-/* 3. Code: Texto pequeño izq, Código ancho der */
+/* 3. Code: Texto pequeÃ±o izq, CÃ³digo ancho der */
 .layout-code {
     grid-template-columns: 0.9fr 1.1fr;
     align-items: center;
@@ -257,7 +261,7 @@ body {
 }
 
 /* ==================================================
-   FOOTER: Información inferior
+   FOOTER: InformaciÃ³n inferior
    ================================================== */
 .slide-footer {
     position: relative;
@@ -314,15 +318,29 @@ body {
 }
 
 /* ==================================================
-   MEDIA QUERIES: Lógica responsiva
+   MEDIA QUERIES: LÃ³gica responsiva
    ================================================== */
 
 /* ESCRITORIO GRANDE (Ratio 16:9) */
 @media (min-width: 1200px) {
-    /* Reglas específicas si se requieren */
+    /* Reglas especÃ­ficas si se requieren */
 }
 
-/* TABLETS / LAPTOPS PEQUEÑOS (< 1024px) */
+/* ALTURAS REDUCIDAS: priorizar lectura y evitar solapamientos */
+@media (max-height: 820px) {
+    .slide-body {
+        align-content: flex-start;
+    }
+
+    .layout-hero > .content-box,
+    .layout-intro > .content-box {
+        margin-top: clamp(0.5rem, 1.5vh, 1rem);
+        margin-bottom: clamp(0.5rem, 1.5vh, 1rem);
+    }
+}
+
+
+/* TABLETS / LAPTOPS PEQUEÃ‘OS (< 1024px) */
 @media (max-width: 1024px) {
 
     #sapiens-slide,
@@ -337,7 +355,7 @@ body {
     }
 }
 
-/* MÓVIL VERTICAL / TABLET PEQUEÑA (< 768px) */
+/* MÃ“VIL VERTICAL / TABLET PEQUEÃ‘A (< 768px) */
 @media (max-width: 768px) {
     body {
         height: auto;
@@ -361,7 +379,7 @@ body {
         --gap: 1rem;
     }
 
-    /* Header: Badge encima del título */
+    /* Header: Badge encima del tÃ­tulo */
     .slide-header {
         flex-direction: column-reverse;
         gap: 0.5rem;
@@ -391,7 +409,7 @@ body {
 }
 
 /* ==================================================
-   TIPOGRAFÍA Y ELEMENTOS BASE
+   TIPOGRAFÃA Y ELEMENTOS BASE
    ================================================== */
 h2 {
     font-family: var(--font-head);
@@ -407,7 +425,7 @@ p {
 }
 
 /* ==================================================
-   ANIMACIONES BÁSICAS
+   ANIMACIONES BÃSICAS
    ================================================== */
 .animate-in {
     animation: fadeInUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
@@ -425,3 +443,4 @@ p {
         transform: translateY(0);
     }
 }
+

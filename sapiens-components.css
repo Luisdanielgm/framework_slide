@@ -1585,3 +1585,43 @@
         font-size: 1.5rem;
     }
 }
+
+/* ==================================================
+   INTELLIGENT LAYOUT CORRECTIONS
+   ================================================== */
+
+/* --- Overflow Adjustments --- */
+/* Step 1: When content overflows, try reducing font sizes first. */
+.slide-shell.is-overflowing .slide-body h1,
+.slide-shell.is-overflowing .slide-body h2,
+.slide-shell.is-overflowing .slide-body .text-hero {
+    font-size: clamp(2rem, 4vw, 2.8rem); /* Reduce max font size */
+}
+
+.slide-shell.is-overflowing .slide-body p,
+.slide-shell.is-overflowing .slide-body li,
+.slide-shell.is-overflowing .slide-body .text-lead {
+    font-size: clamp(0.9rem, 1.6vw, 1.1rem); /* Reduce body text size */
+}
+
+/* Step 2: If content STILL overflows, apply columns to the targeted child. */
+.force-columns {
+    column-count: 2;
+    column-gap: 2rem; /* Standardized gap */
+    height: 100%; /* Ensure it fills the space for proper column calculation */
+}
+
+/* --- Underflow Adjustments --- */
+/* If there's extra space, center the content vertically and increase font size. */
+.slide-shell.has-extra-space .slide-body {
+    justify-content: center; /* Center content vertically */
+}
+
+.slide-shell.has-extra-space .slide-body h1,
+.slide-shell.has-extra-space .slide-body h2 {
+    font-size: 3.5rem; /* Enlarge titles */
+}
+
+.slide-shell.has-extra-space .slide-body p {
+    font-size: 1.25rem; /* Enlarge text */
+}

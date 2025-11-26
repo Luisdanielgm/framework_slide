@@ -18,7 +18,7 @@
     --text-main: #f8fafc;
     --text-muted: #94a3b8;
 
-    /* --- CAPAS DE SUPERFICIE Y BORDES (Contrato mÃ­nimo) --- */
+    /* --- CAPAS DE SUPERFICIE Y BORDES (Contrato mínimo) --- */
     --surface-0: rgba(255, 255, 255, 0.02);
     --surface-1: rgba(255, 255, 255, 0.04);
     --surface-2: rgba(255, 255, 255, 0.07);
@@ -55,12 +55,12 @@
     --text-on-accent: #ffffff;
 
     /* --- ESPACIADOS INTERNOS --- */
-    /* El padding y gap reaccionan a la altura de la ventana (vh) para compactaciÃ³n inteligente */
+    /* El padding y gap reaccionan a la altura de la ventana (vh) para compactación inteligente */
     --slide-p: clamp(1.5rem, 4vh, 3rem);
     --gap: clamp(0.8rem, 2.5vh, 2rem);
     --radius: 24px;
 
-    /* --- ESPACIADO EXTERNO (Padding de pÃ¡gina) --- */
+    /* --- ESPACIADO EXTERNO (Padding de página) --- */
     --page-padding: 30px;
 
     /* --- CAPAS DE PINTADO (evita que decoraciones tapen contenido) --- */
@@ -107,6 +107,10 @@ body {
 
     /* Padding del body: "borde" negro alrededor */
     padding: var(--page-padding);
+    padding-left: calc(var(--page-padding) + env(safe-area-inset-left, 0px));
+    padding-right: calc(var(--page-padding) + env(safe-area-inset-right, 0px));
+    padding-top: calc(var(--page-padding) + env(safe-area-inset-top, 0px));
+    padding-bottom: calc(var(--page-padding) + env(safe-area-inset-bottom, 0px));
 
     overflow: hidden;
 }
@@ -147,13 +151,13 @@ body {
 
     overflow: hidden;
 
-    /* TransiciÃ³n suave */
+    /* Transición suave */
     transition: padding 0.3s ease, gap 0.3s ease;
     isolation: isolate;
 }
 
 /* ==================================================
-   HEADER: TÃ­tulo y badge
+   HEADER: Título y badge
    ================================================== */
 .slide-header {
     position: relative;
@@ -206,6 +210,7 @@ body {
     z-index: var(--layer-content);
     width: 100%;
     flex-grow: 1;
+    min-height: 0;
 
     /* Habilitar Container Queries para layouts inteligentes */
     container-type: size;
@@ -217,51 +222,7 @@ body {
 }
 
 /* ==================================================
-   LAYOUTS: DefiniciÃ³n de grids principales
-   ================================================== */
-
-/* 1. Hero: Texto centrado */
-.layout-hero {
-    grid-template-columns: 1fr;
-    text-align: center;
-    place-items: center;
-}
-
-/* 2. Split: Texto izq, Imagen/Code der */
-.layout-split {
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-}
-
-/* 3. Code: Texto pequeÃ±o izq, CÃ³digo ancho der */
-.layout-code {
-    grid-template-columns: 0.9fr 1.1fr;
-    align-items: center;
-}
-
-/* 4. Bento: Grilla 2x2 */
-.layout-bento {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: minmax(auto, 1fr);
-}
-
-.layout-bento .span-row {
-    grid-row: span 2;
-}
-
-.layout-bento .span-col {
-    grid-column: span 2;
-}
-
-/* 5. Intro: Portada creativa */
-.layout-intro {
-    grid-template-columns: 1fr;
-    text-align: center;
-    place-items: center;
-}
-
-/* ==================================================
-   FOOTER: InformaciÃ³n inferior
+   FOOTER: Información inferior
    ================================================== */
 .slide-footer {
     position: relative;
@@ -276,6 +237,7 @@ body {
     opacity: 0.7;
     flex-wrap: wrap;
     gap: 10px;
+    flex-shrink: 0; /* No comprimir el footer cuando hay poca altura */
 }
 
 /* ==================================================
@@ -318,24 +280,18 @@ body {
 }
 
 /* ==================================================
-   MEDIA QUERIES: LÃ³gica responsiva
+   MEDIA QUERIES: Lógica responsiva
    ================================================== */
 
 /* ESCRITORIO GRANDE (Ratio 16:9) */
 @media (min-width: 1200px) {
-    /* Reglas especÃ­ficas si se requieren */
+    /* Reglas específicas si se requieren */
 }
 
 /* ALTURAS REDUCIDAS: priorizar lectura y evitar solapamientos */
 @media (max-height: 820px) {
     .slide-body {
         align-content: flex-start;
-    }
-
-    .layout-hero > .content-box,
-    .layout-intro > .content-box {
-        margin-top: clamp(0.5rem, 1.5vh, 1rem);
-        margin-bottom: clamp(0.5rem, 1.5vh, 1rem);
     }
 }
 
@@ -346,12 +302,6 @@ body {
     #sapiens-slide,
     .slide-shell {
         /* Ajustes para tablets si es necesario */
-    }
-
-    .layout-split,
-    .layout-code {
-        grid-template-columns: 1fr;
-        text-align: left;
     }
 }
 
@@ -367,7 +317,7 @@ body {
     #sapiens-slide,
     .slide-shell {
         height: auto;
-        min-height: 600px;
+        min-height: min(600px, 100vh);
         max-height: none;
         aspect-ratio: unset;
         border-radius: 24px;
@@ -379,7 +329,7 @@ body {
         --gap: 1rem;
     }
 
-    /* Header: Badge encima del tÃ­tulo */
+    /* Header: Badge encima del título */
     .slide-header {
         flex-direction: column-reverse;
         gap: 0.5rem;
@@ -390,17 +340,6 @@ body {
         margin-top: 0;
     }
 
-    /* Bento: Se convierte en lista */
-    .layout-bento {
-        grid-template-columns: 1fr;
-    }
-
-    .layout-bento .span-row,
-    .layout-bento .span-col {
-        grid-column: span 1;
-        grid-row: span 1;
-    }
-
     /* Footer: Centrado */
     .slide-footer {
         justify-content: center;
@@ -408,8 +347,9 @@ body {
     }
 }
 
+
 /* ==================================================
-   TIPOGRAFÃA Y ELEMENTOS BASE
+   TIPOGRAFÍA Y ELEMENTOS BASE
    ================================================== */
 h2 {
     font-family: var(--font-head);
@@ -443,4 +383,3 @@ p {
         transform: translateY(0);
     }
 }
-

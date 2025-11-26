@@ -102,7 +102,7 @@ body {
        pero controlamos el contenido con 'overflow-x: hidden' en el body */
     overflow: visible;
 
-    /* Transición suave al cambiar tamaños */
+    /* Transició suave al cambiar tamaños */
     transition: padding 0.3s ease, gap 0.3s ease;
 }
 
@@ -135,7 +135,7 @@ body {
 }
 
 .header-badge {
-    /* El botón/badge de la esquina */
+    /* El botó/badge de la esquina */
     font-size: 0.75rem;
     font-weight: 600;
     background: rgba(255, 255, 255, 0.08);
@@ -163,7 +163,7 @@ body {
     /* Centra contenido verticalmente si sobra espacio */
 }
 
-/* --- DEFINICIÓN DE LAYOUTS (Restaurados completos) --- */
+/* --- DEFINICIó DE LAYOUTS (Restaurados completos) --- */
 /* 1. Hero: Texto centrado */
 .layout-hero {
     grid-template-columns: 1fr;
@@ -236,7 +236,7 @@ h2 {
     gap: 0.8rem;
     color: var(--text-muted);
     align-items: baseline;
-    /* Alineación perfecta texto-punto */
+    /* Alineació perfecta texto-punto */
 }
 
 .feature-list li::before {
@@ -317,7 +317,7 @@ h2 {
     gap: 10px;
 }
 
-/* --- DECORACIÓN DE FONDO --- */
+/* --- DECORACIó DE FONDO --- */
 .decorative {
     position: absolute;
     pointer-events: none;
@@ -362,7 +362,7 @@ h2 {
 @media (min-width: 1200px) and (min-height: 800px) {
     #sapiens-slide {
         aspect-ratio: 16/9;
-        /* Forzamos altura para que se vea como presentación */
+        /* Forzamos altura para que se vea como presentació */
         height: auto;
     }
 }
@@ -591,7 +591,7 @@ h2 {
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
 }
 
-/* --- COMPARISON: Comparación lado a lado --- */
+/* --- COMPARISON: Comparació lado a lado --- */
 .layout-comparison {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
@@ -905,7 +905,7 @@ h2 {
 }
 
 /* =========================================
-   ELEMENTOS DE CONEXIÓN
+   ELEMENTOS DE CONEXIó
    ========================================= */
 
 .connector-line {

@@ -7,7 +7,7 @@
                     "Verde follaje vibrante",
                     "Coral brillante"
                 ],
-                "justificacion": "La combinación de un verde follaje vibrante con un coral brillante evoca la primavera y logra un diseño fresco que sobresale:contentReference[oaicite:0]{index=0}.",
+                "justificacion": "La combinació de un verde follaje vibrante con un coral brillante evoca la primavera y logra un diseño fresco que sobresale:contentReference[oaicite:0]{index=0}.",
                 "implementado": true,
                 "clase_css": "theme-nature-spring"
             },
@@ -23,9 +23,9 @@
             {
                 "colores": [
                     "Verde hoja",
-                    "Marrón tierra"
+                    "Marró tierra"
                 ],
-                "justificacion": "Mezclar verdes hoja con tonos marrón tierra produce una paleta ideal para temáticas de medio ambiente y naturaleza, transmitiendo frescura y sostenibilidad:contentReference[oaicite:2]{index=2}.",
+                "justificacion": "Mezclar verdes hoja con tonos marró tierra produce una paleta ideal para temáticas de medio ambiente y naturaleza, transmitiendo frescura y sostenibilidad:contentReference[oaicite:2]{index=2}.",
                 "implementado": true,
                 "clase_css": "theme-nature-earth"
             },
@@ -49,7 +49,7 @@
             {
                 "colores": [
                     "Azul cielo",
-                    "Marrón bosque"
+                    "Marró bosque"
                 ],
                 "justificacion": "Una gama de azules combinada con marrones naturales constituye una paleta atractiva que evoca el cielo y la tierra, transmitiendo sensaciones de permanencia, transparencia y fiabilidad:contentReference[oaicite:5]{index=5}.",
                 "implementado": true,
@@ -60,7 +60,7 @@
                     "Oliva",
                     "Café oscuro"
                 ],
-                "justificacion": "Los tonos marrón y oliva son perfectos para temas de sostenibilidad y lo orgánico; esta combinación terrenal conecta con la moda de lo ecológico y añade un carácter natural al diseño:contentReference[oaicite:6]{index=6}.",
+                "justificacion": "Los tonos marró y oliva son perfectos para temas de sostenibilidad y lo orgánico; esta combinació terrenal conecta con la moda de lo ecológico y añade un carácter natural al diseño:contentReference[oaicite:6]{index=6}.",
                 "implementado": true,
                 "clase_css": "theme-nature-organic"
             },
@@ -70,7 +70,7 @@
                     "Gris cálido",
                     "Coral claro"
                 ],
-                "justificacion": "Contrastar grises cálidos con un azul hielo y añadir un matiz coral pálido produce una combinación dinámica mucho más interesante que el típico esquema monótono de azul y gris, manteniendo la paleta moderada pero fresca:contentReference[oaicite:7]{index=7}.",
+                "justificacion": "Contrastar grises cálidos con un azul hielo y añadir un matiz coral pálido produce una combinació dinámica mucho más interesante que el típico esquema monótono de azul y gris, manteniendo la paleta moderada pero fresca:contentReference[oaicite:7]{index=7}.",
                 "implementado": true,
                 "clase_css": "theme-nature-arctic"
             }
@@ -103,7 +103,7 @@
                     "Azul spa",
                     "Frambuesa claro"
                 ],
-                "justificacion": "Relajantes verdes y azules estilo \"spa\" cobran más vida con un toque de frambuesa como color de acento. Añadir un acento ligeramente más intenso a una paleta suave es una buena técnica para avivar una combinación pastel sin perder su esencia tranquila:contentReference[oaicite:10]{index=10}.",
+                "justificacion": "Relajantes verdes y azules estilo \"spa\" cobran más vida con un toque de frambuesa como color de acento. Añadir un acento ligeramente más intenso a una paleta suave es una buena técnica para avivar una combinació pastel sin perder su esencia tranquila:contentReference[oaicite:10]{index=10}.",
                 "implementado": true,
                 "clase_css": "theme-pastel-spa"
             },
@@ -111,19 +111,19 @@
                 "colores": [
                     "Lavanda",
                     "Turquesa suave",
-                    "Naranja melón"
+                    "Naranja meló"
                 ],
-                "justificacion": "Una mezcla de lavandas y turquesas con un toque de naranja claro puede evocar la atmósfera apacible de una tarde de playa veraniega. Estos tonos suaves y atenuados transmiten una sensación relajada y acogedora sin dejar de ser únicos:contentReference[oaicite:11]{index=11}.",
+                "justificacion": "Una mezcla de lavandas y turquesas con un toque de naranja claro puede evocar la atmósfera apacible de una tarde de playa veraniega. Estos tonos suaves y atenuados transmiten una sensació relajada y acogedora sin dejar de ser únicos:contentReference[oaicite:11]{index=11}.",
                 "implementado": true,
                 "clase_css": "theme-pastel-sunset"
             },
             {
                 "colores": [
                     "Durazno pastel",
-                    "Salmón claro",
+                    "Salmó claro",
                     "Crema cálida"
                 ],
-                "justificacion": "Muchos pueblos costeros mediterráneos están pintados en colores pastel cálidos. Imitar esos matices (durazno, salmón, crema) ayuda a crear un efecto soleado, acogedor y con un toque de estilo \"vintage\" italiano en el diseño:contentReference[oaicite:12]{index=12}.",
+                "justificacion": "Muchos pueblos costeros mediterráneos están pintados en colores pastel cálidos. Imitar esos matices (durazno, salmó, crema) ayuda a crear un efecto soleado, acogedor y con un toque de estilo \"vintage\" italiano en el diseño:contentReference[oaicite:12]{index=12}.",
                 "implementado": true,
                 "clase_css": "theme-pastel-mediterranean"
             },
@@ -133,23 +133,23 @@
                     "Celeste claro",
                     "Coral pálido"
                 ],
-                "justificacion": "Contrastar grises cálidos con un azul hielo y añadir un matiz coral pálido produce una combinación dinámica mucho más interesante que el típico esquema monótono de azul y gris, manteniendo la paleta moderada pero fresca:contentReference[oaicite:13]{index=13}.",
+                "justificacion": "Contrastar grises cálidos con un azul hielo y añadir un matiz coral pálido produce una combinació dinámica mucho más interesante que el típico esquema monótono de azul y gris, manteniendo la paleta moderada pero fresca:contentReference[oaicite:13]{index=13}.",
                 "implementado": true,
                 "clase_css": "theme-pastel-cool"
             }
         ]
     },
     {
-        "categoria": "Paletas Vibrantes y Neón",
+        "categoria": "Paletas Vibrantes y Neó",
         "combos": [
             {
                 "colores": [
                     "Negro intenso",
-                    "Fucsia neón",
+                    "Fucsia neó",
                     "Azul eléctrico",
-                    "Morado neón"
+                    "Morado neó"
                 ],
-                "justificacion": "Usar un fondo negro profundo con colores de acento neón (fucsias, azules eléctricos, morados) crea un contraste llamativo y audaz, logrando un efecto visual de gran impacto:contentReference[oaicite:14]{index=14}.",
+                "justificacion": "Usar un fondo negro profundo con colores de acento neó (fucsias, azules eléctricos, morados) crea un contraste llamativo y audaz, logrando un efecto visual de gran impacto:contentReference[oaicite:14]{index=14}.",
                 "implementado": true,
                 "clase_css": "theme-neon-cyber"
             },
@@ -160,7 +160,7 @@
                     "Azul marino oscuro",
                     "Blanco"
                 ],
-                "justificacion": "Una combinación de rojo, amarillo, azul marino (casi negro) y blanco resulta clásica pero, al usar tonalidades bien saturadas, deja de ser aburrida y se vuelve intensa. Esta paleta básica e intensa hace una declaración fuerte sin recurrir a colores inusuales:contentReference[oaicite:15]{index=15}.",
+                "justificacion": "Una combinació de rojo, amarillo, azul marino (casi negro) y blanco resulta clásica pero, al usar tonalidades bien saturadas, deja de ser aburrida y se vuelve intensa. Esta paleta básica e intensa hace una declaració fuerte sin recurrir a colores inusuales:contentReference[oaicite:15]{index=15}.",
                 "implementado": true,
                 "clase_css": "theme-neon-intense"
             },
@@ -171,7 +171,7 @@
                     "Amarillo",
                     "Negro"
                 ],
-                "justificacion": "Los colores de tinta CMYK (cian, magenta, amarillo y negro) juntos forman una combinación vibrante por sí mismos, similar a los letreros de neón de una gran ciudad nocturna:contentReference[oaicite:16]{index=16}.",
+                "justificacion": "Los colores de tinta CMYK (cian, magenta, amarillo y negro) juntos forman una combinació vibrante por sí mismos, similar a los letreros de neó de una gran ciudad nocturna:contentReference[oaicite:16]{index=16}.",
                 "implementado": true,
                 "clase_css": "theme-neon-cmyk"
             },
@@ -182,7 +182,7 @@
                     "Azul turquesa",
                     "Amarillo brillante"
                 ],
-                "justificacion": "Una paleta con colores altamente saturados —rosa vibrante, verde lima, turquesa y amarillo intenso— transmite diversión, energía y emoción juvenil. Es un conjunto impactante y nada discreto, ideal si se busca hacer una declaración visual atrevida:contentReference[oaicite:17]{index=17}.",
+                "justificacion": "Una paleta con colores altamente saturados —rosa vibrante, verde lima, turquesa y amarillo intenso— transmite diversió, energía y emoció juvenil. Es un conjunto impactante y nada discreto, ideal si se busca hacer una declaració visual atrevida:contentReference[oaicite:17]{index=17}.",
                 "implementado": true,
                 "clase_css": "theme-neon-youth"
             },
@@ -190,7 +190,7 @@
                 "colores": [
                     "Varios tonos \"dulce\""
                 ],
-                "justificacion": "Un conjunto de tonos vibrantes dignos de una dulcería (inspirado en grafiti urbano) aporta mucha energía juvenil. Esta paleta es deliberadamente chillona y nada discreta: está pensada para destacar y llamar la atención de inmediato:contentReference[oaicite:18]{index=18}.",
+                "justificacion": "Un conjunto de tonos vibrantes dignos de una dulcería (inspirado en grafiti urbano) aporta mucha energía juvenil. Esta paleta es deliberadamente chillona y nada discreta: está pensada para destacar y llamar la atenció de inmediato:contentReference[oaicite:18]{index=18}.",
                 "implementado": true,
                 "clase_css": "theme-neon-candy"
             },
@@ -200,7 +200,7 @@
                     "Violeta profundo",
                     "Naranja brillante"
                 ],
-                "justificacion": "La combinación de un fucsia oscuro con violeta intenso más un naranja suave logra una paleta colorida y vibrante que transmite energía y calidez, evocando un cielo al atardecer lleno de vida:contentReference[oaicite:19]{index=19}.",
+                "justificacion": "La combinació de un fucsia oscuro con violeta intenso más un naranja suave logra una paleta colorida y vibrante que transmite energía y calidez, evocando un cielo al atardecer lleno de vida:contentReference[oaicite:19]{index=19}.",
                 "implementado": true,
                 "clase_css": "theme-neon-sunset"
             },
@@ -209,7 +209,7 @@
                     "Rojo complementario",
                     "Verde complementario"
                 ],
-                "justificacion": "Un rojo y verde opuestos en la rueda de color ofrecen un contraste marcado. Atenuando ligeramente ambos (evitando la saturación extrema tipo \"Navidad\"), se obtiene un giro más fresco y moderno de esta pareja complementaria tradicional:contentReference[oaicite:20]{index=20}.",
+                "justificacion": "Un rojo y verde opuestos en la rueda de color ofrecen un contraste marcado. Atenuando ligeramente ambos (evitando la saturació extrema tipo \"Navidad\"), se obtiene un giro más fresco y moderno de esta pareja complementaria tradicional:contentReference[oaicite:20]{index=20}.",
                 "implementado": true,
                 "clase_css": "theme-neon-complementary"
             },
@@ -244,7 +244,7 @@
                     "Negro",
                     "Rojos encendidos"
                 ],
-                "justificacion": "Incluir negro junto a una gama de rojos intensos genera una combinación dramática. Este esquema, inspirado en un paisaje volcánico, es ideal para diseños de marketing que buscan captar la atención del público de forma inmediata:contentReference[oaicite:24]{index=24}.",
+                "justificacion": "Incluir negro junto a una gama de rojos intensos genera una combinació dramática. Este esquema, inspirado en un paisaje volcánico, es ideal para diseños de marketing que buscan captar la atenció del público de forma inmediata:contentReference[oaicite:24]{index=24}.",
                 "implementado": true,
                 "clase_css": "theme-neon-volcanic"
             },
@@ -253,7 +253,7 @@
                     "Cian brillante",
                     "Rojo vibrante"
                 ],
-                "justificacion": "Mezclar azules/cianes fuertes con un rojo intenso produce una combinación única y versátil. Usando diferentes dosis de estos colores se puede lograr desde un estilo profesional de tonos fríos hasta una creación muy enérgica y dinámica para proyectos modernos:contentReference[oaicite:25]{index=25}.",
+                "justificacion": "Mezclar azules/cianes fuertes con un rojo intenso produce una combinació única y versátil. Usando diferentes dosis de estos colores se puede lograr desde un estilo profesional de tonos fríos hasta una creació muy enérgica y dinámica para proyectos modernos:contentReference[oaicite:25]{index=25}.",
                 "implementado": true,
                 "clase_css": "theme-neon-cyan-red"
             }
@@ -289,7 +289,7 @@
                     "Cian intenso",
                     "Amarillo suave"
                 ],
-                "justificacion": "Una combinación única de azul desaturado con anaranjado, complementada por un cian vibrante y amarillo suave, genera un aspecto retro clásico que evoca nostalgia y cierto glamour de los años 50:contentReference[oaicite:28]{index=28}.",
+                "justificacion": "Una combinació única de azul desaturado con anaranjado, complementada por un cian vibrante y amarillo suave, genera un aspecto retro clásico que evoca nostalgia y cierto glamour de los años 50:contentReference[oaicite:28]{index=28}.",
                 "implementado": true,
                 "clase_css": "theme-retro-classic"
             },
@@ -297,7 +297,7 @@
                 "colores": [
                     "Colores pop vintage"
                 ],
-                "justificacion": "Los colores vintage brillantes e impactantes (inspirados en ilustraciones antiguas) pueden usarse todos a la vez manteniendo cohesión. Incluso con muchos colores saturados simultáneos, es posible lograr un diseño unificado si comparten un estilo retro común:contentReference[oaicite:29]{index=29}.",
+                "justificacion": "Los colores vintage brillantes e impactantes (inspirados en ilustraciones antiguas) pueden usarse todos a la vez manteniendo cohesió. Incluso con muchos colores saturados simultáneos, es posible lograr un diseño unificado si comparten un estilo retro común:contentReference[oaicite:29]{index=29}.",
                 "implementado": true,
                 "clase_css": "theme-retro-pop"
             },
@@ -307,7 +307,7 @@
                     "Cuero",
                     "Beige ahumado"
                 ],
-                "justificacion": "Tonos como madera oscura, cuero envejecido y beige grisáceo evocan espacios vintage como tabernas inglesas o clubes antiguos. Una combinación de cafés intensos equilibrada con un neutro nebuloso añade sofisticación clásica y un ambiente vintage refinado al diseño:contentReference[oaicite:30]{index=30}.",
+                "justificacion": "Tonos como madera oscura, cuero envejecido y beige grisáceo evocan espacios vintage como tabernas inglesas o clubes antiguos. Una combinació de cafés intensos equilibrada con un neutro nebuloso añade sofisticació clásica y un ambiente vintage refinado al diseño:contentReference[oaicite:30]{index=30}.",
                 "implementado": true,
                 "clase_css": "theme-retro-leather"
             },
@@ -352,7 +352,7 @@
                     "Rojo oscuro",
                     "Turquesa brillante"
                 ],
-                "justificacion": "Para renovar la clásica combinación de blanco y negro, se pueden introducir acentos de color inesperados. Por ejemplo, un rojo profundo junto con un turquesa brillante le dan un giro fresco a esta dupla familiar, manteniendo el contraste pero agregando interés visual:contentReference[oaicite:34]{index=34}.",
+                "justificacion": "Para renovar la clásica combinació de blanco y negro, se pueden introducir acentos de color inesperados. Por ejemplo, un rojo profundo junto con un turquesa brillante le dan un giro fresco a esta dupla familiar, manteniendo el contraste pero agregando interés visual:contentReference[oaicite:34]{index=34}.",
                 "implementado": true,
                 "clase_css": "theme-neutral-modern"
             },
@@ -381,7 +381,7 @@
                     "Gris perla",
                     "Beige arena"
                 ],
-                "justificacion": "Tonos náuticos ligeramente desteñidos como azul acero, combinados con colores arena y toques verde-agua, brindan una paleta sutil que no encasilla el diseño en un estilo específico. Son colores versátiles y suaves que aportan frescura sin sobrecargar la composición:contentReference[oaicite:37]{index=37}.",
+                "justificacion": "Tonos náuticos ligeramente desteñidos como azul acero, combinados con colores arena y toques verde-agua, brindan una paleta sutil que no encasilla el diseño en un estilo específico. Son colores versátiles y suaves que aportan frescura sin sobrecargar la composició:contentReference[oaicite:37]{index=37}.",
                 "implementado": true,
                 "clase_css": "theme-neutral-nautical"
             },
@@ -390,7 +390,7 @@
                     "Gris cálido",
                     "Amarillo dorado"
                 ],
-                "justificacion": "Grises cálidos con un leve matiz dorado generan una combinación pulida y acogedora muy usada en interiorismo. Es una paleta mayormente neutra que transmite confort gracias a la calidez del gris, y el toque de amarillo le inyecta alegría y energía sin perder la sofisticación:contentReference[oaicite:38]{index=38}.",
+                "justificacion": "Grises cálidos con un leve matiz dorado generan una combinació pulida y acogedora muy usada en interiorismo. Es una paleta mayormente neutra que transmite confort gracias a la calidez del gris, y el toque de amarillo le inyecta alegría y energía sin perder la sofisticació:contentReference[oaicite:38]{index=38}.",
                 "implementado": true,
                 "clase_css": "theme-neutral-warm"
             }
@@ -404,7 +404,7 @@
                     "Azul marino",
                     "Dorado"
                 ],
-                "justificacion": "El azul oscuro combinado con dorado es una dupla atemporal que se observa desde invitaciones de gala hasta los colores oficiales de escuelas y equipos deportivos de élite. Esta combinación de alto contraste evoca clase y elegancia, ideal para darle un toque distinguido a cualquier diseño:contentReference[oaicite:39]{index=39}.",
+                "justificacion": "El azul oscuro combinado con dorado es una dupla atemporal que se observa desde invitaciones de gala hasta los colores oficiales de escuelas y equipos deportivos de élite. Esta combinació de alto contraste evoca clase y elegancia, ideal para darle un toque distinguido a cualquier diseño:contentReference[oaicite:39]{index=39}.",
                 "implementado": true,
                 "clase_css": "theme-elegant-navy-gold"
             },
@@ -423,7 +423,7 @@
                     "Gris cálido",
                     "Oro suave"
                 ],
-                "justificacion": "Una paleta neutra cálida se puede realzar con un matiz de amarillo dorado. Por ejemplo, combinar grises cálidos (que dan una sensación reconfortante) con toques dorados aporta un refinamiento alegre pero no estridente, manteniendo el diseño sofisticado sin volverse demasiado conservador:contentReference[oaicite:41]{index=41}.",
+                "justificacion": "Una paleta neutra cálida se puede realzar con un matiz de amarillo dorado. Por ejemplo, combinar grises cálidos (que dan una sensació reconfortante) con toques dorados aporta un refinamiento alegre pero no estridente, manteniendo el diseño sofisticado sin volverse demasiado conservador:contentReference[oaicite:41]{index=41}.",
                 "implementado": true,
                 "clase_css": "theme-elegant-warm-grey"
             },
@@ -474,10 +474,10 @@
             {
                 "colores": [
                     "Azul ultramar",
-                    "Verde neón suave",
+                    "Verde neó suave",
                     "Gris claro"
                 ],
-                "justificacion": "Un azul profundo con acentos verde neón y gris claro transmite innovación pero mantiene una base profesional y legible.",
+                "justificacion": "Un azul profundo con acentos verde neó y gris claro transmite innovació pero mantiene una base profesional y legible.",
                 "implementado": true,
                 "clase_css": "theme-tech-innovative"
             },
@@ -498,7 +498,7 @@
         "combos": [
             {
                 "colores": [
-                    "Negro carbón",
+                    "Negro carbó",
                     "Gris humo",
                     "Azul petróleo"
                 ],
@@ -519,7 +519,7 @@
             {
                 "colores": [
                     "Negro profundo",
-                    "Morado neón",
+                    "Morado neó",
                     "Verde lima brillante"
                 ],
                 "justificacion": "Sobre negro, detalles en morado y verde lima logran un modo oscuro de estilo gamer o ciberpunk muy llamativo.",
@@ -538,7 +538,7 @@
                     "Verde menta",
                     "Blanco marfil"
                 ],
-                "justificacion": "Azul y morado transmiten confianza e innovación financiera, mientras el verde menta y el blanco suavizan la paleta para un look digital amigable.",
+                "justificacion": "Azul y morado transmiten confianza e innovació financiera, mientras el verde menta y el blanco suavizan la paleta para un look digital amigable.",
                 "implementado": true,
                 "clase_css": "theme-fintech-trust"
             },
@@ -548,7 +548,7 @@
                     "Cian intenso",
                     "Violeta suave"
                 ],
-                "justificacion": "Una gama de azules con transición a violeta crea el efecto de gradiente moderno que muchas empresas fintech usan en sus interfaces.",
+                "justificacion": "Una gama de azules con transició a violeta crea el efecto de gradiente moderno que muchas empresas fintech usan en sus interfaces.",
                 "implementado": true,
                 "clase_css": "theme-fintech-gradient"
             },
@@ -558,7 +558,7 @@
                     "Verde esmeralda",
                     "Gris cálido"
                 ],
-                "justificacion": "Azul petróleo y verde esmeralda se asocian con estabilidad y crecimiento, ideales para productos financieros y de inversión.",
+                "justificacion": "Azul petróleo y verde esmeralda se asocian con estabilidad y crecimiento, ideales para productos financieros y de inversió.",
                 "implementado": true,
                 "clase_css": "theme-fintech-growth"
             }

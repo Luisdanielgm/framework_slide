@@ -53,7 +53,7 @@ PROHIBIDO INCLUIR (rechaza cualquier campo extra):
 
 REGLAS PARA SLIDES:
 - layout-hero: idea central, 1-3 bullets clave.
-- layout-split: columna primaria con puntos/explicación, secundaria con ejemplo/dato/código breve.
+- layout-split: columna primaria con puntos/explicació, secundaria con ejemplo/dato/código breve.
 - layout-code: texto explicativo + bloque de código/pseudocódigo en secondary.
 - layout-bento: 3-4 tarjetas cortas en primary.
 - layout-timeline: content.primary son los pasos.

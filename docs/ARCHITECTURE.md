@@ -1,141 +1,90 @@
 # Arquitectura CSS Modular - Sapiens Framework (v0.5)
 
-El framework se divide en tres archivos principales para aislar la base estable de los componentes que evolucionan:
+El framework está dividido en capas para que la base no cambie y puedas iterar en temas, decor y layouts sin tocar el core.
 
 ```
-sapiens-core.css        → Base estructural (estable)
-sapiens-themes.css      → Temas rápidos basados en tokens (opcional)
-sapiens-components.css  → Componentes UI (evolutivo)
+sapiens-core.css        -> Base estructural/responsiva (estable)
+sapiens-themes.css      -> Temas rápidos basados en tokens
+sapiens-decor.css       -> Texturas/adornos opcionales (consume tokens)
+sapiens-layouts.css     -> Layouts base (hero, split, code, bento, intro)
+sapiens-components.css  -> Componentes UI y layouts creativos (evolutivo)
+sapiens.js              -> Motor inteligente (overflow/underflow + animaciones)
 ```
 
 ---
 
-## Estructura de archivos
-
-### sapiens-core.css (~400 líneas)
-Propósito: base estructural y sistema responsivo; no cambia en versiones menores.
+## Capa 1: sapiens-core.css (~400 líneas)
+Propósito: base estructural y sistema responsivo; NO se modifica para nuevos layouts o decor.
 
 Incluye:
-- Variables CSS (`:root`) y tokens base
-- Reset global y configuración de `body`
-- Contenedor principal (`#sapiens-slide` / `.slide-shell`)
-- Layouts base (hero, split, code, bento, intro)
-- Header/footer (el título usa degradado derivado de `--text-main` y `--text-muted`)
-- Media queries y lógica responsive
-- Decoraciones de fondo (orbs, grid-lines)
-- Tipografía base
+- Variables base (`:root`), reset, body centrado, safe-area.
+- Contenedor (`#sapiens-slide` / `.slide-shell`), header/footer.
+- Grid contenedor `.slide-body` y media queries generales.
 
-Cuándo tocarlo:
-- Solo en versiones mayores
-- Cambios estructurales del layout
-- Ajustes al sistema responsive
+Tócalo solo para cambios estructurales mayores.
 
-### sapiens-themes.css (temas predefinidos)
-Propósito: paquetes de tokens listos para usar sin tocar componentes.
+---
 
-Incluye clases de tema que reescriben todo el contrato de tokens (también disponibles como `data-theme="..."`), entre ellas:
-- Base: `theme-ocean`, `theme-sunset`, `theme-forest`.
-- Nature: `theme-nature-spring`, `theme-nature-desert`, `theme-nature-earth`, `theme-nature-ice`, `theme-nature-exotic`, `theme-nature-horizon`, `theme-nature-organic`, `theme-nature-arctic`.
-- Pastel: `theme-pastel-playful`, `theme-pastel-dream`, `theme-pastel-spa`, `theme-pastel-sunset`, `theme-pastel-mediterranean`, `theme-pastel-cool`.
-- Neon: `theme-neon-cyber`, `theme-neon-intense`, `theme-neon-cmyk`, `theme-neon-youth`, `theme-neon-candy`, `theme-neon-sunset`, `theme-neon-complementary`, `theme-neon-lime-purple`, `theme-neon-berry`, `theme-neon-chocolate`, `theme-neon-volcanic`, `theme-neon-cyan-red`.
-- Retro: `theme-retro-warm`, `theme-retro-earthy`, `theme-retro-classic`, `theme-retro-pop`, `theme-retro-leather`, `theme-retro-luxury`.
-- Neutral: `theme-neutral-slate`, `theme-neutral-cobalt`, `theme-neutral-modern`, `theme-neutral-luxe`, `theme-neutral-cool`, `theme-neutral-nautical`, `theme-neutral-warm`.
-- Elegant: `theme-elegant-navy-gold`, `theme-elegant-corporate`, `theme-elegant-warm-grey`, `theme-elegant-classic-accent`, `theme-elegant-cream-wine`, `theme-elegant-festive`.
-- Tech/Dark: `theme-tech-future-neon`, `theme-tech-innovative`, `theme-tech-dynamic`, `theme-dark-carbon`, `theme-dark-anthracite`, `theme-dark-gamer`.
-- Fintech/Special: `theme-fintech-trust`, `theme-fintech-gradient`, `theme-fintech-growth`, `theme-nebula-code`, `theme-cyan-stats`.
+## Capa 2: sapiens-themes.css
+Propósito: paquetes de tokens listos; no define fondos ni layouts.
 
-Cuándo tocarlo:
-- Añadir/ajustar temas curados
-- Mantener paridad de tokens con `sapiens-core.css`
+Incluye clases de tema (`theme-*`) que reescriben el contrato de tokens (`--bg-*`, `--accent-*`, `--text-*`, etc.).
 
-### sapiens-components.css (~1600 líneas)
+---
+
+## Capa 3: sapiens-decor.css
+Propósito: texturas y adornos opt-in que consumen tokens del tema.
+
+Incluye:
+- Fondos: `bg-blueprint`, `bg-watercolor`, `bg-wood`, `bg-dots`, `bg-noise-soft`, `bg-icons`.
+- Remates/decor: `.grid-lines`, `.orb`, `.watermark`, `.torn-edge`, `.decorative-shape`.
+
+Agregar nuevas texturas aquí, no en core.
+
+---
+
+## Capa 4: sapiens-layouts.css
+Propósito: layouts base y sus media queries.
+
+Incluye:
+- Layouts base: hero, split, code, bento, intro.
+- Ajustes responsivos básicos (collapse split/code a 1 col, bento a lista en móvil, márgenes de content-box en alturas bajas).
+
+Agregar/modificar layouts base aquí (no en core).
+
+---
+
+## Capa 5: sapiens-components.css (~1600 líneas)
 Propósito: componentes y layouts creativos; puede evolucionar.
 
 Incluye:
-- Cards, badges, iconos, pills
-- Code blocks (fondos y texto ligados a tokens del tema)
-- Layouts creativos:
-  - Timeline, Circular Diagram, Comparison, Stats
-  - Process Flow, Isometric, Feature Grid, Header Logos
-  - Smart Grid (con Container Queries por altura)
-- Container Queries para adaptación inteligente de layouts
-- Sistema de iconos y utilidades de texto/spacing
-- Decoraciones creativas, animaciones
-- Utilidades de fondo/remate (`bg-blueprint`, `torn-edge`)
+- Cards, badges, iconos, pills, content-box, code-block.
+- Layouts creativos: timeline, circular, comparison, stats, process-flow, isometric, feature-grid, header-logos, smart-grid.
+- Container Queries y ajustes responsivos específicos.
+- Animaciones/utilidades de texto/spacing.
 
-Cuándo tocarlo:
-- Agregar/mejorar componentes o layouts
-- Ajustes visuales menores
-- Versiones menores/patch
+Agregar nuevos layouts creativos o componentes aquí.
 
 ---
 
-## Uso en proyectos
+## Motor JS: sapiens.js
+Propósito: detección inteligente de overflow/underflow con histéresis y aplicación de clases:
+- `.is-overflowing` (reduce fuentes/padding, puede forzar columnas).
+- `.has-extra-space` (puede ampliar fuentes/centrar).
+- `.is-landscape-tight` (paisajes bajos para truncado suave).
 
-### Local (core + themes + components)
+No depende de layouts concretos; es una capa transversal.
+
+---
+
+## Uso en proyectos (orden de carga)
+
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@master/sapiens-core.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@master/sapiens-themes.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@master/sapiens-components.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="sapiens-core.css">
+<link rel="stylesheet" href="sapiens-themes.css">
+<link rel="stylesheet" href="sapiens-decor.css">
+<link rel="stylesheet" href="sapiens-layouts.css">
+<link rel="stylesheet" href="sapiens-components.css">
 ```
 
-### Core estable por CDN + components locales
-```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@master/sapiens-core.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@master/sapiens-themes.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@master/sapiens-components.css">
-```
-
----
-
-## Tokens y temas
-
-Contrato de tokens (definido en `sapiens-core.css` y reescrito por cada tema):
-`--bg-*`, `--accent-*`, `--text-*`, `--surface-*`, `--border-*`, `--accent-strong`, `--accent-soft`, `--badge-bg`, `--pill-*`, `--glow-*`, `--font-body`, `--font-head`.
-
-Cómo usarlos:
-- Aplica una clase/atributo de tema (`class="theme-ocean"` o `data-theme="ocean"`).
-- O redefine tokens en un `<style>`; la cascada respeta el valor más cercano.
-
-Componentes sensibles a tokens:
-- Header title: degradado con `--text-main`/`--text-muted`.
-- Code block y `content-box`: fondos/textos ligados a tokens del tema.
-- Superficies/bordes/pills/badges usan los tokens declarados.
-
----
-
-## Contribución
-
-Para nuevos componentes:
-1) Edita `sapiens-components.css`.
-2) Agrega ejemplo en `examples/`.
-3) Actualiza README.md y docs.
-4) No toques `sapiens-core.css` salvo necesidad estructural.
-
-Para cambios de base/layout:
-1) Discutir y versionar como cambio mayor.
-
----
-
-## Estructura del repositorio
-
-```
-framework_slide/
-├── sapiens-core.css          # Base (estable)
-├── sapiens-themes.css        # Temas (tokens)
-├── sapiens-components.css    # Componentes (evolutivo)
-├── sapiens.js                # Animaciones y dimensionamiento inteligente
-├── index.html                # Galería
-├── examples/                 # Slides de ejemplo (13+ layouts)
-├── docs/                     # Documentación
-│   ├── ARCHITECTURE.md       # Este archivo
-│   ├── THEMING.md            # Sistema de temas
-│   └── ADAPTIVE_LAYOUTS.md   # Sistema de responsividad completo
-├── verification/             # Tests automatizados
-└── legacy/                   # Versión monolítica (deprecated)
-```
-
----
-
-Mantén los tokens y la arquitectura modular para asegurar compatibilidad y facilidad de actualización.
+Así el core queda inmutable; temas/decor/layouts/componentes pueden crecer sin romper la base.

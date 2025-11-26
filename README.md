@@ -1,6 +1,6 @@
 # Guía de Uso - Sapiens Slide Framework (v0.5 Modular)
 
-Framework moderno para crear presentaciones web responsivas. Arquitectura modular: core estable, temas por tokens y componentes evolutivos.
+Framework moderno para crear presentaciones web responsivas. Arquitectura modular: core estable, temas por tokens, decor separado y componentes/layouts evolutivos.
 
 ---
 
@@ -8,14 +8,16 @@ Framework moderno para crear presentaciones web responsivas. Arquitectura modula
 
 ```html
 <link rel="stylesheet" href="sapiens-core.css">
-<link rel="stylesheet" href="sapiens-themes.css"><!-- opcional, temas -->
-<link rel="stylesheet" href="sapiens-components.css">
+<link rel="stylesheet" href="sapiens-themes.css"><!-- opcional, tokens -->
+<link rel="stylesheet" href="sapiens-decor.css"><!-- opcional, texturas -->
+<link rel="stylesheet" href="sapiens-layouts.css"><!-- layouts base -->
+<link rel="stylesheet" href="sapiens-components.css"><!-- componentes y layouts creativos -->
 ```
 
 Estructura mínima:
 ```html
-<body class="theme-ocean">
-  <div id="sapiens-slide" class="surface-1 border-soft">
+<body class="theme-ocean bg-blueprint">
+  <div id="sapiens-slide" class="slide-shell surface-1 border-soft">
     <div class="decorative grid-lines"></div>
     <header class="slide-header">
       <h1>Título de la Diapositiva</h1>
@@ -32,10 +34,12 @@ Estructura mínima:
 ## Archivos
 
 ```
-sapiens-core.css        -> Base estructural (estable)
+sapiens-core.css        -> Base estructural/responsiva (estable)
 sapiens-themes.css      -> Temas rápidos (tokens)
-sapiens-components.css  -> Componentes UI (evolutivo)
-sapiens.js              -> Animaciones básicas
+sapiens-decor.css       -> Texturas/adornos opcionales (capa decor)
+sapiens-layouts.css     -> Layouts base (hero, split, code, bento, intro)
+sapiens-components.css  -> Componentes UI y layouts creativos (evolutivo)
+sapiens.js              -> Motor inteligente (overflow/underflow + animaciones)
 examples/               -> 9+ slides de ejemplo
 docs/                   -> Arquitectura y theming
 legacy/                 -> Versión monolítica (deprecated)
@@ -45,10 +49,10 @@ legacy/                 -> Versión monolítica (deprecated)
 
 ## Layouts disponibles
 
-**Layouts Base:**
+**Layouts Base (sapiens-layouts.css):**
 - Hero, Split, Code, Bento, Intro
 
-**Layouts Creativos:**
+**Layouts Creativos (sapiens-components.css):**
 - Timeline, Circular Diagram, Comparison, Stats
 - Process Flow, Isometric, Feature Grid, Header Logos
 - Smart Grid (con Container Queries inteligentes)
@@ -73,8 +77,6 @@ Temas listos (clase o `data-theme`, ver `sapiens-themes.css`):
 Contrato de tokens (definido en core, reescrito por temas):
 `--bg-*`, `--accent-*`, `--text-*`, `--surface-*`, `--border-*`, `--accent-strong`, `--accent-soft`, `--badge-bg`, `--pill-*`, `--glow-*`, `--font-body`, `--font-head`.
 
-Puedes redefinirlos en un `<style>`; la cascada respeta el valor más cercano.
-
 Componentes sensibles a tokens:
 - Header `h1` usa degradado basado en `--text-main`/`--text-muted`.
 - `code-block` y `content-box` usan fondos/textos derivados de tokens de tema.
@@ -82,14 +84,11 @@ Componentes sensibles a tokens:
 
 ---
 
-## Utilidades y decoraciones
+## Decoraciones (sapiens-decor.css)
 
-- Superficies: `.surface-0` a `.surface-3`
-- Bordes: `.border-soft`, `.border-strong`
-- Texto: `.text-strong`, `.text-subtle`, `.text-accent`
-- Chips/badges: `.pill`, `.pill-sm`, `.badge`, `.badge-primary`, `.badge-gradient`, `.badge-glow`
-- Fondos/remates: `.bg-accent-soft`, `.card-accent`, `.bg-blueprint`, `.torn-edge`
-- Decorativos: `.orb`, `.grid-lines`, `.watermark`, `.decorative-shape`
+Clases opt-in para texturas y remates:
+- Fondos: `bg-blueprint`, `bg-watercolor`, `bg-wood`, `bg-dots`, `bg-noise-soft`, `bg-icons`.
+- Remates/decorativos: `.grid-lines`, `.orb`, `.watermark`, `.torn-edge`, `.decorative-shape`.
 
 ---
 
@@ -102,14 +101,10 @@ Componentes sensibles a tokens:
 
 ## Responsive
 
-**Sistema Multi-Capa de Adaptación:**
-- **Desktop**: ratio 16:9, sin scroll, centrado perfecto
-- **Tablet** (<1024px): layouts Split/Code a 1 columna
-- **Móvil** (<768px): altura flexible, scroll vertical, padding reducido
-- **Container Queries**: Algunos layouts se adaptan al tamaño del contenedor (no solo viewport)
-  - Smart Grid: tarjetas horizontales en contenedores bajos
-  - Timeline/Comparison/Circular: layouts verticales en contenedores estrechos
-- **JavaScript Inteligente**: Detecta overflow/underflow y ajusta automáticamente fuentes y columnas
+**Sistema multi-capa:**
+- **Exterior (core):** ratio 16:9, centrado, sin scroll en desktop; modo página en <768px; safe-area y compactación inteligente de header/footer.
+- **Interior (components/layouts):** Container Queries por ancho/alto; clases `is-overflowing/has-extra-space` aplicadas por `sapiens.js` reducen fuentes/padding o fuerzan columnas.
+- **JavaScript inteligente:** detecta overflow/underflow con histéresis y ajusta columnas si hace falta.
 
 Ver `docs/ADAPTIVE_LAYOUTS.md` para detalles completos.
 
@@ -140,20 +135,13 @@ Icono circular:
 
 ---
 
-## Notas de implementación recientes
-
-- El degradado del título del header usa los tokens de texto del tema (evita títulos lavados en fondos claros).
-- `code-block` y `content-box` ahora toman colores de tokens (`--bg-1`, `--text-main`, `--text-muted`, `--border-strong`).
-- Nuevas utilidades decorativas: `.bg-blueprint`, `.torn-edge`.
-- Nuevos temas: `theme-nebula-code`, `theme-cyan-stats`.
-
----
-
 ## Contribuir
 
-1) Nuevos componentes → `sapiens-components.css` + ejemplo en `examples/`.
-2) Nuevos temas → `sapiens-themes.css`.
-3) No modificar `sapiens-core.css` salvo cambios estructurales.
+1) Nuevos componentes/layouts -> `sapiens-components.css` + ejemplo en `examples/`.
+2) Nuevos temas -> `sapiens-themes.css`.
+3) Nuevas texturas/adornos -> `sapiens-decor.css`.
+4) Layouts base -> `sapiens-layouts.css`.
+5) No modificar `sapiens-core.css` salvo cambios estructurales mayores.
 
 ---
 

@@ -1,5 +1,5 @@
 /* ==================================================
-   SAPIENS FRAMEWORK - SCRIPT v4.0
+   SAPIENS FRAMEWORK - SCRIPT v4.1
    Motor de Layout Inteligente y Animaciones
    ================================================== */
 
@@ -9,78 +9,98 @@
     const Sapiens = {};
 
     /**
-     * Verifica una diapositiva individual para detectar desbordamiento (overflow) o falta de contenido (underflow) y aplica las clases necesarias.
-     * @param {HTMLElement} slide - El elemento de la diapositiva a verificar.
+     * Medicion robusta del contenido (incluye gaps y scroll real).
+     */
+    function measureContent(slideBody) {
+        const style = window.getComputedStyle(slideBody);
+        const rowGap = parseFloat(style.rowGap || style.gap || 0) || 0;
+        const children = Array.from(slideBody.children);
+        const gaps = rowGap * Math.max(children.length - 1, 0);
+        const childrenHeight = children.reduce((acc, el) => acc + el.getBoundingClientRect().height, 0);
+        const measured = Math.max(slideBody.scrollHeight, Math.round(childrenHeight + gaps));
+        return {
+            bodyHeight: slideBody.clientHeight,
+            contentHeight: measured
+        };
+    }
+
+    /**
+     * Elige el mejor candidato para forzar columnas cuando hay overflow.
+     */
+    function pickForceColumnsTarget(slideBody) {
+        if (slideBody.classList.contains('layout-intro')) {
+            const contentBox = slideBody.querySelector('.content-box');
+            if (contentBox) {
+                let tallest = null;
+                let maxHeight = 0;
+                Array.from(contentBox.children).forEach(child => {
+                    const h = child.getBoundingClientRect().height;
+                    if (h > maxHeight) {
+                        maxHeight = h;
+                        tallest = child;
+                    }
+                });
+                if (tallest) return tallest;
+            }
+        }
+
+        const preferred = slideBody.querySelector('.feature-list, .content-box, .badge-group, .layout-smart-grid');
+        if (preferred) return preferred;
+
+        let tallestChild = null;
+        let maxChildHeight = 0;
+        Array.from(slideBody.children).forEach(child => {
+            const h = child.getBoundingClientRect().height;
+            if (h > maxChildHeight) {
+                maxChildHeight = h;
+                tallestChild = child;
+            }
+        });
+        return tallestChild;
+    }
+
+    /**
+     * Verifica desbordamiento o underflow y aplica clases correctivas.
      */
     function checkSlideLayout(slide) {
         const slideBody = slide.querySelector('.slide-body');
         if (!slideBody) return;
 
-        // Asegurar que los estilos estén calculados
-        window.getComputedStyle(slideBody);
+        const isLandscapeTight = window.innerWidth > window.innerHeight && window.innerHeight < 820;
+        slide.classList.toggle('is-landscape-tight', isLandscapeTight);
 
-        const bodyHeight = slideBody.clientHeight;
-        // Calcular la altura del contenido sumando las alturas de los hijos directos.
-        // Esto es más confiable que scrollHeight para contenedores flex/grid.
-        const contentHeight = Array.from(slideBody.children)
-            .reduce((acc, el) => acc + el.offsetHeight, 0);
+        const { bodyHeight, contentHeight } = measureContent(slideBody);
+        const ratio = bodyHeight > 0 ? contentHeight / bodyHeight : 0;
 
-        // Limpiar clases anteriores
-        slide.classList.remove('is-overflowing', 'has-extra-space');
-        const previouslyForcedElement = slide.querySelector('.force-columns');
-        if (previouslyForcedElement) {
-            previouslyForcedElement.classList.remove('force-columns');
+        const prevState = slide.dataset.layoutState || 'normal';
+        let nextState = 'normal';
+
+        const OVERFLOW_ENTER = 1.02;
+        const OVERFLOW_EXIT = 0.97; // hysteresis para no oscilar
+        const UNDERFLOW_ENTER = 0.6; // bodyHeight > contentHeight * ~1.65
+        const UNDERFLOW_EXIT = 0.75;
+
+        if (ratio > OVERFLOW_ENTER || (prevState === 'overflow' && ratio > OVERFLOW_EXIT)) {
+            nextState = 'overflow';
+        } else if (ratio < UNDERFLOW_ENTER || (prevState === 'underflow' && ratio < UNDERFLOW_EXIT)) {
+            nextState = 'underflow';
         }
 
-        // --- Detección de Desbordamiento ---
-        if (contentHeight > bodyHeight + 2) { // Verificación inicial de desbordamiento
-            slide.classList.add('is-overflowing');
+        slide.dataset.layoutState = nextState;
+        slide.classList.toggle('is-overflowing', nextState === 'overflow');
+        slide.classList.toggle('has-extra-space', nextState === 'underflow');
 
-            // Usar requestAnimationFrame para permitir que el navegador aplique los nuevos estilos y vuelva a medir.
+        const previous = slide.querySelector('.force-columns');
+        if (previous) previous.classList.remove('force-columns');
+
+        if (nextState === 'overflow') {
             requestAnimationFrame(() => {
-                const newContentHeight = Array.from(slideBody.children)
-                    .reduce((acc, el) => acc + el.offsetHeight, 0);
-
-                // Si sigue desbordando, encontrar el elemento apropiado para aplicar columnas.
-                if (newContentHeight > bodyHeight + 2) {
-                    let elementToForceColumns = null;
-
-                    // Manejo especial para diapositivas de introducción
-                    if (slideBody.classList.contains('layout-intro')) {
-                        const contentBox = slideBody.querySelector('.content-box');
-                        if (contentBox) {
-                            let tallestChildInContentBox = null;
-                            let maxChildHeight = 0;
-                            Array.from(contentBox.children).forEach(child => {
-                                if (child.offsetHeight > maxChildHeight) {
-                                    maxChildHeight = child.offsetHeight;
-                                    tallestChildInContentBox = child;
-                                }
-                            });
-                            elementToForceColumns = tallestChildInContentBox;
-                        }
-                    } else {
-                        // Lógica original para todas las demás diapositivas
-                        let tallestChild = null;
-                        let maxChildHeight = 0;
-                        Array.from(slideBody.children).forEach(child => {
-                            if (child.offsetHeight > maxChildHeight) {
-                                maxChildHeight = child.offsetHeight;
-                                tallestChild = child;
-                            }
-                        });
-                        elementToForceColumns = tallestChild;
-                    }
-
-                    if (elementToForceColumns) {
-                        elementToForceColumns.classList.add('force-columns');
-                    }
+                const remeasure = measureContent(slideBody).contentHeight;
+                if (remeasure > bodyHeight + 2) {
+                    const target = pickForceColumnsTarget(slideBody);
+                    if (target) target.classList.add('force-columns');
                 }
             });
-        }
-        // --- Detección de Underflow (Espacio Extra) ---
-        else if (bodyHeight > contentHeight * 1.5 && contentHeight > 0) {
-            slide.classList.add('has-extra-space');
         }
     }
 
@@ -97,7 +117,6 @@
             const maxDelay = 0.6;
 
             elements.forEach((el, i) => {
-                // Asegurar que el elemento no tenga ya la clase
                 if (!el.classList.contains('animate-in')) {
                     el.classList.add('animate-in');
                     el.style.animationDelay = `${Math.min(i * 0.1, maxDelay)}s`;
@@ -107,7 +126,7 @@
     }
 
     /**
-     * Función principal para actualizar el layout de todas las diapositivas.
+     * Funcion principal para actualizar el layout de todas las diapositivas.
      */
     function checkAllSlidesLayout() {
         const slides = document.querySelectorAll('.slide-shell');
@@ -117,7 +136,7 @@
     Sapiens.checkAllSlidesLayout = checkAllSlidesLayout;
 
     /**
-     * Utilidad Debounce para limitar la tasa de ejecución de funciones.
+     * Utilidad Debounce para limitar la tasa de ejecucion de funciones.
      */
     function debounce(func, wait) {
         let timeout;
@@ -132,17 +151,41 @@
     }
 
     /**
+     * Observadores y puntos de re-chequeo para mantener el layout estable.
+     */
+    function setupObservers() {
+        const slides = document.querySelectorAll('.slide-shell');
+        const debouncedCheck = debounce(checkAllSlidesLayout, 120);
+
+        window.addEventListener('resize', debouncedCheck);
+        window.addEventListener('orientationchange', debouncedCheck);
+
+        slides.forEach(slide => {
+            const body = slide.querySelector('.slide-body');
+            if (!body) return;
+
+            const ro = new ResizeObserver(debouncedCheck);
+            ro.observe(slide);
+            ro.observe(body);
+
+            const mo = new MutationObserver(debouncedCheck);
+            mo.observe(body, { childList: true, subtree: true, characterData: true });
+        });
+
+        if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(debouncedCheck).catch(() => {});
+        }
+        window.addEventListener('load', debouncedCheck);
+    }
+
+    /**
      * Punto de entrada. Espera a que cargue toda la ventana.
      */
     window.onload = function () {
         checkAllSlidesLayout();
         initAnimations();
+        setupObservers();
     };
-
-    // Re-verificar layout al redimensionar la ventana (con debounce)
-    window.addEventListener('resize', debounce(() => {
-        checkAllSlidesLayout();
-    }, 200));
 
     // Exponer Sapiens al objeto global window
     window.Sapiens = Sapiens;

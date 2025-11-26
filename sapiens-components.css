@@ -1,4 +1,4 @@
-/* ==================================================
+﻿/* ==================================================
    SAPIENS FRAMEWORK - COMPONENTS v0.5
    Componentes UI y elementos decorativos (Evolucionan)
    ================================================== */
@@ -79,9 +79,9 @@
     box-shadow: 0 0 10px var(--accent-1);
 }
 
-/* --- BLOQUES DE CÓDIGO --- */
+/* --- BLOQUES DE CÃ“DIGO --- */
 .code-block {
-    /* Estilo Mac: fondo oscuro sólido */
+    /* Estilo Mac: fondo oscuro sÃ³lido */
     background: #0c0f14;
     border: 1px solid var(--border-strong);
     border-radius: calc(var(--radius) - 8px);
@@ -141,348 +141,72 @@
     color: var(--text-main);
 }
 
-/* ==================================================
-   LAYOUTS CREATIVOS
-   ================================================== */
+/* Ajustes responsivos: compactar cÃ³digo en pantallas pequeÃ±as antes de forzar scroll largo */
+@media (max-width: 1024px) {
+    .code-block pre {
+        font-size: clamp(0.68rem, 1.1vw, 0.82rem);
+        line-height: 1.5;
+        padding: 0.95rem;
+    }
 
-/* --- TIMELINE: Línea de tiempo horizontal --- */
-.layout-timeline {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0;
+    .code-nav {
+        padding: 8px 12px;
+        gap: 6px;
+    }
 }
 
-.timeline-container {
-    display: flex;
-    align-items: center;
-    gap: clamp(1rem, 3vw, 3rem);
-    width: 100%;
-    justify-content: center;
-    padding: 2rem 0;
+@media (max-width: 640px) {
+    .code-block pre {
+        font-size: clamp(0.64rem, 2.8vw, 0.78rem);
+        line-height: 1.4;
+        padding: 0.85rem;
+    }
+
+    .code-nav {
+        padding: 7px 10px;
+        gap: 5px;
+    }
+
+    .dot {
+        width: 9px;
+        height: 9px;
+    }
 }
 
-.timeline-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    text-align: center;
+/* --- CODE BLOCK (Token aware override) --- */
+.code-block {
+    /* Mantener estilo Mac clÃ¡sico con fondo oscuro fijo */
+    background: #0c0f14;
+    border: 1px solid var(--border-strong, rgba(255, 255, 255, 0.14));
 }
 
-.timeline-connector {
-    flex-grow: 0;
-    width: clamp(40px, 5vw, 80px);
-    height: 6px;
-    background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
-    border-radius: 10px;
+.code-nav {
+    background: rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid var(--border-soft, rgba(255, 255, 255, 0.08));
 }
 
-/* --- CIRCULAR DIAGRAM: Diagrama radial con nodo central --- */
-.layout-circular {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    min-height: 500px;
+.dot {
+    background: #333;
 }
 
-.circular-center {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 5;
+.dot:nth-child(1) {
+    background: #ff5f56;
 }
 
-.circular-nodes {
-    position: relative;
-    width: 100%;
-    height: 100%;
+.dot:nth-child(2) {
+    background: #ffbd2e;
 }
 
-.circular-node {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
+.dot:nth-child(3) {
+    background: #27c93f;
 }
 
-/* Posiciones en círculo (6 nodos) */
-.circular-node:nth-child(1) {
-    left: 50%;
-    top: 10%;
+.code-block pre {
+    color: var(--text-muted, #94a3b8);
 }
 
-.circular-node:nth-child(2) {
-    left: 88%;
-    top: 30%;
-}
-
-.circular-node:nth-child(3) {
-    left: 88%;
-    top: 70%;
-}
-
-.circular-node:nth-child(4) {
-    left: 50%;
-    top: 90%;
-}
-
-.circular-node:nth-child(5) {
-    left: 12%;
-    top: 70%;
-}
-
-.circular-node:nth-child(6) {
-    left: 12%;
-    top: 30%;
-}
-
-.node-label {
-    background: var(--panel-surface, var(--surface-1));
-    padding: 0.5rem 1rem;
-    border-radius: 12px;
-    border: 1px solid var(--border-soft);
-    white-space: nowrap;
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-/* --- PROCESS FLOW: Flujo de proceso con pasos --- */
-.layout-process-flow {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    align-items: stretch;
-}
-
-.process-step {
-    position: relative;
-    padding-left: 2.5rem;
-}
-
-.process-step::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(180deg, var(--accent-1), var(--accent-2));
-}
-
-.step-number {
-    position: absolute;
-    left: -0.75rem;
-    top: 0;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    background: var(--accent-1);
-    color: var(--text-on-accent);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 1.1rem;
-    box-shadow: 0 4px 12px color-mix(in srgb, var(--accent-1) 35%, transparent);
-}
-
-/* --- COMPARISON: Comparación lado a lado --- */
-.layout-comparison {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    gap: 2rem;
-    align-items: center;
-}
-
-.comparison-divider {
-    width: 2px;
-    height: 100%;
-    min-height: 300px;
-    background: linear-gradient(180deg, transparent, var(--accent-1), transparent);
-    position: relative;
-}
-
-.comparison-divider::after {
-    content: 'VS';
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background: var(--bg-1);
-    padding: 0.5rem 1rem;
-    border-radius: 100px;
-    border: 2px solid var(--accent-1);
-    font-weight: 700;
-    color: var(--accent-1);
-}
-
-/* --- ISOMETRIC: Grid isométrico --- */
-.layout-isometric {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    perspective: 1000px;
-}
-
-.isometric-card {
-    background: var(--panel-surface, var(--surface-1));
-    border: 1px solid var(--border-soft);
-    border-radius: calc(var(--radius) - 8px);
-    padding: 2rem;
-    transform-style: preserve-3d;
-    transform: rotateX(5deg) rotateY(-5deg);
-    transition: transform 0.3s ease;
-}
-
-.isometric-card:hover {
-    transform: rotateX(0deg) rotateY(0deg) translateY(-5px);
-}
-
-/* --- FEATURE GRID: Grid de características con iconos --- */
-.layout-feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-}
-
-.feature-card {
-    background: var(--surface-1);
-    border: 1px solid var(--border-soft);
-    border-radius: calc(var(--radius) - 8px);
-    padding: 1.5rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    transition: all 0.3s ease;
-}
-
-.feature-card:hover {
-    background: var(--surface-2);
-    border-color: var(--accent-1);
-    transform: translateY(-5px);
-}
-
-/* --- HEADER LOGOS: Header con múltiples logos --- */
-.layout-header-logos {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-}
-
-.logos-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-    padding: 1rem;
-    background: var(--surface-0);
-    border-radius: calc(var(--radius) - 8px);
-    border: 1px solid var(--border-soft);
-}
-
-.logo-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1rem;
-    text-align: center;
-}
-
-.logo-item img {
-    max-width: 80px;
-    max-height: 80px;
-    object-fit: contain;
-}
-
-/* --- STATS: Tarjetas de estadísticas --- */
-.layout-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-}
-
-.stat-card {
-    --stat-accent-1: var(--accent-1);
-    --stat-accent-2: var(--accent-2);
-    --stat-shadow: color-mix(in srgb, var(--stat-accent-1) 30%, transparent);
-    background: var(--panel-surface, var(--surface-1));
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--border-soft);
-    border-radius: 20px;
-    padding: 2.5rem 2rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.stat-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--stat-accent-1);
-    box-shadow: 0 12px 30px var(--stat-shadow);
-}
-
-.stat-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--stat-accent-1), var(--stat-accent-2));
-}
-
-.stat-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: var(--stat-accent-1);
-}
-
-.stat-number {
-    font-size: clamp(3rem, 6vw, 4.5rem);
-    font-weight: 900;
-    font-family: var(--font-head);
-    line-height: 1;
-    margin-bottom: 0.5rem;
-    background: linear-gradient(135deg, var(--stat-accent-1), var(--stat-accent-2));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.stat-label {
-    font-size: 1rem;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-weight: 600;
-}
-
-/* Variantes ligadas a tokens (sin hex fijos) */
-.stat-card.magenta {
-    --stat-accent-1: var(--accent-1);
-    --stat-accent-2: color-mix(in srgb, var(--accent-1) 60%, var(--accent-2) 40%);
-}
-
-.stat-card.yellow {
-    --stat-accent-1: color-mix(in srgb, var(--accent-1) 35%, var(--text-main) 65%);
-    --stat-accent-2: color-mix(in srgb, var(--accent-2) 35%, var(--text-main) 65%);
-}
-
-.stat-card.purple {
-    --stat-accent-1: color-mix(in srgb, var(--accent-1) 55%, var(--bg-2) 45%);
-    --stat-accent-2: color-mix(in srgb, var(--accent-2) 55%, var(--bg-2) 45%);
-}
-
-.stat-card.cyan {
-    --stat-accent-1: color-mix(in srgb, var(--accent-2) 70%, var(--text-muted) 30%);
-    --stat-accent-2: color-mix(in srgb, var(--accent-1) 50%, var(--accent-2) 50%);
+.code-block code {
+    color: var(--text-main, #e2e8f0);
 }
 
 /* ==================================================
@@ -505,7 +229,7 @@
     flex-shrink: 0;
 }
 
-/* Tamaños */
+/* TamaÃ±os */
 .icon-sm {
     width: 50px;
     height: 50px;
@@ -637,7 +361,7 @@
 .icon-inline { font-size: 1.5rem; }
 
 /* ==================================================
-   ELEMENTOS DE CONEXIÓN
+   ELEMENTOS DE CONEXIÃ³
    ================================================== */
 .connector-line {
     height: 2px;
@@ -672,35 +396,6 @@
     border-left: 8px solid var(--accent-2);
     border-top: 6px solid transparent;
     border-bottom: 6px solid transparent;
-}
-
-/* ==================================================
-   RESPONSIVE DESIGN HELPERS
-   Ajustes para layouts complejos en pantallas pequeñas
-   ================================================== */
-@container slideBody (width < 900px) {
-    /* Timeline: apilar eventos y usar conectores verticales */
-    .layout-timeline { flex-direction: column; gap: 1.5rem; }
-    .timeline-container { flex-direction: column; gap: 1.25rem; align-items: stretch; }
-    .timeline-item { align-items: flex-start; text-align: left; }
-    .timeline-connector { width: 4px; height: clamp(40px, 14vw, 80px); align-self: center; }
-
-    /* Comparison: evitar overflow de la columna central */
-    .layout-comparison { grid-template-columns: 1fr; gap: 1.25rem; }
-    .comparison-divider {
-        width: 100%;
-        height: 2px;
-        min-height: unset;
-        background: linear-gradient(90deg, transparent, var(--accent-1), transparent);
-    }
-    .comparison-divider::after { position: static; display: inline-flex; transform: none; margin: 0 auto; }
-
-    /* Circular diagram: degradar a lista flexible */
-    .layout-circular { min-height: 0; }
-    .circular-nodes { position: static; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; }
-    .circular-node { position: static; transform: none; flex-direction: row; align-items: center; justify-content: flex-start; }
-    .circular-node:nth-child(n) { left: auto; top: auto; }
-    .node-label { white-space: normal; }
 }
 
 /* --------------------------------------------------
@@ -989,287 +684,6 @@
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
-.content-box.is-compact {
-    /* Compacta alto sin alterar ancho disponible */
-    padding: clamp(1.6rem, 3vh, 2.2rem) clamp(2.2rem, 3vw, 2.8rem);
-}
-
-.content-box.is-dense {
-    padding: clamp(1.4rem, 2.5vh, 2rem) clamp(2rem, 2.8vw, 2.6rem);
-}
-
-.content-box.is-dense h2 {
-    font-size: clamp(1.8rem, 3vw, 2.4rem);
-    margin-bottom: 0.9rem;
-}
-
-.content-box.is-dense p {
-    font-size: clamp(0.95rem, 1.4vw, 1.1rem);
-    line-height: 1.6;
-    margin-bottom: 1.2rem;
-}
-
-.content-box.is-dense > * + * {
-    margin-top: clamp(0.6rem, 1.5vh, 1rem);
-}
-
-.content-box.is-dense .layout-smart-grid {
-    gap: clamp(0.8rem, 2vw, 1.2rem);
-}
-
-.content-box.is-dense .feature-list {
-    gap: 0.55em;
-}
-
-.content-box.is-dense .feature-list li {
-    font-size: clamp(0.88rem, 1.3vw, 1rem);
-}
-
-.content-box.is-dense .badge-group {
-    gap: clamp(0.35rem, 1vw, 0.6rem);
-}
-
-.content-box.is-dense .badge-item {
-    padding: 0.5rem 1rem;
-    font-size: 0.88rem;
-}
-
-/* Separar el bloque destacado del header solo en intros/hero con content-box */
-.layout-hero > .content-box,
-.layout-intro > .content-box {
-    margin-top: clamp(1rem, 2.5vh, 2rem);
-    margin-bottom: clamp(0.75rem, 2vh, 2rem);
-    padding: clamp(1.5rem, 3vw, 2rem);
-}
-
-/* Auto-balancear hero/intro cuando combinan lista compacta + grid de badges (sin afectar casos simples) */
-.layout-hero > .content-box:has(.feature-list.is-compact + .badge-group.auto-grid),
-.layout-intro > .content-box:has(.feature-list.is-compact + .badge-group.auto-grid) {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: clamp(0.8rem, 1.5vw, 1.5rem);
-    align-items: start;
-}
-
-.layout-hero > .content-box:has(.feature-list.is-compact + .badge-group.auto-grid) > :not(.feature-list):not(.badge-group.auto-grid),
-.layout-intro > .content-box:has(.feature-list.is-compact + .badge-group.auto-grid) > :not(.feature-list):not(.badge-group.auto-grid) {
-    grid-column: 1 / -1;
-}
-
-.layout-hero > .content-box:has(.feature-list.is-compact + .badge-group.auto-grid) > .feature-list.is-compact,
-.layout-intro > .content-box:has(.feature-list.is-compact + .badge-group.auto-grid) > .feature-list.is-compact {
-    grid-column: 1;
-}
-
-.layout-hero > .content-box:has(.feature-list.is-compact + .badge-group.auto-grid) > .badge-group.auto-grid,
-.layout-intro > .content-box:has(.feature-list.is-compact + .badge-group.auto-grid) > .badge-group.auto-grid {
-    grid-column: 2;
-    align-self: start;
-}
-
-/* Viewports anchos y bajos (laptop 16:9): aprovechar más ancho y compactar vertical */
-@media (min-aspect-ratio: 16/10) and (max-height: 900px) {
-    .layout-hero > .content-box,
-    .layout-intro > .content-box {
-        max-width: min(1100px, 100%);
-        padding: clamp(1.25rem, 2vw, 1.75rem);
-        margin-top: clamp(0.75rem, 1.5vh, 1.5rem);
-        margin-bottom: clamp(0.75rem, 1.5vh, 1.5rem);
-    }
-
-    .feature-list {
-        /* Solo multi-columna si se solicita */
-        columns: 1;
-        column-gap: 2rem;
-    }
-
-    .feature-list li {
-        break-inside: avoid;
-    }
-
-    .badge-group {
-        /* Permitir grid opt-in */
-        gap: 0.5rem;
-    }
-
-    .layout-stats {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 1rem;
-    }
-}
-
-/* Compactar el hero/intro cuando hay poca altura disponible para no pisar footer */
-@container slideBody (height < 650px) {
-    .slide-body.layout-hero,
-    .slide-body.layout-intro {
-        align-content: flex-start;
-        gap: clamp(0.6rem, 1.5vh, 1rem);
-    }
-
-    .layout-hero > .content-box,
-    .layout-intro > .content-box {
-        margin-top: clamp(0.5rem, 1.5vh, 1rem);
-        margin-bottom: clamp(0.5rem, 1.5vh, 1rem);
-        padding: clamp(1.25rem, 3vw, 1.75rem);
-    }
-
-    .layout-hero .icon-lg,
-    .layout-intro .icon-lg {
-        width: 90px;
-        height: 90px;
-        font-size: 2.1rem;
-    }
-
-    .feature-list {
-        gap: 0.5em;
-        column-gap: 1.5rem;
-    }
-
-    .feature-list li {
-        font-size: clamp(0.8rem, 1.2vw, 0.95rem);
-        break-inside: avoid;
-    }
-
-    .badge-group {
-        gap: 0.35rem;
-        justify-items: start;
-    }
-
-    /* Compactar spacing interno en cajas densas */
-    .content-box > * + * {
-        margin-top: clamp(0.5rem, 1.2vh, 0.9rem);
-    }
-
-    .content-box .layout-smart-grid {
-        gap: 0.8rem;
-    }
-
-    .content-box .badge-group {
-        gap: 0.35rem;
-    }
-
-    .content-box .feature-list {
-        gap: 0.55em;
-    }
-
-    /* Compactar stats para que ocupen más ancho y menos alto */
-    .layout-stats {
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-        gap: 1rem;
-    }
-
-    .stat-card {
-        padding: clamp(1.5rem, 3vw, 2rem);
-    }
-
-    .stat-card .text-hero {
-        font-size: clamp(1.8rem, 3vw, 2.4rem);
-    }
-}
-
-@container slideBody (height < 520px) {
-    .slide-body.layout-hero,
-    .slide-body.layout-intro {
-        gap: clamp(0.4rem, 1vh, 0.7rem);
-    }
-
-    .layout-hero > .content-box,
-    .layout-intro > .content-box {
-        padding: clamp(1rem, 2.5vw, 1.5rem);
-        margin-top: clamp(0.4rem, 1.2vh, 0.8rem);
-        margin-bottom: clamp(0.4rem, 1.2vh, 0.8rem);
-    }
-
-    .content-box h2 {
-        margin-bottom: 0.7rem;
-        font-size: clamp(1.5rem, 2.8vw, 2rem);
-    }
-
-    .content-box p {
-        margin-bottom: 0.9rem;
-        line-height: 1.55;
-    }
-
-    .content-box > * + * {
-        margin-top: clamp(0.4rem, 1vh, 0.8rem);
-    }
-
-    .feature-list {
-        gap: 0.45em;
-        columns: 2;
-        column-gap: 1.2rem;
-    }
-
-    .feature-list li {
-        font-size: clamp(0.78rem, 1.1vw, 0.9rem);
-        break-inside: avoid;
-    }
-
-    .badge-group {
-        gap: 0.3rem;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
-
-    /* Reducir aún más las stats y el texto en alturas críticas */
-    .layout-stats {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 0.75rem;
-    }
-
-    .stat-card {
-        padding: clamp(1.25rem, 3vw, 1.75rem);
-    }
-
-    .stat-card .text-hero {
-        font-size: clamp(1.6rem, 3vw, 2rem);
-    }
-
-    .stat-card .text-caption {
-        font-size: 0.9rem;
-    }
-}
-
-/* Fondos y remates reutilizables */
-.bg-blueprint {
-    background-color: var(--bg-1);
-    background-image:
-        linear-gradient(color-mix(in srgb, var(--accent-1) 25%, transparent) 1px, transparent 1px),
-        linear-gradient(90deg, color-mix(in srgb, var(--accent-2) 25%, transparent) 1px, transparent 1px);
-    background-size: 40px 40px;
-}
-
-.torn-edge {
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 100%;
-    height: 20px;
-    background: linear-gradient(135deg, var(--accent-1), color-mix(in srgb, var(--accent-2) 70%, var(--accent-1) 30%));
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='black'/%3E%3C/svg%3E");
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='black'/%3E%3C/svg%3E");
-    mask-size: cover;
-    mask-repeat: no-repeat;
-    -webkit-mask-size: cover;
-    -webkit-mask-repeat: no-repeat;
-    transform: rotate(180deg);
-    z-index: var(--layer-decor);
-    pointer-events: none;
-}
-
-.content-box h2 {
-    color: var(--text-main);
-    font-size: clamp(2rem, 4vw, 3rem);
-    margin-bottom: 1.5rem;
-    font-weight: 800;
-}
-
-.content-box p {
-    color: var(--text-muted);
-    font-size: clamp(1rem, 1.8vw, 1.2rem);
-    line-height: 1.8;
-    margin-bottom: 2rem;
-}
-
 /* ==================================================
    ANIMACIONES
    ================================================== */
@@ -1371,7 +785,7 @@
 }
 
 .content-box {
-    /* Fondo adaptativo más contrastado para temas claros/oscuro */
+    /* Fondo adaptativo mÃ¡s contrastado para temas claros/oscuro */
     --content-surface: color-mix(in srgb, var(--bg-1) 82%, var(--text-main) 18%);
     background: var(--content-surface, var(--panel-surface, color-mix(in srgb, var(--bg-2) 80%, var(--text-main) 20%)));
     border-radius: 24px;
@@ -1469,21 +883,8 @@
 .delay-900 { animation-delay: 0.9s; }
 
 /* ==================================================
-   SMART GRID LAYOUT (Generic Component)
+   SMART GRID CARDS (componentes)
    ================================================== */
-.layout-smart-grid {
-    display: grid;
-    /* Grid base: columnas flexibles */
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: var(--gap);
-    width: 100%;
-    transition: all 0.3s ease;
-}
-
-.layout-smart-grid.is-compact {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-}
-
 .card-interactive {
     --card-surface: color-mix(in srgb, var(--bg-1) 88%, var(--text-main) 12%);
     background: var(--card-surface, var(--panel-surface, var(--surface-1)));
@@ -1530,102 +931,4 @@
     line-height: 1.4;
 }
 
-.heading-section {
-    grid-column: 1 / -1;
-    font-family: var(--font-head);
-    font-size: 1.5rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    color: var(--text-main);
-    border-bottom: 1px solid var(--border-soft);
-    padding-bottom: 0.5rem;
-}
 
-/* --- INTELIGENCIA DE LAYOUT (Container Queries) --- */
-
-/* Nivel 1: Altura reducida (ej. Laptops pequeñas) */
-@container slideBody (height < 600px) {
-    .layout-smart-grid {
-        /* Cambiar a 2 columnas forzadas para aprovechar ancho */
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.8rem;
-    }
-
-    .card-interactive {
-        flex-direction: row;
-        /* Diseño horizontal */
-        align-items: center;
-        padding: 1rem;
-        gap: 1rem;
-    }
-
-    .icon-box {
-        width: 36px;
-        height: 36px;
-        font-size: 1rem;
-        margin-bottom: 0;
-    }
-
-    .text-desc {
-        display: none;
-        /* Ocultar descripción para ahorrar espacio */
-    }
-
-    .heading-section {
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
-        font-size: 1.2rem;
-    }
-}
-
-/* Nivel 2: Altura muy crítica (ej. Pantallas muy apaisadas) */
-@container slideBody (height < 400px) {
-    .layout-smart-grid {
-        grid-template-columns: repeat(3, 1fr);
-        /* Más columnas */
-    }
-
-    .slide-header h1 {
-        font-size: 1.5rem;
-    }
-}
-
-/* ==================================================
-   INTELLIGENT LAYOUT CORRECTIONS
-   ================================================== */
-
-/* --- Overflow Adjustments --- */
-/* Step 1: When content overflows, try reducing font sizes first. */
-.slide-shell.is-overflowing .slide-body h1,
-.slide-shell.is-overflowing .slide-body h2,
-.slide-shell.is-overflowing .slide-body .text-hero {
-    font-size: clamp(2rem, 4vw, 2.8rem); /* Reduce max font size */
-}
-
-.slide-shell.is-overflowing .slide-body p,
-.slide-shell.is-overflowing .slide-body li,
-.slide-shell.is-overflowing .slide-body .text-lead {
-    font-size: clamp(0.9rem, 1.6vw, 1.1rem); /* Reduce body text size */
-}
-
-/* Step 2: If content STILL overflows, apply columns to the targeted child. */
-.force-columns {
-    column-count: 2;
-    column-gap: 2rem; /* Standardized gap */
-    height: 100%; /* Ensure it fills the space for proper column calculation */
-}
-
-/* --- Underflow Adjustments --- */
-/* If there's extra space, center the content vertically and increase font size. */
-.slide-shell.has-extra-space .slide-body {
-    justify-content: center; /* Center content vertically */
-}
-
-.slide-shell.has-extra-space .slide-body h1,
-.slide-shell.has-extra-space .slide-body h2 {
-    font-size: 3.5rem; /* Enlarge titles */
-}
-
-.slide-shell.has-extra-space .slide-body p {
-    font-size: 1.25rem; /* Enlarge text */
-}

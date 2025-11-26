@@ -1,51 +1,51 @@
 /* ==================================================
    SAPIENS FRAMEWORK - SCRIPT v4.0
-   Intelligent Layout Engine & Animations
+   Motor de Layout Inteligente y Animaciones
    ================================================== */
 
-(function(window) {
+(function (window) {
     "use strict";
 
     const Sapiens = {};
 
     /**
-     * Checks a single slide for overflow or underflow and applies the necessary classes.
-     * @param {HTMLElement} slide - The slide element to check.
+     * Verifica una diapositiva individual para detectar desbordamiento (overflow) o falta de contenido (underflow) y aplica las clases necesarias.
+     * @param {HTMLElement} slide - El elemento de la diapositiva a verificar.
      */
     function checkSlideLayout(slide) {
         const slideBody = slide.querySelector('.slide-body');
         if (!slideBody) return;
 
-        // Ensure styles are computed
+        // Asegurar que los estilos estén calculados
         window.getComputedStyle(slideBody);
 
         const bodyHeight = slideBody.clientHeight;
-        // Calculate content height by summing the heights of direct children.
-        // This is more reliable than scrollHeight for flex/grid containers.
+        // Calcular la altura del contenido sumando las alturas de los hijos directos.
+        // Esto es más confiable que scrollHeight para contenedores flex/grid.
         const contentHeight = Array.from(slideBody.children)
-                                   .reduce((acc, el) => acc + el.offsetHeight, 0);
+            .reduce((acc, el) => acc + el.offsetHeight, 0);
 
-        // Clean up previous classes
+        // Limpiar clases anteriores
         slide.classList.remove('is-overflowing', 'has-extra-space');
         const previouslyForcedElement = slide.querySelector('.force-columns');
         if (previouslyForcedElement) {
             previouslyForcedElement.classList.remove('force-columns');
         }
 
-        // --- Overflow Detection ---
-        if (contentHeight > bodyHeight + 2) { // Initial overflow check
+        // --- Detección de Desbordamiento ---
+        if (contentHeight > bodyHeight + 2) { // Verificación inicial de desbordamiento
             slide.classList.add('is-overflowing');
 
-            // Use requestAnimationFrame to allow the browser to apply the new styles and re-measure.
+            // Usar requestAnimationFrame para permitir que el navegador aplique los nuevos estilos y vuelva a medir.
             requestAnimationFrame(() => {
                 const newContentHeight = Array.from(slideBody.children)
-                                              .reduce((acc, el) => acc + el.offsetHeight, 0);
+                    .reduce((acc, el) => acc + el.offsetHeight, 0);
 
-                // If it's still overflowing, find the appropriate element to apply columns.
+                // Si sigue desbordando, encontrar el elemento apropiado para aplicar columnas.
                 if (newContentHeight > bodyHeight + 2) {
                     let elementToForceColumns = null;
 
-                    // Special handling for intro slides
+                    // Manejo especial para diapositivas de introducción
                     if (slideBody.classList.contains('layout-intro')) {
                         const contentBox = slideBody.querySelector('.content-box');
                         if (contentBox) {
@@ -60,7 +60,7 @@
                             elementToForceColumns = tallestChildInContentBox;
                         }
                     } else {
-                        // Original logic for all other slides
+                        // Lógica original para todas las demás diapositivas
                         let tallestChild = null;
                         let maxChildHeight = 0;
                         Array.from(slideBody.children).forEach(child => {
@@ -78,14 +78,14 @@
                 }
             });
         }
-        // --- Underflow Detection ---
+        // --- Detección de Underflow (Espacio Extra) ---
         else if (bodyHeight > contentHeight * 1.5 && contentHeight > 0) {
             slide.classList.add('has-extra-space');
         }
     }
 
     /**
-     * Initializes staggered animations for elements within each slide.
+     * Inicializa animaciones escalonadas para elementos dentro de cada diapositiva.
      */
     function initAnimations() {
         const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -97,7 +97,7 @@
             const maxDelay = 0.6;
 
             elements.forEach((el, i) => {
-                // Ensure the element doesn't already have the class
+                // Asegurar que el elemento no tenga ya la clase
                 if (!el.classList.contains('animate-in')) {
                     el.classList.add('animate-in');
                     el.style.animationDelay = `${Math.min(i * 0.1, maxDelay)}s`;
@@ -107,7 +107,7 @@
     }
 
     /**
-     * Main function to update layout for all slides.
+     * Función principal para actualizar el layout de todas las diapositivas.
      */
     function checkAllSlidesLayout() {
         const slides = document.querySelectorAll('.slide-shell');
@@ -117,14 +117,34 @@
     Sapiens.checkAllSlidesLayout = checkAllSlidesLayout;
 
     /**
-     * Entry point. Waits for the entire window to load.
+     * Utilidad Debounce para limitar la tasa de ejecución de funciones.
      */
-    window.onload = function() {
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+
+    /**
+     * Punto de entrada. Espera a que cargue toda la ventana.
+     */
+    window.onload = function () {
         checkAllSlidesLayout();
         initAnimations();
     };
 
-    // Expose Sapiens to the global window object
+    // Re-verificar layout al redimensionar la ventana (con debounce)
+    window.addEventListener('resize', debounce(() => {
+        checkAllSlidesLayout();
+    }, 200));
+
+    // Exponer Sapiens al objeto global window
     window.Sapiens = Sapiens;
 
 })(window);

@@ -45,10 +45,15 @@ legacy/                 -> Versión monolítica (deprecated)
 
 ## Layouts disponibles
 
-- Hero, Split, Code, Bento
-- Timeline, Circular diagram, Stats, Intro, Modular demo
+**Layouts Base:**
+- Hero, Split, Code, Bento, Intro
 
-Abre `index.html` para ver la galería.
+**Layouts Creativos:**
+- Timeline, Circular Diagram, Comparison, Stats
+- Process Flow, Isometric, Feature Grid, Header Logos
+- Smart Grid (con Container Queries inteligentes)
+
+Abre `index.html` para ver la galería completa.
 
 ---
 
@@ -97,10 +102,16 @@ Componentes sensibles a tokens:
 
 ## Responsive
 
-- Desktop: ratio 16:9, sin scroll
-- Tablet (<1024px): layouts Split/Code a 1 columna
-- Móvil (<768px): altura flexible, padding reducido
-- Hero/Intro ajustan padding y tamaños con container queries para no tapar footer
+**Sistema Multi-Capa de Adaptación:**
+- **Desktop**: ratio 16:9, sin scroll, centrado perfecto
+- **Tablet** (<1024px): layouts Split/Code a 1 columna
+- **Móvil** (<768px): altura flexible, scroll vertical, padding reducido
+- **Container Queries**: Algunos layouts se adaptan al tamaño del contenedor (no solo viewport)
+  - Smart Grid: tarjetas horizontales en contenedores bajos
+  - Timeline/Comparison/Circular: layouts verticales en contenedores estrechos
+- **JavaScript Inteligente**: Detecta overflow/underflow y ajusta automáticamente fuentes y columnas
+
+Ver `docs/ADAPTIVE_LAYOUTS.md` para detalles completos.
 
 ---
 
@@ -146,4 +157,4 @@ Icono circular:
 
 ---
 
-Versión: 0.5 | Última actualización: 2025-11-23
+Versión: 0.5 | Última actualización: 2025-11-26

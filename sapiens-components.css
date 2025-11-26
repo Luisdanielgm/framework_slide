@@ -678,7 +678,7 @@
    RESPONSIVE DESIGN HELPERS
    Ajustes para layouts complejos en pantallas pequeñas
    ================================================== */
-@media (max-width: 900px) {
+@container slideBody (width < 900px) {
     /* Timeline: apilar eventos y usar conectores verticales */
     .layout-timeline { flex-direction: column; gap: 1.5rem; }
     .timeline-container { flex-direction: column; gap: 1.25rem; align-items: stretch; }

@@ -48,17 +48,20 @@ Cuándo tocarlo:
 - Añadir/ajustar temas curados
 - Mantener paridad de tokens con `sapiens-core.css`
 
-### sapiens-components.css (~900 líneas)
+### sapiens-components.css (~1600 líneas)
 Propósito: componentes y layouts creativos; puede evolucionar.
 
 Incluye:
 - Cards, badges, iconos, pills
-- Code blocks (fondos y texto ahora ligados a tokens del tema)
-- Layouts creativos (timeline, circular, stats, intro)
+- Code blocks (fondos y texto ligados a tokens del tema)
+- Layouts creativos:
+  - Timeline, Circular Diagram, Comparison, Stats
+  - Process Flow, Isometric, Feature Grid, Header Logos
+  - Smart Grid (con Container Queries por altura)
+- Container Queries para adaptación inteligente de layouts
 - Sistema de iconos y utilidades de texto/spacing
 - Decoraciones creativas, animaciones
 - Utilidades de fondo/remate (`bg-blueprint`, `torn-edge`)
-- Ajustes inteligentes para hero/intro en alturas pequeñas
 
 Cuándo tocarlo:
 - Agregar/mejorar componentes o layouts
@@ -122,10 +125,14 @@ framework_slide/
 ├── sapiens-core.css          # Base (estable)
 ├── sapiens-themes.css        # Temas (tokens)
 ├── sapiens-components.css    # Componentes (evolutivo)
-├── sapiens.js
+├── sapiens.js                # Animaciones y dimensionamiento inteligente
 ├── index.html                # Galería
-├── examples/                 # Slides de ejemplo
+├── examples/                 # Slides de ejemplo (13+ layouts)
 ├── docs/                     # Documentación
+│   ├── ARCHITECTURE.md       # Este archivo
+│   ├── THEMING.md            # Sistema de temas
+│   └── ADAPTIVE_LAYOUTS.md   # Sistema de responsividad completo
+├── verification/             # Tests automatizados
 └── legacy/                   # Versión monolítica (deprecated)
 ```
 

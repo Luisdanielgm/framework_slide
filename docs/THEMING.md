@@ -69,8 +69,13 @@ Utilidades de color/superficie:
 
 ## Estado de ejemplos
 
-- Con clase de tema (sin CSS inline): `bento.html`, `circular-diagram.html`, `creative-intro.html`, `hero.html`, `modular-demo.html`, `split.html`, `timeline.html`, `code.html`, `stats.html`.
-- Tokens manuales (solo si quieres probar): puedes reemplazar el tema por un `<style>` con el contrato completo.
+- **Layouts Base**: `hero.html`, `split.html`, `code.html`, `bento.html`
+- **Layouts Intro**: `creative-intro.html`, `creative-intro-product.html`, `creative-intro-workshop.html`, y más variantes
+- **Layouts Creativos**: `timeline.html`, `circular-diagram.html`, `comparison.html`, `stats.html`
+- **Nuevos (2025-11-26)**: `feature-grid.html`, `header-logos.html`, `isometric.html`, `process-flow.html`
+- **Smart Grid**: Usado en todos los archivos `index.html` de galerías
+
+Todos los ejemplos usan clases de tema (`theme-*`). Puedes reemplazar el tema por un `<style>` con tokens personalizados si lo prefieres.
 
 ## Crear tu propio tema
 

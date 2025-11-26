@@ -1480,6 +1480,10 @@
     transition: all 0.3s ease;
 }
 
+.layout-smart-grid.is-compact {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
 .card-interactive {
     --card-surface: color-mix(in srgb, var(--bg-1) 88%, var(--text-main) 12%);
     background: var(--card-surface, var(--panel-surface, var(--surface-1)));

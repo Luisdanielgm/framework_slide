@@ -3,68 +3,194 @@
    Fondos y adornos opcionales (capa separada)
    ================================================== */
 
-/* Patrones de fondo */
-.bg-blueprint {
-    background-color: var(--bg-1);
-    background-image:
+/* Patrones de fondo (se aplican a body o shell) */
+:is(body, #sapiens-slide, .slide-shell).bg-blueprint {
+    background:
         linear-gradient(color-mix(in srgb, var(--accent-1) 25%, transparent) 1px, transparent 1px),
-        linear-gradient(90deg, color-mix(in srgb, var(--accent-2) 25%, transparent) 1px, transparent 1px);
+        linear-gradient(90deg, color-mix(in srgb, var(--accent-2) 25%, transparent) 1px, transparent 1px),
+        var(--bg-1);
     background-size: 40px 40px;
+    background-repeat: repeat;
+    background-position: center;
 }
 
-.bg-watercolor {
-    background-color: var(--bg-1);
+:is(body, #sapiens-slide, .slide-shell).bg-watercolor {
+    background-color: color-mix(in srgb, var(--bg-1) 85%, var(--accent-2) 15%);
     background-image:
-        radial-gradient(120% 120% at 20% 20%, color-mix(in srgb, var(--accent-1) 18%, transparent), transparent 55%),
-        radial-gradient(120% 120% at 80% 10%, color-mix(in srgb, var(--accent-2) 16%, transparent), transparent 55%),
-        radial-gradient(160% 140% at 60% 80%, color-mix(in srgb, var(--accent-1) 12%, var(--accent-2) 8%, transparent), transparent 65%);
-    background-blend-mode: screen;
+        radial-gradient(120% 120% at 15% 25%, color-mix(in srgb, var(--accent-1) 65%, transparent) 40%, transparent 68%),
+        radial-gradient(140% 130% at 85% 20%, color-mix(in srgb, var(--accent-2) 60%, transparent) 36%, transparent 70%),
+        radial-gradient(180% 170% at 55% 80%, color-mix(in srgb, var(--accent-1) 40%, var(--accent-2) 40%, transparent) 44%, transparent 72%),
+        radial-gradient(240% 200% at 40% 50%, color-mix(in srgb, var(--accent-1) 18%, transparent) 16%, transparent 60%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: screen, screen, screen, soft-light;
 }
 
-.bg-wood {
-    background-color: var(--bg-2);
-    background-image:
-        linear-gradient(90deg, color-mix(in srgb, var(--bg-1) 80%, var(--accent-1) 5%) 12%, transparent 12%),
-        linear-gradient(90deg, transparent 18%, color-mix(in srgb, var(--bg-1) 70%, var(--accent-2) 6%) 22%, transparent 22%),
-        linear-gradient(90deg, color-mix(in srgb, var(--bg-1) 65%, var(--accent-2) 4%) 30%, transparent 30%);
-    background-size: 140px 100%;
-}
-
-.bg-dots {
-    background-color: var(--bg-1);
-    background-image: radial-gradient(circle, color-mix(in srgb, var(--accent-1) 18%, transparent) 1px, transparent 1px);
-    background-size: 22px 22px;
-}
-
-.bg-noise-soft {
-    background-color: var(--bg-1);
-    background-image:
-        radial-gradient(circle at 10% 20%, color-mix(in srgb, var(--accent-1) 10%, transparent) 12%, transparent 40%),
-        radial-gradient(circle at 80% 0%, color-mix(in srgb, var(--accent-2) 10%, transparent) 10%, transparent 38%),
-        radial-gradient(circle at 50% 70%, color-mix(in srgb, var(--text-muted) 8%, transparent) 18%, transparent 50%);
+:is(body, #sapiens-slide, .slide-shell).bg-wood {
+    background:
+        linear-gradient(90deg, color-mix(in srgb, var(--bg-1) 70%, var(--accent-1) 14%) 12%, transparent 12%),
+        linear-gradient(90deg, transparent 18%, color-mix(in srgb, var(--bg-1) 68%, var(--accent-2) 12%) 22%, transparent 22%),
+        linear-gradient(90deg, color-mix(in srgb, var(--bg-1) 60%, var(--accent-2) 10%) 30%, transparent 30%),
+        var(--bg-2);
+    background-size: 120px 100%;
+    background-repeat: repeat-x;
+    background-position: center;
     background-blend-mode: soft-light;
 }
 
-.bg-icons {
+:is(body, #sapiens-slide, .slide-shell).bg-dots {
+    background:
+        radial-gradient(circle, color-mix(in srgb, var(--accent-1) 26%, transparent) 2px, transparent 2px),
+        var(--bg-1);
+    background-size: 20px 20px;
+    background-repeat: repeat;
+    background-position: center;
+}
+
+:is(body, #sapiens-slide, .slide-shell).bg-noise-soft {
     background-color: var(--bg-1);
     background-image:
-        radial-gradient(circle at 10% 20%, color-mix(in srgb, var(--accent-1) 18%, transparent) 12%, transparent 12%),
-        radial-gradient(circle at 40% 60%, color-mix(in srgb, var(--accent-2) 20%, transparent) 14%, transparent 14%),
-        radial-gradient(circle at 75% 30%, color-mix(in srgb, var(--text-muted) 15%, transparent) 10%, transparent 10%);
-    background-size: 160px 160px;
+        radial-gradient(110% 110% at 15% 25%, color-mix(in srgb, var(--accent-1) 32%, transparent) 32%, transparent 55%),
+        radial-gradient(130% 120% at 85% 15%, color-mix(in srgb, var(--accent-2) 32%, transparent) 28%, transparent 52%),
+        radial-gradient(140% 140% at 55% 78%, color-mix(in srgb, var(--text-muted) 26%, transparent) 32%, transparent 60%),
+        radial-gradient(circle, color-mix(in srgb, var(--accent-1) 18%, transparent) 1.4px, transparent 1.4px);
+    background-size: cover, cover, cover, 70px 70px;
+    background-repeat: no-repeat, no-repeat, no-repeat, repeat;
+    background-position: center;
+    background-blend-mode: screen, screen, screen, soft-light;
+}
+
+:is(body, #sapiens-slide, .slide-shell).bg-icons {
+    background:
+        radial-gradient(circle at 10% 20%, color-mix(in srgb, var(--accent-1) 26%, transparent) 18%, transparent 18%),
+        radial-gradient(circle at 40% 60%, color-mix(in srgb, var(--accent-2) 24%, transparent) 16%, transparent 16%),
+        radial-gradient(circle at 75% 30%, color-mix(in srgb, var(--text-muted) 20%, transparent) 12%, transparent 12%),
+        var(--bg-1);
+    background-size: 140px 140px;
+    background-repeat: repeat;
+    background-position: center;
+}
+
+:is(body, #sapiens-slide, .slide-shell).bg-aurora {
+    background-color: var(--bg-1);
+    background-image:
+        radial-gradient(160% 140% at 20% 20%, color-mix(in srgb, var(--accent-1) 40%, transparent) 45%, transparent 70%),
+        radial-gradient(180% 160% at 80% 30%, color-mix(in srgb, var(--accent-2) 38%, transparent) 42%, transparent 72%),
+        radial-gradient(200% 180% at 60% 80%, color-mix(in srgb, var(--accent-1) 20%, var(--accent-2) 24%, transparent) 40%, transparent 75%);
+    background-blend-mode: screen;
+    background-size: cover;
+}
+
+:is(body, #sapiens-slide, .slide-shell).bg-stripes-soft {
+    background:
+        linear-gradient(135deg,
+            color-mix(in srgb, var(--accent-1) 18%, transparent) 25%,
+            transparent 25% 50%,
+            color-mix(in srgb, var(--accent-2) 16%, transparent) 50%,
+            transparent 50% 75%,
+            color-mix(in srgb, var(--text-muted) 12%, transparent) 75%),
+        var(--bg-1);
+    background-size: 140px 140px;
+    background-repeat: repeat;
+}
+
+:is(body, #sapiens-slide, .slide-shell).bg-halftone {
+    background:
+        radial-gradient(circle, color-mix(in srgb, var(--accent-1) 20%, transparent) 3px, transparent 3px),
+        radial-gradient(circle, color-mix(in srgb, var(--accent-2) 16%, transparent) 2px, transparent 2px),
+        var(--bg-1);
+    background-size: 36px 36px, 24px 24px, auto;
+    background-position: 0 0, 18px 18px, center;
+    background-repeat: repeat;
+}
+
+:is(body, #sapiens-slide, .slide-shell).bg-fiber {
+    background:
+        linear-gradient(90deg, color-mix(in srgb, var(--accent-1) 12%, transparent) 1px, transparent 1px),
+        linear-gradient(0deg, color-mix(in srgb, var(--accent-2) 12%, transparent) 1px, transparent 1px),
+        linear-gradient(135deg, color-mix(in srgb, var(--text-muted) 10%, transparent) 2px, transparent 2px),
+        var(--bg-1);
+    background-size: 6px 6px, 6px 6px, 60px 60px, auto;
+    background-repeat: repeat;
+    background-blend-mode: soft-light;
+}
+
+:is(body, #sapiens-slide, .slide-shell).bg-grid-glow {
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        radial-gradient(circle, color-mix(in srgb, var(--accent-1) 24%, transparent) 18%, transparent 50%),
+        var(--bg-1);
+    background-size: 48px 48px, 48px 48px, 160px 160px, auto;
+    background-position: center;
+    background-repeat: repeat;
+    background-blend-mode: screen, screen, soft-light, normal;
+}
+
+:is(body, #sapiens-slide, .slide-shell).bg-molecules {
+    background-color: color-mix(in srgb, var(--bg-1) 90%, var(--bg-2) 10%);
+    background-image:
+        /* blobs principales (compactados) */
+        radial-gradient(120px 104px at 84% 18%, color-mix(in srgb, var(--accent-1) 70%, transparent) 60%, transparent 72%),
+        radial-gradient(110px 92px at 28% 26%, color-mix(in srgb, var(--accent-2) 68%, transparent) 60%, transparent 72%),
+        radial-gradient(120px 96px at 64% 72%, color-mix(in srgb, var(--accent-1) 62%, transparent) 60%, transparent 72%),
+        radial-gradient(110px 92px at 32% 82%, color-mix(in srgb, var(--accent-2) 66%, transparent) 60%, transparent 72%),
+        /* burbujas secundarias */
+        radial-gradient(28px 28px at 18% 20%, color-mix(in srgb, var(--accent-1) 32%, transparent) 60%, transparent 80%),
+        radial-gradient(28px 28px at 76% 24%, color-mix(in srgb, var(--accent-2) 32%, transparent) 60%, transparent 80%),
+        radial-gradient(24px 24px at 62% 30%, color-mix(in srgb, var(--accent-1) 28%, transparent) 60%, transparent 80%),
+        radial-gradient(24px 24px at 50% 82%, color-mix(in srgb, var(--accent-2) 28%, transparent) 60%, transparent 80%),
+        radial-gradient(24px 24px at 86% 56%, color-mix(in srgb, var(--accent-1) 28%, transparent) 60%, transparent 80%),
+        radial-gradient(24px 24px at 14% 66%, color-mix(in srgb, var(--accent-2) 28%, transparent) 60%, transparent 80%),
+        /* nodos tipo m�lecula */
+        radial-gradient(10px 10px at 24% 72%, color-mix(in srgb, var(--accent-1) 80%, transparent) 70%, transparent 100%),
+        radial-gradient(7px 7px at 22% 68%, color-mix(in srgb, var(--accent-1) 60%, transparent) 70%, transparent 100%),
+        radial-gradient(7px 7px at 26% 68%, color-mix(in srgb, var(--accent-1) 60%, transparent) 70%, transparent 100%),
+        radial-gradient(7px 7px at 22% 76%, color-mix(in srgb, var(--accent-1) 60%, transparent) 70%, transparent 100%),
+        radial-gradient(7px 7px at 26% 76%, color-mix(in srgb, var(--accent-1) 60%, transparent) 70%, transparent 100%),
+        radial-gradient(10px 10px at 56% 18%, color-mix(in srgb, var(--accent-2) 70%, transparent) 70%, transparent 100%),
+        radial-gradient(7px 7px at 58% 21%, color-mix(in srgb, var(--accent-2) 50%, transparent) 70%, transparent 100%),
+        radial-gradient(7px 7px at 60% 18%, color-mix(in srgb, var(--accent-2) 50%, transparent) 70%, transparent 100%),
+        radial-gradient(7px 7px at 58% 15%, color-mix(in srgb, var(--accent-2) 50%, transparent) 70%, transparent 100%),
+        radial-gradient(10px 10px at 78% 64%, color-mix(in srgb, var(--accent-1) 70%, transparent) 70%, transparent 100%),
+        radial-gradient(7px 7px at 80% 66%, color-mix(in srgb, var(--accent-1) 50%, transparent) 70%, transparent 100%),
+        radial-gradient(7px 7px at 82% 64%, color-mix(in srgb, var(--accent-1) 50%, transparent) 70%, transparent 100%),
+        radial-gradient(7px 7px at 80% 62%, color-mix(in srgb, var(--accent-1) 50%, transparent) 70%, transparent 100%),
+        /* clusters de puntitos */
+        radial-gradient(4px 4px at 18% 26%, color-mix(in srgb, var(--text-muted) 80%, transparent) 75%, transparent 100%),
+        radial-gradient(3.5px 3.5px at 22% 22%, color-mix(in srgb, var(--text-muted) 70%, transparent) 75%, transparent 100%),
+        radial-gradient(4px 4px at 25% 28%, color-mix(in srgb, var(--text-muted) 80%, transparent) 75%, transparent 100%),
+        radial-gradient(3.5px 3.5px at 30% 24%, color-mix(in srgb, var(--text-muted) 70%, transparent) 75%, transparent 100%),
+        radial-gradient(4px 4px at 62% 18%, color-mix(in srgb, var(--text-muted) 80%, transparent) 75%, transparent 100%),
+        radial-gradient(4px 4px at 66% 22%, color-mix(in srgb, var(--text-muted) 70%, transparent) 75%, transparent 100%),
+        radial-gradient(4px 4px at 70% 18%, color-mix(in srgb, var(--text-muted) 80%, transparent) 75%, transparent 100%),
+        radial-gradient(4px 4px at 68% 26%, color-mix(in srgb, var(--text-muted) 70%, transparent) 75%, transparent 100%),
+        radial-gradient(4px 4px at 76% 78%, color-mix(in srgb, var(--text-muted) 70%, transparent) 75%, transparent 100%),
+        radial-gradient(4px 4px at 72% 74%, color-mix(in srgb, var(--text-muted) 70%, transparent) 75%, transparent 100%),
+        radial-gradient(4px 4px at 68% 78%, color-mix(in srgb, var(--text-muted) 80%, transparent) 75%, transparent 100%),
+        radial-gradient(4px 4px at 70% 70%, color-mix(in srgb, var(--text-muted) 70%, transparent) 75%, transparent 100%),
+        radial-gradient(4px 4px at 30% 76%, color-mix(in srgb, var(--text-muted) 70%, transparent) 75%, transparent 100%),
+        radial-gradient(4px 4px at 26% 72%, color-mix(in srgb, var(--text-muted) 70%, transparent) 75%, transparent 100%),
+        radial-gradient(4px 4px at 34% 74%, color-mix(in srgb, var(--text-muted) 80%, transparent) 75%, transparent 100%),
+        radial-gradient(4px 4px at 32% 70%, color-mix(in srgb, var(--text-muted) 70%, transparent) 75%, transparent 100%);
+    background-repeat: no-repeat;
 }
 
 /* Remates */
 .torn-edge {
     position: absolute;
-    bottom: -10px;
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 20px;
-    background: radial-gradient(circle at 10% 50%, transparent 12px, var(--bg-1) 13px),
-        radial-gradient(circle at 30% 50%, transparent 12px, var(--bg-1) 13px),
-        radial-gradient(circle at 50% 50%, transparent 12px, var(--bg-1) 13px),
-        radial-gradient(circle at 70% 50%, transparent 12px, var(--bg-1) 13px),
-        radial-gradient(circle at 90% 50%, transparent 12px, var(--bg-1) 13px);
+    height: 18px;
+    pointer-events: none;
+    z-index: var(--layer-decor);
+    background: radial-gradient(circle at 10% 50%, transparent 11px, color-mix(in srgb, var(--bg-1) 92%, var(--text-main) 8%) 12px),
+        radial-gradient(circle at 30% 50%, transparent 11px, color-mix(in srgb, var(--bg-1) 92%, var(--text-main) 8%) 12px),
+        radial-gradient(circle at 50% 50%, transparent 11px, color-mix(in srgb, var(--bg-1) 92%, var(--text-main) 8%) 12px),
+        radial-gradient(circle at 70% 50%, transparent 11px, color-mix(in srgb, var(--bg-1) 92%, var(--text-main) 8%) 12px),
+        radial-gradient(circle at 90% 50%, transparent 11px, color-mix(in srgb, var(--bg-1) 92%, var(--text-main) 8%) 12px);
     background-size: 100% 100%;
+    filter: drop-shadow(0 -1px 0 color-mix(in srgb, var(--border-soft) 80%, transparent));
 }

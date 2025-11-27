@@ -9,6 +9,61 @@
     const Sapiens = {};
 
     /**
+     * Ajusta la densidad en layouts intro/hero seg�n altura ocupada y n�mero de nodos.
+     */
+    function applyIntroDensity(slideBody) {
+        if (!slideBody.classList.contains('layout-intro') && !slideBody.classList.contains('layout-hero')) return;
+
+        const contentBox = slideBody.querySelector('.content-box');
+        if (!contentBox) return;
+
+        const visibleChildren = Array.from(contentBox.children).filter(el => el.offsetParent !== null);
+        const childCount = visibleChildren.length;
+
+        const bodyRect = slideBody.getBoundingClientRect();
+        const boxRect = contentBox.getBoundingClientRect();
+        const ratio = bodyRect.height > 0 ? boxRect.height / bodyRect.height : 0;
+
+        const prevDensity = slideBody.dataset.introDensity || 'intro-cozy';
+        const prevHeight = parseFloat(slideBody.dataset.introHeight || '0');
+        const heightDelta = prevHeight > 0 ? Math.abs(boxRect.height - prevHeight) / prevHeight : 1;
+
+        const denseEnter = 0.88;
+        const denseExit = 0.84;
+        const tightEnter = 0.78;
+        const tightExit = 0.74;
+        const looseEnter = 0.6;
+        const looseExit = 0.62;
+
+        let densityClass = prevDensity;
+        const denseByRatio = ratio >= denseEnter || (prevDensity === 'intro-dense' && ratio >= denseExit);
+        const denseByCount = childCount >= 6 && ratio >= 0.8;
+        const tightByRatio = ratio >= tightEnter || (prevDensity === 'intro-tight' && ratio >= tightExit);
+        const tightByCount = childCount >= 5 && ratio >= 0.7;
+        const looseByRatio = ratio < looseEnter || (prevDensity === 'intro-loose' && ratio < looseExit && childCount <= 3);
+
+        if (denseByRatio || denseByCount) {
+            densityClass = 'intro-dense';
+        } else if (tightByRatio || tightByCount) {
+            densityClass = 'intro-tight';
+        } else if (looseByRatio && childCount <= 3) {
+            densityClass = 'intro-loose';
+        } else {
+            densityClass = 'intro-cozy';
+        }
+
+        // Evita saltos por cambios mínimos de altura
+        if (heightDelta < 0.05) {
+            densityClass = prevDensity;
+        }
+
+        slideBody.dataset.introHeight = boxRect.height.toFixed(2);
+        slideBody.dataset.introDensity = densityClass;
+        slideBody.classList.remove('intro-dense', 'intro-tight', 'intro-loose', 'intro-cozy');
+        slideBody.classList.add(densityClass);
+    }
+
+    /**
      * Medicion robusta del contenido (incluye gaps y scroll real).
      */
     function measureContent(slideBody) {
@@ -65,6 +120,8 @@
     function checkSlideLayout(slide) {
         const slideBody = slide.querySelector('.slide-body');
         if (!slideBody) return;
+
+        applyIntroDensity(slideBody);
 
         const isLandscapeTight = window.innerWidth > window.innerHeight && window.innerHeight < 820;
         slide.classList.toggle('is-landscape-tight', isLandscapeTight);
@@ -173,7 +230,10 @@
         });
 
         if (document.fonts && document.fonts.ready) {
-            document.fonts.ready.then(debouncedCheck).catch(() => {});
+            document.fonts.ready.then(() => {
+                debouncedCheck();
+                setTimeout(debouncedCheck, 320);
+            }).catch(() => {});
         }
         window.addEventListener('load', debouncedCheck);
     }

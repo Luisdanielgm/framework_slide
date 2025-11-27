@@ -38,7 +38,7 @@ Eres el Renderizador UI del Framework Sapiens. Compila la slide del plan en HTML
    </div>
 
 7. UTILIDADES DECORATIVAS:
-   - Fondos: `.bg-blueprint`, `.surface-*`, `.border-*`.
+   - Fondos: `.bg-blueprint`, `.bg-watercolor`, `.bg-wood`, `.bg-dots`, `.bg-noise-soft`, `.bg-icons`, `.bg-aurora`, `.bg-stripes-soft`, `.bg-halftone`, `.bg-fiber`, `.bg-grid-glow`, `.bg-molecules`, `.surface-*`, `.border-*`.
    - Remate inferior: `.torn-edge`.
    - Decorativos existentes: `.orb`, `.grid-lines`, `.decorative-shape` (star/circle/triangle).
    - Bloque destacado: `.content-box`.

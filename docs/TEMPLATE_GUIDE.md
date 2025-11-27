@@ -43,7 +43,7 @@ Cómo armar una slide desde `<body>` hasta `<article>`/header/footer. El conteni
 
 ## Body
 - Tema: clase `theme-*` (ver `sapiens-themes.css`).
-- Fondo opcional (decor): clase `bg-*` (`bg-blueprint`, `bg-watercolor`, `bg-wood`, `bg-dots`, `bg-noise-soft`, `bg-icons`).
+- Fondo opcional (decor): clase `bg-*` (`bg-blueprint`, `bg-watercolor`, `bg-wood`, `bg-dots`, `bg-noise-soft`, `bg-icons`, `bg-aurora`, `bg-stripes-soft`, `bg-halftone`, `bg-fiber`, `bg-grid-glow`, `bg-molecules`).
 - No poner overlays aquí; van dentro del shell. Mantén el body solo para tema/textura global.
 
 ## Shell (`#sapiens-slide` / `.slide-shell`)

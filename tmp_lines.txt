@@ -1,0 +1,89 @@
+001: /* ==================================================
+002:    SAPIENS FRAMEWORK - DECOR
+003:    Fondos y adornos opcionales (capa separada)
+004:    ================================================== */
+005: 
+006: /* Patrones de fondo (se aplican a body o shell) */
+007: :is(body, #sapiens-slide, .slide-shell).bg-blueprint {
+008:     background:
+009:         linear-gradient(color-mix(in srgb, var(--accent-1) 25%, transparent) 1px, transparent 1px),
+010:         linear-gradient(90deg, color-mix(in srgb, var(--accent-2) 25%, transparent) 1px, transparent 1px),
+011:         var(--bg-1);
+012:     background-size: 40px 40px;
+013:     background-repeat: repeat;
+014:     background-position: center;
+015: }
+016: 
+017: :is(body, #sapiens-slide, .slide-shell).bg-watercolor {
+018:     background:
+019:         radial-gradient(130% 130% at 20% 20%, color-mix(in srgb, var(--accent-1) 40%, transparent) 45%, transparent 70%),
+020:         radial-gradient(140% 120% at 80% 10%, color-mix(in srgb, var(--accent-2) 36%, transparent) 40%, transparent 68%),
+021:         radial-gradient(180% 150% at 60% 80%, color-mix(in srgb, var(--accent-1) 28%, var(--accent-2) 18%, transparent) 48%, transparent 72%),
+022:         var(--bg-1);
+023:     background-repeat: no-repeat;
+024:     background-size: cover;
+025:     background-position: center;
+026:     background-blend-mode: screen;
+027: }
+028: 
+029: :is(body, #sapiens-slide, .slide-shell).bg-wood {
+030:     background:
+031:         linear-gradient(90deg, color-mix(in srgb, var(--bg-1) 70%, var(--accent-1) 14%) 12%, transparent 12%),
+032:         linear-gradient(90deg, transparent 18%, color-mix(in srgb, var(--bg-1) 68%, var(--accent-2) 12%) 22%, transparent 22%),
+033:         linear-gradient(90deg, color-mix(in srgb, var(--bg-1) 60%, var(--accent-2) 10%) 30%, transparent 30%),
+034:         var(--bg-2);
+035:     background-size: 120px 100%;
+036:     background-repeat: repeat-x;
+037:     background-position: center;
+038:     background-blend-mode: soft-light;
+039: }
+040: 
+041: :is(body, #sapiens-slide, .slide-shell).bg-dots {
+042:     background:
+043:         radial-gradient(circle, color-mix(in srgb, var(--accent-1) 26%, transparent) 2px, transparent 2px),
+044:         var(--bg-1);
+045:     background-size: 20px 20px;
+046:     background-repeat: repeat;
+047:     background-position: center;
+048: }
+049: 
+050: :is(body, #sapiens-slide, .slide-shell).bg-noise-soft {
+051:     background:
+052:         radial-gradient(circle at 10% 20%, color-mix(in srgb, var(--accent-1) 32%, transparent) 26%, transparent 50%),
+053:         radial-gradient(circle at 80% 0%, color-mix(in srgb, var(--accent-2) 30%, transparent) 24%, transparent 48%),
+054:         radial-gradient(circle at 50% 70%, color-mix(in srgb, var(--text-muted) 26%, transparent) 30%, transparent 56%),
+055:         var(--bg-1);
+056:     background-repeat: no-repeat;
+057:     background-size: cover;
+058:     background-position: center;
+059:     background-blend-mode: screen;
+060: }
+061: 
+062: :is(body, #sapiens-slide, .slide-shell).bg-icons {
+063:     background:
+064:         radial-gradient(circle at 10% 20%, color-mix(in srgb, var(--accent-1) 26%, transparent) 18%, transparent 18%),
+065:         radial-gradient(circle at 40% 60%, color-mix(in srgb, var(--accent-2) 24%, transparent) 16%, transparent 16%),
+066:         radial-gradient(circle at 75% 30%, color-mix(in srgb, var(--text-muted) 20%, transparent) 12%, transparent 12%),
+067:         var(--bg-1);
+068:     background-size: 140px 140px;
+069:     background-repeat: repeat;
+070:     background-position: center;
+071: }
+072: 
+073: /* Remates */
+074: .torn-edge {
+075:     position: absolute;
+076:     bottom: 0;
+077:     left: 0;
+078:     width: 100%;
+079:     height: 18px;
+080:     pointer-events: none;
+081:     z-index: var(--layer-decor);
+082:     background: radial-gradient(circle at 10% 50%, transparent 11px, color-mix(in srgb, var(--bg-1) 92%, var(--text-main) 8%) 12px),
+083:         radial-gradient(circle at 30% 50%, transparent 11px, color-mix(in srgb, var(--bg-1) 92%, var(--text-main) 8%) 12px),
+084:         radial-gradient(circle at 50% 50%, transparent 11px, color-mix(in srgb, var(--bg-1) 92%, var(--text-main) 8%) 12px),
+085:         radial-gradient(circle at 70% 50%, transparent 11px, color-mix(in srgb, var(--bg-1) 92%, var(--text-main) 8%) 12px),
+086:         radial-gradient(circle at 90% 50%, transparent 11px, color-mix(in srgb, var(--bg-1) 92%, var(--text-main) 8%) 12px);
+087:     background-size: 100% 100%;
+088:     filter: drop-shadow(0 -1px 0 color-mix(in srgb, var(--border-soft) 80%, transparent));
+089: }

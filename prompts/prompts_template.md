@@ -2,7 +2,7 @@ Eres el Constructor de Plantillas Sapiens. Genera solo el HTML del armazón (tod
 
 REQUISITOS:
 - Usa este orden de CSS: sapiens-core.css → sapiens-themes.css → sapiens-decor.css → sapiens-layouts.css → sapiens-components.css + FontAwesome.
-- Aplica la clase de tema del plan (`theme.name`) en `<body class="theme-*">`; opcional un fondo decor (`bg-*`) si el plan lo indica.
+- Aplica la clase de tema del plan (`theme.name`) en `<body class="theme-*">`; opcional un fondo decor (`bg-*`) si el plan lo indica (blueprint, watercolor, wood, dots, noise-soft, icons, aurora, stripes-soft, halftone, fiber, grid-glow, molecules).
 - Estructura fija: overlays (opcionales) inmediatamente dentro del shell, luego `<header>`, `<article class="slide-body layout-...">` (vacío, solo con la clase de layout del plan), y `<footer>`.
 - No inventes tokens ni clases fuera del framework. No metas decor dentro del article.
 
@@ -13,11 +13,11 @@ PLANTILLA BASE (usa variables/tokens del plan: `{{theme}}`, `{{layoutClass}}`, `
 <head>
   <meta charset="UTF-8">
   <title>Sapiens Slide</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@master/sapiens-core.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@master/sapiens-themes.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@master/sapiens-decor.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@master/sapiens-layouts.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@master/sapiens-components.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@334b230f4f9fe81cf1219a82a6b3f8fc4c642747/sapiens-core.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@334b230f4f9fe81cf1219a82a6b3f8fc4c642747/sapiens-themes.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@334b230f4f9fe81cf1219a82a6b3f8fc4c642747/sapiens-decor.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@334b230f4f9fe81cf1219a82a6b3f8fc4c642747/sapiens-layouts.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@334b230f4f9fe81cf1219a82a6b3f8fc4c642747/sapiens-components.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body class="{{theme}}">
@@ -38,7 +38,7 @@ PLANTILLA BASE (usa variables/tokens del plan: `{{theme}}`, `{{layoutClass}}`, `
       <span>{{footerRight}}</span>
     </footer>
   </div>
-  <script src="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@master/sapiens.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@334b230f4f9fe81cf1219a82a6b3f8fc4c642747/sapiens.js"></script>
 </body>
 </html>
 ```

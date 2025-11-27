@@ -10,6 +10,12 @@ Todas las decoraciones son opt-in. Usa temas (`theme-*`) + texturas de fondo (`b
 <body class="theme-neutral-slate bg-dots">
 <body class="theme-tech-innovative bg-noise-soft">
 <body class="theme-pastel-dream bg-icons">
+<body class="theme-tech-future-neon bg-aurora">
+<body class="theme-retro-pop bg-stripes-soft">
+<body class="theme-neutral-cobalt bg-halftone">
+<body class="theme-dark-anthracite bg-fiber">
+<body class="theme-ocean bg-grid-glow">
+<body class="theme-sunset bg-molecules">
 ```
 
 ## Overlays dentro del shell (añadir como hijos de `#sapiens-slide`)
@@ -44,6 +50,7 @@ Clases disponibles (overlays):
 - Fondo + rejilla overlay: `body class="theme-ocean bg-blueprint"` + `<div class="decorative grid-lines"></div>`.
 - Fondo acuarela + orbs: `body class="theme-forest bg-watercolor"` + `orb-1`, `orb-2`.
 - Fondo madera sin overlay: `body class="theme-elegant-festive bg-wood">` (sin decoratives para un look limpio).
+- Fondo molecular: `body class="theme-sunset bg-molecules">` (ya incluye puntos y nodos).
 - Marca de agua: agrega `<div class="watermark">TEXTO</div>` (o `.watermark-soft`).
 - Borde rasgado: `<div class="torn-edge"></div>` al final del shell.
 - Coloca los overlays al inicio del shell (antes de header/main/footer) para mantener el stacking correcto; solo el borde rasgado puede ir al final si quieres que corte la base.

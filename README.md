@@ -102,7 +102,7 @@ Componentes sensibles a tokens:
 ## Decoraciones (sapiens-decor.css)
 
 Clases opt-in para texturas y remates:
-- Fondos: `bg-blueprint`, `bg-watercolor`, `bg-wood`, `bg-dots`, `bg-noise-soft`, `bg-icons`.
+- Fondos: `bg-blueprint`, `bg-watercolor`, `bg-wood`, `bg-dots`, `bg-noise-soft`, `bg-icons`, `bg-aurora`, `bg-stripes-soft`, `bg-halftone`, `bg-fiber`, `bg-grid-glow`, `bg-molecules`.
 - Remates/decorativos: `.grid-lines`, `.orb`, `.watermark`, `.torn-edge`, `.decorative-shape`.
 
 ---

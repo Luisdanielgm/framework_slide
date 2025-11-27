@@ -837,6 +837,11 @@
     margin-bottom: 2rem;
 }
 
+.slide-body.layout-intro.intro-tight .content-box.is-compact .feature-list li,
+.slide-body.layout-hero.intro-tight .content-box.is-compact .feature-list li {
+    margin-bottom: 0.4rem;
+}
+
 .content-box .text-muted {
     color: color-mix(in srgb, var(--text-main) 90%, var(--text-muted) 10%);
 }

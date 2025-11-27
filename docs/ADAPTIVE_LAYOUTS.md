@@ -40,7 +40,7 @@ En `sapiens-components.css` + `sapiens.js`:
 
 ## 5. Decoración y temas
 - Temas (`sapiens-themes.css`): solo tokens (`--bg-*`, `--accent-*`, `--text-*`, etc.).
-- Decor (`sapiens-decor.css`): texturas opt-in (`bg-blueprint`, `bg-watercolor`, `bg-wood`, `bg-dots`, `bg-noise-soft`, `bg-icons`), remates (`grid-lines`, `orb`, `watermark`, `torn-edge`).
+- Decor (`sapiens-decor.css`): texturas opt-in (`bg-blueprint`, `bg-watercolor`, `bg-wood`, `bg-dots`, `bg-noise-soft`, `bg-icons`, `bg-aurora`, `bg-stripes-soft`, `bg-halftone`, `bg-fiber`, `bg-grid-glow`, `bg-molecules`), remates (`grid-lines`, `orb`, `watermark`, `torn-edge`).
 - Carga recomendada: `core → themes → decor → layouts → components`.
 
 ---

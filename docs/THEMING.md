@@ -24,7 +24,7 @@ Listado (resumen):
 
 ## Decor (sapiens-decor.css)
 Texturas/remates opt-in que consumen tokens del tema:
-- Fondos: `bg-blueprint`, `bg-watercolor`, `bg-wood`, `bg-dots`, `bg-noise-soft`, `bg-icons`.
+- Fondos: `bg-blueprint`, `bg-watercolor`, `bg-wood`, `bg-dots`, `bg-noise-soft`, `bg-icons`, `bg-aurora`, `bg-stripes-soft`, `bg-halftone`, `bg-fiber`, `bg-grid-glow`, `bg-molecules`.
 - Remates/decor: `grid-lines`, `orb`, `watermark`, `torn-edge`, `decorative-shape`.
 
 Aplica un tema + decor por clase, e.g.:

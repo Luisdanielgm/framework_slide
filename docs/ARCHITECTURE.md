@@ -36,7 +36,7 @@ Incluye clases de tema (`theme-*`) que reescriben el contrato de tokens (`--bg-*
 Propósito: texturas y adornos opt-in que consumen tokens del tema.
 
 Incluye:
-- Fondos: `bg-blueprint`, `bg-watercolor`, `bg-wood`, `bg-dots`, `bg-noise-soft`, `bg-icons`.
+- Fondos: `bg-blueprint`, `bg-watercolor`, `bg-wood`, `bg-dots`, `bg-noise-soft`, `bg-icons`, `bg-aurora`, `bg-stripes-soft`, `bg-halftone`, `bg-fiber`, `bg-grid-glow`, `bg-molecules`.
 - Remates/decor: `.grid-lines`, `.orb`, `.watermark`, `.torn-edge`, `.decorative-shape`.
 
 ---

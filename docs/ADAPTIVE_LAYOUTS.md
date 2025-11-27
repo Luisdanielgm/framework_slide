@@ -27,6 +27,14 @@ Nuevos layouts base se agregan aquí, no en core.
 En `sapiens-components.css` + `sapiens.js`:
 - Container Queries por ancho/alto para timeline, comparison, circular, smart-grid, etc.
 - Ajustes específicos por layout creativo viven aquí.
+- Densidad automática:
+  - Intro/Hero: `intro-dense|intro-tight|intro-cozy|intro-loose` según ratio, nº de bloques y densidad de texto (con histéresis). Excluye `loose` si hay `stat-card` o `layout-smart-grid`. Breakpoints tablet y móvil pequeño compactan más; en móviles muy pequeños se habilita scroll interno oculto solo si es necesario.
+  - Split/Code: `split-tight|split-loose` según ocupación y nº de bloques; compacta o amplía padding/gaps/typo de `content-box`.
+  - Stats: `stats-tight|stats-loose` ajusta padding/gap de `stat-card`.
+  - Timeline/Process-detailed/Process-flow: `timeline-tight|timeline-loose` ajusta gaps, padding de cards, conectores y números de paso (tight más agresivo).
+  - Text-analysis/Comparison: `analysis-tight|analysis-loose` ajusta padding/gaps en paneles.
+  - Circular: `circular-tight|circular-loose` escala nodos y gaps (tight más agresivo).
+  - Bento/Smart-grid: `grid-tight|grid-loose` cambia gaps y padding en cards/grids.
 
 ---
 

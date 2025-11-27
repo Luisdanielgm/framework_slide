@@ -68,6 +68,206 @@
     }
 }
 
+/* Scroll optativo en móviles muy pequeños para intro/hero */
+@media (max-width: 540px), (max-height: 620px) {
+    .slide-body.layout-intro,
+    .slide-body.layout-hero {
+        overflow-y: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .slide-body.layout-intro::-webkit-scrollbar,
+    .slide-body.layout-hero::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Compactar más en móviles muy pequeños antes de llegar al scroll duro */
+    .slide-body.layout-intro .content-box,
+    .slide-body.layout-hero .content-box {
+        padding: clamp(0.9rem, 3vw, 1.3rem);
+        margin-top: clamp(0.4rem, 1vh, 0.8rem);
+        margin-bottom: clamp(0.4rem, 1vh, 0.8rem);
+    }
+
+    .slide-body.layout-intro .content-box > * + *,
+    .slide-body.layout-hero .content-box > * + * {
+        margin-top: clamp(0.25rem, 0.7vh, 0.5rem);
+    }
+
+    .slide-body.layout-intro h2,
+    .slide-body.layout-hero h2 {
+        font-size: clamp(1.1rem, 3vw, 1.6rem);
+    }
+
+    .slide-body.layout-intro p,
+    .slide-body.layout-hero p,
+    .slide-body.layout-intro li,
+    .slide-body.layout-hero li {
+        font-size: clamp(0.9rem, 2.2vw, 1.05rem);
+        line-height: 1.6;
+    }
+
+    .slide-body.layout-intro .icon-lg,
+    .slide-body.layout-hero .icon-lg {
+        width: 78px;
+        height: 78px;
+        font-size: 1.8rem;
+    }
+
+    .slide-body.layout-intro .badge-group,
+    .slide-body.layout-hero .badge-group {
+        gap: 0.5rem;
+    }
+
+    .slide-body.layout-intro .badge,
+    .slide-body.layout-hero .badge,
+    .slide-body.layout-intro .pill,
+    .slide-body.layout-hero .pill {
+        font-size: clamp(0.78rem, 1.7vw, 0.9rem);
+        padding: 6px 10px;
+    }
+
+    .slide-body.layout-intro .feature-list,
+    .slide-body.layout-hero .feature-list {
+        gap: 0.35em;
+    }
+
+    .slide-body.layout-intro .layout-smart-grid,
+    .slide-body.layout-hero .layout-smart-grid {
+        gap: 0.6rem;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 430px), (max-height: 560px) {
+    .slide-body.layout-intro,
+    .slide-body.layout-hero {
+        gap: clamp(0.35rem, 1vh, 0.6rem);
+        align-content: flex-start;
+    }
+
+    .slide-body.layout-intro .content-box,
+    .slide-body.layout-hero .content-box {
+        padding: clamp(0.8rem, 3vw, 1.1rem);
+        margin-top: clamp(0.3rem, 0.8vh, 0.6rem);
+        margin-bottom: clamp(0.3rem, 0.8vh, 0.6rem);
+        width: 100%;
+    }
+
+    .slide-body.layout-intro .content-box > * + *,
+    .slide-body.layout-hero .content-box > * + * {
+        margin-top: clamp(0.2rem, 0.6vh, 0.4rem);
+    }
+
+    .slide-body.layout-intro h2,
+    .slide-body.layout-hero h2 {
+        font-size: clamp(1rem, 2.8vw, 1.4rem);
+    }
+
+    .slide-body.layout-intro p,
+    .slide-body.layout-hero p,
+    .slide-body.layout-intro li,
+    .slide-body.layout-hero li {
+        font-size: clamp(0.85rem, 2vw, 1rem);
+        line-height: 1.55;
+    }
+
+    .slide-body.layout-intro .icon-lg,
+    .slide-body.layout-hero .icon-lg {
+        width: 68px;
+        height: 68px;
+        font-size: 1.6rem;
+    }
+
+    .slide-body.layout-intro .badge-group,
+    .slide-body.layout-hero .badge-group {
+        gap: 0.4rem;
+    }
+
+    .slide-body.layout-intro .badge,
+    .slide-body.layout-hero .badge,
+    .slide-body.layout-intro .pill,
+    .slide-body.layout-hero .pill {
+        font-size: clamp(0.72rem, 1.5vw, 0.85rem);
+        padding: 5px 9px;
+    }
+
+    .slide-body.layout-intro .feature-list,
+    .slide-body.layout-hero .feature-list {
+        gap: 0.25em;
+    }
+
+    .slide-body.layout-intro .layout-smart-grid,
+    .slide-body.layout-hero .layout-smart-grid {
+        gap: 0.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .slide-body.layout-intro .layout-smart-grid .card-interactive,
+    .slide-body.layout-hero .layout-smart-grid .card-interactive {
+        padding: clamp(0.6rem, 1.4vw, 0.9rem);
+        gap: clamp(0.4rem, 0.9vw, 0.65rem);
+    }
+
+    .slide-body.layout-intro .icon-box,
+    .slide-body.layout-hero .icon-box {
+        width: clamp(34px, 8vw, 48px);
+        height: clamp(34px, 8vw, 48px);
+        font-size: clamp(0.9rem, 2.6vw, 1.3rem);
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 541px) {
+    .slide-body.layout-intro,
+    .slide-body.layout-hero {
+        gap: clamp(0.5rem, 1.2vh, 0.9rem);
+    }
+
+    .slide-body.layout-intro .content-box,
+    .slide-body.layout-hero .content-box {
+        padding: clamp(1.2rem, 2.4vw, 1.6rem);
+        margin-top: clamp(0.8rem, 1.6vh, 1.4rem);
+        margin-bottom: clamp(0.8rem, 1.6vh, 1.4rem);
+        max-width: min(1000px, 100%);
+    }
+
+    .slide-body.layout-intro .content-box > * + *,
+    .slide-body.layout-hero .content-box > * + * {
+        margin-top: clamp(0.4rem, 1vh, 0.8rem);
+    }
+
+    .slide-body.layout-intro h2,
+    .slide-body.layout-hero h2 {
+        font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+    }
+
+    .slide-body.layout-intro p,
+    .slide-body.layout-hero p,
+    .slide-body.layout-intro li,
+    .slide-body.layout-hero li {
+        font-size: clamp(1rem, 1.8vw, 1.2rem);
+    }
+
+    .slide-body.layout-intro .icon-lg,
+    .slide-body.layout-hero .icon-lg {
+        width: 100px;
+        height: 100px;
+        font-size: 2.3rem;
+    }
+
+    .slide-body.layout-intro .badge-group,
+    .slide-body.layout-hero .badge-group {
+        gap: 0.8rem;
+    }
+
+    .slide-body.layout-intro .layout-smart-grid,
+    .slide-body.layout-hero .layout-smart-grid {
+        gap: 0.7rem;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
 /* ==================================================
    LAYOUTS CREATIVOS
    ================================================== */
@@ -103,6 +303,41 @@
     height: 6px;
     background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
     border-radius: 10px;
+}
+
+@container slideBody (width < 1100px) {
+    .layout-timeline {
+        gap: 1rem;
+    }
+
+    .timeline-container {
+        gap: clamp(0.8rem, 2vw, 1.4rem);
+        padding: 1.2rem 0;
+    }
+
+    .timeline-item {
+        gap: clamp(0.6rem, 1.5vw, 0.9rem);
+    }
+
+    .timeline-connector {
+        width: clamp(30px, 4vw, 60px);
+        height: clamp(5px, 0.8vw, 6px);
+    }
+}
+
+@container slideBody (width < 800px) {
+    .timeline-container {
+        gap: clamp(0.6rem, 1.5vw, 1rem);
+    }
+
+    .timeline-item {
+        gap: clamp(0.5rem, 1.2vw, 0.8rem);
+    }
+
+    .timeline-connector {
+        width: clamp(24px, 3.5vw, 40px);
+        height: clamp(4px, 0.7vw, 5px);
+    }
 }
 
 /* --- CIRCULAR DIAGRAM: Diagrama radial con nodo central --- */
@@ -585,6 +820,178 @@
     font-size: clamp(1rem, 2.8vw, 1.4rem);
 }
 
+/* ==================================================
+   DENSIDAD AUTOMÁTICA - SPLIT / CODE
+   ================================================== */
+.slide-body.layout-split.split-tight,
+.slide-body.layout-code.split-tight {
+    gap: clamp(0.75rem, 1.5vw, 1.2rem);
+}
+
+.slide-body.layout-split.split-tight .content-box,
+.slide-body.layout-code.split-tight .content-box {
+    padding: clamp(1.1rem, 2vw, 1.5rem);
+}
+
+.slide-body.layout-split.split-tight h2,
+.slide-body.layout-code.split-tight h2 {
+    font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+}
+
+.slide-body.layout-split.split-loose,
+.slide-body.layout-code.split-loose {
+    gap: clamp(1.2rem, 2vw, 1.6rem);
+}
+
+.slide-body.layout-split.split-loose .content-box,
+.slide-body.layout-code.split-loose .content-box {
+    padding: clamp(1.6rem, 2.8vw, 2.2rem);
+}
+
+.slide-body.layout-split.split-loose h2,
+.slide-body.layout-code.split-loose h2 {
+    font-size: clamp(1.4rem, 2.6vw, 2rem);
+}
+
+/* ==================================================
+   DENSIDAD AUTOMÁTICA - STATS
+   ================================================== */
+.slide-body.layout-stats.stats-tight .layout-stats {
+    gap: clamp(0.6rem, 1vw, 0.9rem);
+}
+
+.slide-body.layout-stats.stats-tight .stat-card {
+    padding: clamp(0.9rem, 1.6vw, 1.2rem);
+}
+
+.slide-body.layout-stats.stats-loose .layout-stats {
+    gap: clamp(1rem, 2vw, 1.4rem);
+}
+
+.slide-body.layout-stats.stats-loose .stat-card {
+    padding: clamp(1.3rem, 2.2vw, 1.8rem);
+}
+
+/* ==================================================
+   DENSIDAD AUTOMÁTICA - TIMELINE / PROCESS
+   ================================================== */
+.slide-body.timeline-tight .timeline-container,
+.slide-body.timeline-tight .layout-process-detailed {
+    gap: clamp(0.55rem, 1vw, 0.9rem);
+}
+
+.slide-body.timeline-tight .timeline-item,
+.slide-body.timeline-tight .process-detailed-step {
+    gap: clamp(0.35rem, 0.8vw, 0.6rem);
+}
+
+.slide-body.timeline-tight .timeline-connector {
+    width: clamp(20px, 4vw, 50px);
+    height: clamp(4px, 0.8vw, 6px);
+}
+
+.slide-body.timeline-tight .timeline-item .card,
+.slide-body.timeline-tight .process-detailed-step .card {
+    padding: clamp(0.8rem, 1.8vw, 1.1rem);
+}
+
+.slide-body.timeline-tight .process-step {
+    padding-left: 2rem;
+}
+
+.slide-body.timeline-tight .step-number {
+    width: 2.1rem;
+    height: 2.1rem;
+    font-size: 1rem;
+}
+
+.slide-body.timeline-loose .timeline-container,
+.slide-body.timeline-loose .layout-process-detailed {
+    gap: clamp(1.4rem, 2vw, 1.8rem);
+}
+
+.slide-body.timeline-loose .timeline-item,
+.slide-body.timeline-loose .process-detailed-step {
+    gap: clamp(0.8rem, 1.5vw, 1.2rem);
+}
+
+.slide-body.layout-process-flow.timeline-tight {
+    gap: clamp(0.6rem, 1vw, 1rem);
+}
+
+.slide-body.layout-process-flow.timeline-tight .card {
+    padding: clamp(0.75rem, 1.6vw, 1.05rem);
+}
+
+.slide-body.layout-process-flow.timeline-tight .step-number {
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.95rem;
+}
+
+/* ==================================================
+   DENSIDAD AUTOMÁTICA - TEXT ANALYSIS / COMPARISON
+   ================================================== */
+.slide-body.analysis-tight {
+    gap: clamp(0.8rem, 1.5vw, 1.1rem);
+}
+
+.slide-body.analysis-tight .content-box,
+.slide-body.analysis-tight .comparison-panel {
+    padding: clamp(1rem, 2vw, 1.4rem);
+}
+
+.slide-body.analysis-loose {
+    gap: clamp(1.4rem, 2vw, 1.8rem);
+}
+
+.slide-body.analysis-loose .content-box,
+.slide-body.analysis-loose .comparison-panel {
+    padding: clamp(1.6rem, 2.6vw, 2.2rem);
+}
+
+/* ==================================================
+   DENSIDAD AUTOMÁTICA - CIRCULAR
+   ================================================== */
+.slide-body.circular-tight .circular-nodes {
+    gap: clamp(0.45rem, 0.9vw, 0.9rem);
+}
+
+.slide-body.circular-tight .circular-node {
+    transform: scale(0.85);
+}
+
+.slide-body.circular-loose .circular-nodes {
+    gap: clamp(1.2rem, 2vw, 1.6rem);
+}
+
+.slide-body.circular-loose .circular-node {
+    transform: scale(1.05);
+}
+
+/* ==================================================
+   DENSIDAD AUTOMÁTICA - BENTO / SMART GRID
+   ================================================== */
+.slide-body.grid-tight .layout-smart-grid,
+.slide-body.grid-tight.layout-bento {
+    gap: clamp(0.5rem, 1vw, 0.8rem);
+}
+
+.slide-body.grid-tight .layout-smart-grid .card,
+.slide-body.grid-tight .layout-smart-grid .card-interactive {
+    padding: clamp(0.8rem, 1.6vw, 1.1rem);
+}
+
+.slide-body.grid-loose .layout-smart-grid,
+.slide-body.grid-loose.layout-bento {
+    gap: clamp(1rem, 2vw, 1.4rem);
+}
+
+.slide-body.grid-loose .layout-smart-grid .card,
+.slide-body.grid-loose .layout-smart-grid .card-interactive {
+    padding: clamp(1.4rem, 2.4vw, 2rem);
+}
+
 .slide-body.layout-intro.intro-tight .card,
 .slide-body.layout-hero.intro-tight .card,
 .slide-body.layout-intro.intro-tight .card-interactive,
@@ -665,44 +1072,56 @@
 
 .slide-body.layout-intro.intro-loose .content-box,
 .slide-body.layout-hero.intro-loose .content-box {
-    padding: clamp(1.8rem, 3.2vw, 2.4rem);
-    margin-top: clamp(1.1rem, 2.8vh, 2.1rem);
-    margin-bottom: clamp(1rem, 2.6vh, 2rem);
+    padding: clamp(2.3rem, 3.8vw, 3rem);
+    margin-top: clamp(1.3rem, 3.2vh, 2.6rem);
+    margin-bottom: clamp(1.3rem, 3.2vh, 2.6rem);
 }
 
 .slide-body.layout-intro.intro-loose .content-box > * + *,
 .slide-body.layout-hero.intro-loose .content-box > * + * {
-    margin-top: clamp(0.7rem, 1.6vh, 1.1rem);
+    margin-top: clamp(0.9rem, 2vh, 1.4rem);
 }
 
 .slide-body.layout-intro.intro-loose h2,
 .slide-body.layout-hero.intro-loose h2 {
-    font-size: clamp(1.4rem, 2.6vw, 2.1rem);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
 }
 
 .slide-body.layout-intro.intro-loose p,
 .slide-body.layout-hero.intro-loose p,
 .slide-body.layout-intro.intro-loose li,
 .slide-body.layout-hero.intro-loose li {
-    font-size: clamp(1rem, 1.6vw, 1.2rem);
+    font-size: clamp(1.2rem, 2vw, 1.4rem);
+    line-height: 1.7;
 }
 
 .slide-body.layout-intro.intro-loose .icon-lg,
 .slide-body.layout-hero.intro-loose .icon-lg {
-    width: 108px;
-    height: 108px;
-    font-size: 2.6rem;
+    width: 130px;
+    height: 130px;
+    font-size: 3rem;
 }
 
 .slide-body.layout-intro.intro-loose .badge-group,
 .slide-body.layout-hero.intro-loose .badge-group {
-    gap: 0.75rem;
+    gap: 1rem;
 }
 
 .slide-body.layout-intro.intro-loose .badge,
 .slide-body.layout-hero.intro-loose .badge {
-    font-size: clamp(0.85rem, 1.5vw, 1rem);
-    padding: 8px 14px;
+    font-size: clamp(0.98rem, 1.7vw, 1.15rem);
+    padding: 10px 18px;
+}
+
+.slide-body.layout-intro.intro-loose,
+.slide-body.layout-hero.intro-loose {
+    place-items: center;
+    align-content: center;
+}
+
+.slide-body.layout-intro.intro-loose .feature-list,
+.slide-body.layout-hero.intro-loose .feature-list {
+    gap: 1em;
 }
 
 .layout-hero > .content-box:has(.feature-list.is-compact + .badge-group.auto-grid),
@@ -1231,4 +1650,10 @@
         font-size: 1rem !important;
         line-height: 1.3;
     }
+}
+
+/* Centrado vertical cuando sobra espacio en process-flow */
+.slide-body.timeline-loose.layout-process-flow,
+.slide-shell.has-extra-space .layout-process-flow {
+    align-content: center;
 }

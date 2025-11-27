@@ -39,7 +39,7 @@ sapiens-themes.css      -> Temas rápidos (tokens)
 sapiens-decor.css       -> Texturas/adornos opcionales (capa decor)
 sapiens-layouts.css     -> Layouts base (hero, split, code, bento, intro)
 sapiens-components.css  -> Componentes UI y layouts creativos (evolutivo)
-sapiens.js              -> Motor inteligente (overflow/underflow + animaciones)
+sapiens.js              -> Motor inteligente (overflow/underflow + animaciones + densidad en intro/hero)
 examples/               -> Galería de ejemplos lista para abrir
 docs/                   -> Arquitectura y theming
 legacy/                 -> Versión monolítica (deprecated)
@@ -123,7 +123,7 @@ Clases opt-in para texturas y remates:
 **Sistema multi-capa:**
 - **Exterior (core):** ratio 16:9, centrado, sin scroll en desktop; modo página en <768px; safe-area y compactación inteligente de header/footer.
 - **Interior (components/layouts):** Container Queries por ancho/alto; clases `is-overflowing/has-extra-space` aplicadas por `sapiens.js` reducen fuentes/padding o fuerzan columnas.
-- **JavaScript inteligente:** detecta overflow/underflow con histéresis y ajusta columnas si hace falta.
+- **JavaScript inteligente:** detecta overflow/underflow con histéresis y ajusta columnas si hace falta. Densidad automática por layout: Intro/Hero (`intro-dense|tight|cozy|loose`), Split/Code (`split-tight|loose`), Stats (`stats-tight|loose`), Timeline/Process (`timeline-tight|loose`), Text-analysis/Comparison (`analysis-tight|loose`), Circular (`circular-tight|loose`), Bento/Smart-grid (`grid-tight|loose`). Tablet y móviles pequeños compactan más y, en móviles muy reducidos, se habilita scroll interno oculto solo en casos extremos.
 
 Ver `docs/ADAPTIVE_LAYOUTS.md` para detalles completos.
 

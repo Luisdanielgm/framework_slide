@@ -36,6 +36,21 @@ Cómo usar cada `layout-*` dentro de `<article class="slide-body ...">`, combin�
 - `code-block`: usa dentro de `layout-code` o donde necesites bloque monoespaciado.
 - Utilidades: `mt-*`, `mb-*`, `gap-*`, `text-muted`, `text-lead`, `border-soft`, `surface-*`.
 
+## Comportamiento inteligente en Intro/Hero
+- Densidad automática: `sapiens.js` asigna `intro-dense`, `intro-tight`, `intro-cozy`, `intro-loose` según ratio ocupado, número de bloques y densidad de texto en `.content-box`. Histéresis evita saltos entre estados.
+- Estilos por estado (`sapiens-layouts.css`):
+  - `intro-dense/tight`: compactan padding, gaps, listas, grids, badges/pills, iconos y stats.
+  - `intro-loose`: amplía padding/tipografías/gaps cuando hay pocos bloques y texto breve; excluido si hay `stat-card` o `layout-smart-grid`.
+- Breakpoints extra: tablet (`max-width:1024px`) compacta padding/gaps; móviles pequeños (`max-width:540px` o `max-height:620px`) y extra pequeños (`max-width:430px` o `max-height:560px`) reducen más tamaños/gaps e incluyen scroll interno oculto como último recurso.
+
+## Comportamiento inteligente en otros layouts
+- Split/Code: clases `split-tight|split-loose` (padding/gaps/typo en content-box) según ocupación y nº de bloques.
+- Stats: `stats-tight|stats-loose` compacta o amplía `stat-card` y gaps.
+- Timeline/Process-detailed: `timeline-tight|timeline-loose` ajusta gaps en contenedores y pasos.
+- Text-analysis/Comparison: `analysis-tight|analysis-loose` ajusta padding/gaps en paneles/sidebars.
+- Circular: `circular-tight|circular-loose` modifica tamaño/gaps de nodos.
+- Bento/Smart-grid: `grid-tight|grid-loose` afecta gaps y padding en cards/grids.
+
 ## Patrones de uso
 - Header/Footer: no requieren clases; solo pon `<h1>` + `.header-badge` opcional en header, y 2 spans en footer.
 - Overlays: declara `grid-lines`, `orb`, `decorative-shape`, `watermark` al inicio del shell para que queden debajo de `slide-body`.

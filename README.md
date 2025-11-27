@@ -1,6 +1,6 @@
-# Guía de Uso - Sapiens Slide Framework (v0.5 Modular)
+# Guía de Uso - Sapiens Slide Framework (v0.6 Modular)
 
-Framework moderno para crear presentaciones web responsivas. Arquitectura modular: core estable, temas por tokens, decor separado y componentes/layouts evolutivos.
+Framework moderno para crear presentaciones web responsivas. Arquitectura modular: core estable, temas por tokens, capa decor separada y componentes/layouts evolutivos.
 
 ---
 
@@ -40,7 +40,7 @@ sapiens-decor.css       -> Texturas/adornos opcionales (capa decor)
 sapiens-layouts.css     -> Layouts base (hero, split, code, bento, intro)
 sapiens-components.css  -> Componentes UI y layouts creativos (evolutivo)
 sapiens.js              -> Motor inteligente (overflow/underflow + animaciones)
-examples/               -> 9+ slides de ejemplo
+examples/               -> Galería de ejemplos lista para abrir
 docs/                   -> Arquitectura y theming
 legacy/                 -> Versión monolítica (deprecated)
 ```
@@ -94,7 +94,11 @@ Clases opt-in para texturas y remates:
 
 ## Ejemplos
 
-- Con clase de tema (sin CSS inline): `bento.html`, `circular-diagram.html`, `creative-intro.html`, `hero.html`, `modular-demo.html`, `split.html`, `timeline.html`, `code.html`, `stats.html`.
+- Galería: `index.html` (links a todas las categorías).
+- Intro: `creative-intro*.html`.
+- Hero: `hero.html`, `intelligent-layout-test.html`.
+- Split: `split.html`, `modular-demo.html`.
+- Otros: `code.html`, `bento.html`, `timeline.html`, `circular-diagram.html`, `process-flow.html`, `comparison.html`, `isometric.html`, `feature-grid.html`, `header-logos.html`, `smart-grid.html`, `stats.html`.
 - Tokens manuales: opcional; puedes sustituir un tema por un bloque `<style>` con el contrato completo.
 
 ---
@@ -145,4 +149,4 @@ Icono circular:
 
 ---
 
-Versión: 0.5 | Última actualización: 2025-11-26
+Versión: 0.6 | Última actualización: 2025-11-26

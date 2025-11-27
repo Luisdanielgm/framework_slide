@@ -1,8 +1,8 @@
-﻿# Sistema de temas y tokens
+# Sistema de temas y tokens
 
-Los componentes consumen tokens; los temas los redefinen. Decor y layouts estÃ¡n en capas separadas.
+Los componentes consumen tokens; los temas los redefinen. Decor y layouts están en capas separadas.
 
-## Contrato de tokens (mÃ­nimo)
+## Contrato de tokens (mínimo)
 Declarados en `:root` dentro de `sapiens-core.css` y consumidos por layouts/componentes:
 - Fondos: `--bg-1`, `--bg-2`
 - Acentos: `--accent-1`, `--accent-2`, `--accent-strong`, `--accent-soft`
@@ -13,10 +13,10 @@ Declarados en `:root` dentro de `sapiens-core.css` y consumidos por layouts/comp
 - Sombras: `--glow-1`, `--glow-2`
 - Tipos: `--font-body`, `--font-head`
 
-Puedes sobrescribirlos en cualquier scope (`:root`, `body`, `#sapiens-slide`). La cascada usa el valor mÃ¡s cercano al componente.
+Puedes sobrescribirlos en cualquier scope (`:root`, `body`, `#sapiens-slide`). La cascada usa el valor más cercano al componente.
 
-## Temas rÃ¡pidos (sapiens-themes.css)
-Listos para usar en `body`, `#sapiens-slide` o cualquier wrapper. Equivalente con atributo: `data-theme="..."`. Cada tema redefine TODO el contrato anterior; si ademÃ¡s defines un `<style>` con tokens manuales, esos valores ganan por cascada.
+## Temas rápidos (sapiens-themes.css)
+Listos para usar en `body`, `#sapiens-slide` o cualquier wrapper. Equivalente con atributo: `data-theme="..."`. Cada tema redefine TODO el contrato anterior; si además defines un `<style>` con tokens manuales, esos valores ganan por cascada.
 
 Listado (resumen):
 - Base: `theme-ocean`, `theme-sunset`, `theme-forest`.
@@ -34,7 +34,7 @@ Aplica un tema + decor por clase, e.g.:
 </body>
 ```
 
-## Ejemplos prÃ¡cticos
+## Ejemplos prácticos
 
 Aplicar un tema:
 ```html
@@ -63,7 +63,7 @@ Componentes sensibles a tokens:
 - Header `h1`: degradado con `--text-main`/`--text-muted`.
 - `code-block`: fondo y texto ligados a `--bg-*`, `--text-*`, `--border-strong`.
 - `content-box`: fondo mezclado con `--bg-1`/`--bg-2` y textos con `--text-*`.
-- Superficies/bordes/pills/badges leen sus tokens especÃ­ficos.
+- Superficies/bordes/pills/badges leen sus tokens específicos.
 
 ## Orden de carga recomendado
 ```
@@ -80,4 +80,3 @@ sapiens-components.css
 - Creativos: `timeline.html`, `circular-diagram.html`, `comparison.html`, `stats.html`, `feature-grid.html`, `header-logos.html`, `isometric.html`, `process-flow.html`, `smart-grid.html`.
 
 Todos usan clases de tema (`theme-*`). Puedes reemplazar el tema por un `<style>` con tokens personalizados si lo prefieres.
-

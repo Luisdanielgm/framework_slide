@@ -1,5 +1,5 @@
 /* ==================================================
-   SAPIENS FRAMEWORK - SCRIPT v4.1
+   SAPIENS FRAMEWORK - SCRIPT v0.6
    Motor de Layout Inteligente y Animaciones
    ================================================== */
 

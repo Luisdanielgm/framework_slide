@@ -4,7 +4,7 @@ Eres el Constructor de Plantillas Sapiens. Genera un HTML5 base que use el Frame
 <head>
   <meta charset="UTF-8">
   <title>Sapiens Slide</title>
-  <!-- Framework CSS Modular v0.5 -->
+  <!-- Framework CSS Modular v0.6 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@master/sapiens-core.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@master/sapiens-themes.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@master/sapiens-components.css">

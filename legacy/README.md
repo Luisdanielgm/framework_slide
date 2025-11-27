@@ -5,16 +5,16 @@ Esta carpeta contiene versiones antiguas del framework Sapiens que **NO se recom
 ## Archivos Legacy
 
 ### `sapiens.css` (v0.5 - Monolítico)
-**Descripció:** Versió monolítica original del framework (29.4 KB, 1328 líneas)
+**Descripción:** Versión monolítica original del framework (29.4 KB, 1328 líneas)
 
 **Estado:** ⚠️ **DEPRECATED** - Mantener solo para retrocompatibilidad
 
-**Razó de deprecació:**
+**Razón de deprecación:**
 - Difícil de mantener (todo en un solo archivo)
 - No permite actualizaciones selectivas
 - Mezcla estructura con componentes
 
-**Migració recomendada:**
+**Migración recomendada:**
 ```html
 <!-- ANTES (Legacy) -->
 <link rel="stylesheet" href="legacy/sapiens.css">
@@ -28,12 +28,12 @@ Esta carpeta contiene versiones antiguas del framework Sapiens que **NO se recom
 
 ## ¿Por qué Legacy?
 
-A partir de **v0.5 (Modular)**, el framework Sapiens adoptó una arquitectura modular con dos archivos separados:
+Desde **v0.6 (Modular)** el framework Sapiens usa arquitectura modular con dos archivos separados:
 
 1. **sapiens-core.css** - Base estructural estable
 2. **sapiens-components.css** - Componentes UI evolutivos
 
-Esta separació permite:
+Esta separación permite:
 - ✅ Mejor mantenibilidad
 - ✅ Actualizaciones selectivas
 - ✅ Cache más eficiente
@@ -46,7 +46,7 @@ Esta separació permite:
 **Solo usar si:**
 - Tienes proyectos existentes que no puedes migrar
 - Necesitas compatibilidad exacta con código antiguo
-- Estás en proceso de migració gradual
+- Estás en proceso de migración gradual
 
 **NO usar si:**
 - Estás comenzando un proyecto nuevo
@@ -60,7 +60,7 @@ Esta separació permite:
 Los archivos legacy recibirán:
 - ⚠️ **No actualizaciones** de features nuevos
 - ✅ **Solo bugfixes críticos** de seguridad
-- ⚠️ **Soporte limitado** en documentació
+- ⚠️ **Soporte limitado** en documentación
 
 Se recomienda migrar a la arquitectura modular lo antes posible.
 
@@ -68,11 +68,11 @@ Se recomienda migrar a la arquitectura modular lo antes posible.
 
 ## Historial de Versiones
 
-| Versió | Fecha | Archivo | Estado |
-|---------|-------|---------|--------|
-| v0.5 (Modular) | 2025-11-22 | core + components | ✅ Actual |
-| v0.5 (Monolítico) | 2025-11-22 | sapiens.css | ⚠️ Legacy |
+| Versión | Fecha       | Archivo             | Estado      |
+|---------|-------------|---------------------|-------------|
+| v0.6 (Modular) | 2025-11-26 | core + components   | ✅ Actual    |
+| v0.5 (Monolítico) | 2025-11-22 | sapiens.css         | ⚠️ Legacy    |
 
 ---
 
-**Para más informació sobre la arquitectura modular, consulta [`ARCHITECTURE.md`](../docs/ARCHITECTURE.md)**
+**Para más información sobre la arquitectura modular, consulta [`ARCHITECTURE.md`](../docs/ARCHITECTURE.md).**

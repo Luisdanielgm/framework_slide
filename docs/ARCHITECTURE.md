@@ -1,4 +1,4 @@
-# Arquitectura CSS Modular - Sapiens Framework (v0.5)
+# Arquitectura CSS Modular - Sapiens Framework (v0.6)
 
 El framework está dividido en capas para que la base no cambie y puedas iterar en temas, decor y layouts sin tocar el core.
 
@@ -39,52 +39,23 @@ Incluye:
 - Fondos: `bg-blueprint`, `bg-watercolor`, `bg-wood`, `bg-dots`, `bg-noise-soft`, `bg-icons`.
 - Remates/decor: `.grid-lines`, `.orb`, `.watermark`, `.torn-edge`, `.decorative-shape`.
 
-Agregar nuevas texturas aquí, no en core.
-
 ---
 
 ## Capa 4: sapiens-layouts.css
-Propósito: layouts base y sus media queries.
+Propósito: layouts base reutilizables (hero, split, code, bento, intro).
 
-Incluye:
-- Layouts base: hero, split, code, bento, intro.
-- Ajustes responsivos básicos (collapse split/code a 1 col, bento a lista en móvil, márgenes de content-box en alturas bajas).
-
-Agregar/modificar layouts base aquí (no en core).
+Incluye grids principales, densidades responsivas y ajustes container-aware.
 
 ---
 
-## Capa 5: sapiens-components.css (~1600 líneas)
-Propósito: componentes y layouts creativos; puede evolucionar.
+## Capa 5: sapiens-components.css
+Propósito: componentes UI y layouts creativos (evolutivo).
 
-Incluye:
-- Cards, badges, iconos, pills, content-box, code-block.
-- Layouts creativos: timeline, circular, comparison, stats, process-flow, isometric, feature-grid, header-logos, smart-grid.
-- Container Queries y ajustes responsivos específicos.
-- Animaciones/utilidades de texto/spacing.
-
-Agregar nuevos layouts creativos o componentes aquí.
+Incluye timelines, diagramas circulares, comparaciones, stats, process flow, isometric, feature grid, header logos, smart grid y utilidades visuales.
 
 ---
 
-## Motor JS: sapiens.js
-Propósito: detección inteligente de overflow/underflow con histéresis y aplicación de clases:
-- `.is-overflowing` (reduce fuentes/padding, puede forzar columnas).
-- `.has-extra-space` (puede ampliar fuentes/centrar).
-- `.is-landscape-tight` (paisajes bajos para truncado suave).
+## Capa 6: sapiens.js
+Propósito: motor inteligente de overflow/underflow + animaciones.
 
-No depende de layouts concretos; es una capa transversal.
-
----
-
-## Uso en proyectos (orden de carga)
-
-```html
-<link rel="stylesheet" href="sapiens-core.css">
-<link rel="stylesheet" href="sapiens-themes.css">
-<link rel="stylesheet" href="sapiens-decor.css">
-<link rel="stylesheet" href="sapiens-layouts.css">
-<link rel="stylesheet" href="sapiens-components.css">
-```
-
-Así el core queda inmutable; temas/decor/layouts/componentes pueden crecer sin romper la base.
+Aplica clases `is-overflowing`/`has-extra-space` y fuerza columnas cuando detecta desbordes; inicializa animaciones escalonadas respetando `prefers-reduced-motion`.

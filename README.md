@@ -50,14 +50,29 @@ legacy/                 -> Versión monolítica (deprecated)
 ## Layouts disponibles
 
 **Layouts Base (sapiens-layouts.css):**
-- Hero, Split, Code, Bento, Intro
+- **Hero** (80-250 palabras) - Slides introductorias, conclusiones  
+- **Split** (200-500 palabras) ⭐ Ideal para texto denso - Análisis, investigación
+- **Code** (150-400 palabras) - Tutoriales, documentación técnica
+- **Bento** (120-250 palabras) - Comparación de 4 conceptos
+- **Intro** (80-250 palabras) - Portadas, slides de sección
 
 **Layouts Creativos (sapiens-components.css):**
-- Timeline, Circular Diagram, Comparison, Stats
-- Process Flow, Isometric, Feature Grid, Header Logos
-- Smart Grid (con Container Queries inteligentes)
+- **Text Analysis** (250-500 palabras) ⭐ Ideal para académico - Análisis con hallazgos destacados
+- **Timeline** (100-250 palabras) - Procesos cronológicos
+- **Timeline Curved** (150-300 palabras) - Evolución con contexto detallado
+- **Process Detailed** (200-450 palabras) - Metodologías paso a paso
+- **Circular Diagram** - Ciclos y relaciones circulares
+- **Comparison** (180-350 palabras) - Análisis antes/después, pros/cons
+- **Stats** - Métricas y estadísticas
+- **Process Flow** - Flujos de proceso
+- **Isometric** - Visualizaciones 3D
+- **Feature Grid** - Grids de características
+- **Header Logos** - Logos y partners
+- **Smart Grid** - Grid inteligente con Container Queries
 
 Abre `index.html` para ver la galería completa.
+
+**Capacidad de contenido**: Ver `docs/LAYOUT_CONTENT_CAPACITY.md` para guía detallada sobre cuánto texto soporta cada layout.
 
 ---
 

@@ -46,17 +46,21 @@ En `sapiens-components.css` + `sapiens.js`:
 ---
 
 ## 6. Tabla de comportamiento por layout (resumen)
-| Layout         | Desktop             | Tablet/Container estrecho        | Móvil |
-|----------------|---------------------|----------------------------------|-------|
-| Hero/Intro     | Centrado, texto grande | Reduce fuentes (JS)            | Scroll, padding reducido |
-| Split/Code     | 2 col (50/50 o 45/55) | 1 col (<1024px)                 | 1 col |
-| Bento          | Grid 2x2            | Grid 2x2 (gaps ajustados)        | Lista |
-| Timeline       | Horizontal          | Vertical (CQ ancho)              | Vertical |
-| Comparison     | Dos paneles + divisor| 1 col (CQ ancho)                | 1 col |
-| Circular       | Nodos en círculo    | Grid/lista (CQ ancho)            | Lista |
-| Smart Grid     | Grid auto-fill      | Tarjetas horizontales (CQ alto)  | Lista |
-| Stats          | Grid auto-fit       | Grid más denso                   | 1-2 col |
-| Isometric      | Tarjetas 3D         | Puede reducir 3D                 | 2D plano opcional |
+| Layout         | Capacidad Texto | Desktop             | Tablet/Container estrecho        | Móvil |
+|----------------|-----------------|---------------------|----------------------------------|-------|
+| Hero/Intro     | 80-250 palabras | Centrado, texto grande | Reduce fuentes (JS)            | Scroll, padding reducido |
+| Split/Code     | **200-500 palabras** ⭐ | 2 col (50/50 o 45/55) | 1 col (<1024px)                 | 1 col |
+| Bento          | 120-250 palabras | Grid 2x2            | Grid 2x2 (gaps ajustados)        | Lista |
+| Timeline       | 100-250 palabras | Horizontal          | Vertical (CQ ancho)              | Vertical |
+| Comparison     | 180-350 palabras | Dos paneles + divisor| 1 col (CQ ancho)                | 1 col |
+| Circular       | Variable | Nodos en círculo    | Grid/lista (CQ ancho)            | Lista |
+| Smart Grid     | Variable | Grid auto-fill      | Tarjetas horizontales (CQ alto)  | Lista |
+| Stats          | Variable | Grid auto-fit       | Grid más denso                   | 1-2 col |
+| Text Analysis  | **250-500 palabras** ⭐ | 2fr/1fr (main+sidebar) | 1 col (CQ ancho)              | 1 col |
+| Timeline Curved| 150-300 palabras | Curva 5 nodos       | Lista vertical (CQ ancho)        | Lista |
+| Process Detailed| 200-450 palabras | Grid auto-fit      | 1 col (CQ ancho)                 | 1 col |
+
+**Nota**: ⭐ = Ideal para contenido text-heavy. Ver `docs/LAYOUT_CONTENT_CAPACITY.md` para detalles completos.
 
 ---
 

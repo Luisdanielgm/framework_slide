@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapiens Framework - Curved Timeline</title>
+    <link rel="stylesheet" href="../../sapiens-core.css">
+    <link rel="stylesheet" href="../../sapiens-themes.css">
+    <link rel="stylesheet" href="../../sapiens-decor.css">
+    <link rel="stylesheet" href="../../sapiens-layouts.css">
+    <link rel="stylesheet" href="../../sapiens-components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="theme-forest">
+    <main id="sapiens-slide" class="slide-shell surface-1 border-soft">
+        <header>
+            <h1>La vida del cerebro</h1>
+            <span class="header-badge">Timeline</span>
+        </header>
+
+        <article class="slide-body layout-timeline-curved">
+            <div
+                style="text-align: center; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <h2 class="text-gradient">Son cinco épocas distintas</h2>
+                <p class="text-lead">Un nuevo análisis de 4,216 escáneres cerebrales revela cuatro puntos de inflexión
+                    topológicos clave.</p>
+            </div>
+
+            <!-- SVG Curve Background -->
+            <svg class="curved-path-svg" viewBox="0 0 1000 200" preserveAspectRatio="none">
+                <!-- Gradient definition -->
+                <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:var(--accent-1);stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:var(--accent-2);stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <path d="M0,150 C250,150 250,50 500,50 C750,50 750,150 1000,150" fill="none" stroke="url(#grad1)"
+                    stroke-width="12" stroke-linecap="round" />
+            </svg>
+
+            <div class="timeline-curved-nodes">
+                <div class="timeline-curved-node">
+                    <div class="text-sm font-bold text-muted">Época 1</div>
+                    <div class="timeline-node-marker"></div>
+                    <div class="text-sm">0-9 años</div>
+                </div>
+                <div class="timeline-curved-node">
+                    <div class="text-sm font-bold text-muted">Época 2</div>
+                    <div class="timeline-node-marker"></div>
+                    <div class="text-sm">9-32 años</div>
+                </div>
+                <div class="timeline-curved-node">
+                    <div class="text-sm font-bold text-muted">Época 3</div>
+                    <div class="timeline-node-marker"></div>
+                    <div class="text-sm">32-66 años</div>
+                </div>
+                <div class="timeline-curved-node">
+                    <div class="text-sm font-bold text-muted">Época 4</div>
+                    <div class="timeline-node-marker"></div>
+                    <div class="text-sm">66-83 años</div>
+                </div>
+                <div class="timeline-curved-node">
+                    <div class="text-sm font-bold text-muted">Época 5</div>
+                    <div class="timeline-node-marker"></div>
+                    <div class="text-sm">83+ años</div>
+                </div>
+            </div>
+        </article>
+
+        <footer>
+            <span>&copy; 2025 Sapiens Framework</span>
+            <span>Development Timeline</span>
+        </footer>
+    </main>
+    <script src="../../sapiens.js"></script>
+</body>
+
+</html>

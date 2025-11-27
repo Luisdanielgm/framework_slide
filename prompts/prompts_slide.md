@@ -44,14 +44,22 @@ Eres el Renderizador UI del Framework Sapiens. Compila la slide del plan en HTML
    - Bloque destacado: `.content-box` (usa tokens de tema para fondo/texto).
 
 ================ LÓGICA DE LAYOUTS ================
-- layout-hero: un solo bloque destacado (usa card o content-box) con 1-3 bullets/ideas.
-- layout-intro: portada creativa; puedes combinar content-box y decorativos.
-- layout-split: dos columnas; izquierda card con content.primary (usa feature-list), derecha card con content.secondary.
-- layout-code: izquierda card explicativa, derecha bloque .code-block con el código de content.secondary.
-- layout-bento: 3-4 cards cortas en grid.
-- layout-timeline: <div class="timeline-container"> con <div class="timeline-item"> conectados por <div class="timeline-connector">.
+**Layouts Base (capacidad de texto entre paréntesis):**
+- layout-hero (80-250 palabras): un solo bloque destacado (usa card o content-box) con 1-3 bullets/ideas.
+- layout-intro (80-250 palabras): portada creativa; puedes combinar content-box y decorativos.
+- layout-split (200-500 palabras) ⭐ IDEAL PARA TEXTO DENSO: dos columnas; izquierda card con content.primary (usa feature-list), derecha card con content.secondary.
+- layout-code (150-400 palabras): izquierda card explicativa, derecha bloque .code-block con el código de content.secondary.
+- layout-bento (120-250 palabras): 3-4 cards cortas en grid.
+
+**Layouts Creativos:**
+- layout-text-analysis (250-500 palabras) ⭐ IDEAL PARA ACADÉMICO: área principal + sidebar con key findings.
+- layout-timeline (100-250 palabras): <div class="timeline-container"> con <div class="timeline-item"> conectados por <div class="timeline-connector">.
+- layout-process-detailed (200-450 palabras): grid de pasos con imágenes y descripciones.
 - layout-circular: <div class="layout-circular"> con <div class="circular-center"> y <div class="circular-nodes"> con hasta 6 <div class="circular-node">.
+- layout-comparison (180-350 palabras): dos paneles + divisor para comparaciones.
 - layout-stats: <div class="layout-stats"> con 3-4 <div class="stat-card">.
+
+**IMPORTANTE**: Si contenido excede 500 palabras, divide en múltiples slides o usa Split/Text Analysis.
 
 ================ INSTRUCCIONES DE RENDER ================
 - Usa las CDN actuales: core + themes + components + fontawesome.

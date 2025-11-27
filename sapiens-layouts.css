@@ -1,6 +1,6 @@
-﻿/* ==================================================
+/* ==================================================
    SAPIENS FRAMEWORK - LAYOUTS (Base)
-   Definición de grids principales y ajustes responsivos
+   Definici�n de grids principales y ajustes responsivos
    ================================================== */
 
 /* Layouts base */
@@ -39,7 +39,7 @@
     place-items: center;
 }
 
-/* Ajustes responsivos especÃ­ficos de layout */
+/* Ajustes responsivos específicos de layout */
 @media (max-height: 820px) {
     .layout-hero > .content-box,
     .layout-intro > .content-box {
@@ -72,7 +72,7 @@
    LAYOUTS CREATIVOS
    ================================================== */
 
-/* --- TIMELINE: LÃ­nea de tiempo horizontal --- */
+/* --- TIMELINE: Línea de tiempo horizontal --- */
 .layout-timeline {
     display: flex;
     align-items: center;
@@ -194,7 +194,7 @@
     box-shadow: 0 4px 12px color-mix(in srgb, var(--accent-1) 35%, transparent);
 }
 
-/* --- COMPARISON: ComparaciÃ³n lado a lado --- */
+/* --- COMPARISON: Comparación lado a lado --- */
 .layout-comparison {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
@@ -224,7 +224,7 @@
     color: var(--accent-1);
 }
 
-/* --- ISOMETRIC: Grid isomÃ©trico --- */
+/* --- ISOMETRIC: Grid isométrico --- */
 .layout-isometric {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -246,7 +246,7 @@
     transform: rotateX(0deg) rotateY(0deg) translateY(-5px);
 }
 
-/* --- FEATURE GRID: Grid de caracterÃ­sticas con iconos --- */
+/* --- FEATURE GRID: Grid de características con iconos --- */
 .layout-feature-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -271,7 +271,7 @@
     transform: translateY(-5px);
 }
 
-/* --- HEADER LOGOS: Header con mÃºltiples logos --- */
+/* --- HEADER LOGOS: Header con múltiples logos --- */
 .layout-header-logos {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -302,7 +302,7 @@
     object-fit: contain;
 }
 
-/* --- STATS: Tarjetas de estadÃ­sticas --- */
+/* --- STATS: Tarjetas de estadísticas --- */
 .layout-stats {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -637,3 +637,269 @@
 .slide-shell.has-extra-space .slide-body h1,
 .slide-shell.has-extra-space .slide-body h2 { font-size: 3.5rem; }
 .slide-shell.has-extra-space .slide-body p { font-size: 1.25rem; }
+/* ==================================================
+   TEXT-HEAVY CREATIVE LAYOUTS
+   ================================================== */
+
+/* --- TEXT ANALYSIS: Análisis de texto con sidebar --- */
+.layout-text-analysis {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.text-analysis-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.text-analysis-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.key-findings-box {
+    background: var(--surface-2);
+    border-left: 4px solid var(--accent-1);
+    padding: 1.5rem;
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.key-findings-title {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-1);
+}
+
+/* --- CURVED TIMELINE: Línea de tiempo curva (Simulada) --- */
+.layout-timeline-curved {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 400px;
+    padding: 2rem 0;
+    overflow: hidden;
+}
+
+.curved-path-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.timeline-curved-nodes {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.timeline-curved-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    position: relative;
+}
+
+.timeline-curved-node:nth-child(1) {
+    top: 25%;
+}
+
+.timeline-curved-node:nth-child(2) {
+    top: -10%;
+}
+
+.timeline-curved-node:nth-child(3) {
+    top: -25%;
+}
+
+.timeline-curved-node:nth-child(4) {
+    top: -10%;
+}
+
+.timeline-curved-node:nth-child(5) {
+    top: 25%;
+}
+
+.timeline-node-marker {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--surface-1);
+    border: 3px solid var(--accent-1);
+    z-index: 2;
+    box-shadow: 0 0 0 4px var(--bg-1);
+    transition: transform 0.3s ease;
+}
+
+.timeline-curved-node:hover .timeline-node-marker {
+    transform: scale(1.2);
+    background: var(--accent-1);
+}
+
+/* --- PROCESS DETAILED: Proceso con imágenes y texto --- */
+.layout-process-detailed {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    align-items: start;
+}
+
+.process-detailed-step {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: var(--surface-0);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-soft);
+    position: relative;
+    overflow: hidden;
+}
+
+.process-detailed-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: var(--surface-2);
+    border-radius: calc(var(--radius) - 4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.process-detailed-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.process-step-number {
+    font-family: var(--font-head);
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--accent-1);
+    opacity: 0.1;
+    line-height: 1;
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    z-index: 0;
+}
+
+/* Responsive Helpers for Creative Text-Heavy Layouts */
+@container slideBody (width < 900px) {
+    .layout-text-analysis {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .layout-timeline-curved {
+        height: auto;
+        padding: 1rem 0;
+    }
+
+    .timeline-curved-nodes {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        height: auto;
+    }
+
+    .curved-path-svg {
+        display: none;
+    }
+
+    .timeline-curved-node {
+        top: auto !important;
+        transform: none !important;
+        flex-direction: row;
+        text-align: left;
+        padding: 0.5rem;
+    }
+
+    .timeline-node-marker {
+        min-width: 1.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .layout-process-detailed {
+        grid-template-columns: 1fr;
+    }
+
+    .process-step-number {
+        font-size: 3rem;
+    }
+}
+
+@container slideBody (width < 600px) {
+    .layout-text-analysis {
+        gap: 1.5rem;
+    }
+
+    .text-analysis-content,
+    .text-analysis-sidebar {
+        gap: 1rem;
+    }
+
+    .key-findings-box {
+        padding: 1rem;
+    }
+
+    .key-findings-title {
+        font-size: 1rem;
+    }
+
+    .layout-process-detailed {
+        gap: 1.5rem;
+    }
+
+    .process-detailed-step {
+        padding: 1rem;
+    }
+
+    .process-step-number {
+        font-size: 2.5rem;
+        top: 0.25rem;
+        right: 0.5rem;
+    }
+
+    .slide-body h1 {
+        font-size: clamp(1.5rem, 5vw, 2rem) !important;
+    }
+
+    .slide-body h2 {
+        font-size: clamp(1.2rem, 4vw, 1.5rem) !important;
+    }
+
+    .slide-body p,
+    .slide-body li {
+        font-size: 0.9rem !important;
+        line-height: 1.4;
+    }
+
+    .text-lead {
+        font-size: 1rem !important;
+        line-height: 1.3;
+    }
+}

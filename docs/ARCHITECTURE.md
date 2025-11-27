@@ -18,7 +18,7 @@ Propósito: base estructural y sistema responsivo; NO se modifica para nuevos la
 
 Incluye:
 - Variables base (`:root`), reset, body centrado, safe-area.
-- Contenedor (`#sapiens-slide` / `.slide-shell`), header/footer.
+- Contenedor (`#sapiens-slide` / `.slide-shell`), header/footer (semánticos, sin clases).
 - Grid contenedor `.slide-body` y media queries generales.
 
 Tócalo solo para cambios estructurales mayores.

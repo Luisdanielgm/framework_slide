@@ -159,7 +159,7 @@ body {
 /* ==================================================
    HEADER: Título y badge
    ================================================== */
-.slide-header {
+header {
     position: relative;
     z-index: var(--layer-chrome);
     display: flex;
@@ -170,7 +170,7 @@ body {
     flex-wrap: wrap;
 }
 
-.slide-header h1 {
+header h1 {
     font-family: var(--font-head);
     font-size: clamp(1.75rem, 5vw, 3.2rem);
     line-height: 1.1;
@@ -224,7 +224,7 @@ body {
 /* ==================================================
    FOOTER: Información inferior
    ================================================== */
-.slide-footer {
+footer {
     position: relative;
     z-index: var(--layer-chrome);
     display: flex;
@@ -330,7 +330,7 @@ body {
     }
 
     /* Header: Badge encima del título */
-    .slide-header {
+    header {
         flex-direction: column-reverse;
         gap: 0.5rem;
     }
@@ -341,7 +341,7 @@ body {
     }
 
     /* Footer: Centrado */
-    .slide-footer {
+    footer {
         justify-content: center;
         text-align: center;
     }
@@ -365,7 +365,7 @@ p {
 }
 
 /* ==================================================
-   ANIMACIONES BÃSICAS
+   ANIMACIONES BÁSICAS
    ================================================== */
 .animate-in {
     animation: fadeInUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;

@@ -17,7 +17,8 @@ Definida en `sapiens-core.css`. Controla la relación slide/viewport:
 En `sapiens-layouts.css` (hero, split, code, bento, intro):
 - Split/Code colapsan a 1 columna <1024px.
 - Bento se vuelve lista <768px.
-- Márgenes de `content-box` en alturas bajas para hero/intro.
+ - Márgenes de `content-box` en alturas bajas para hero/intro.
+Recomendación: usar `<article class="slide-body ...">` y `<header>/<footer>` semánticos (ya estilizados por core).
 Nuevos layouts base se agregan aquí, no en core.
 
 ---
@@ -33,6 +34,7 @@ En `sapiens-components.css` + `sapiens.js`:
 - Detecta overflow/underflow con histéresis; aplica `.is-overflowing`, `.has-extra-space`, `.is-landscape-tight`.
 - En overflow: reduce fuentes/padding (header/footer/content), compacta gaps; si persiste, aplica `.force-columns` al bloque más alto.
 - Observa resize/orientation, ResizeObserver, MutationObserver y `document.fonts.ready`.
+ - Header/footer se compactan aunque no tengan clases (se estilizan por elemento).
 
 ---
 

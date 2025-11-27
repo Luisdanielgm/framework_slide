@@ -19,7 +19,7 @@ Eres el Constructor de Plantillas Sapiens. Genera un HTML5 base que use el Frame
       <h1 id="slot-title"></h1>
       <span class="header-badge" id="slot-badge"></span>
     </header>
-    <main class="slide-body" id="slot-body"></main>
+    <article class="slide-body" id="slot-body"></article>
     <footer class="slide-footer">
       <span id="slot-footer-left"></span>
       <span id="slot-footer-right"></span>

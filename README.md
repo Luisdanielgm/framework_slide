@@ -19,12 +19,12 @@ Estructura mínima:
 <body class="theme-ocean bg-blueprint">
   <div id="sapiens-slide" class="slide-shell surface-1 border-soft">
     <div class="decorative grid-lines"></div>
-    <header class="slide-header">
+    <header>
       <h1>Título de la Diapositiva</h1>
       <span class="header-badge">Categoría</span>
     </header>
-    <main class="slide-body layout-hero">...</main>
-    <footer class="slide-footer">...</footer>
+    <article class="slide-body layout-hero">...</article>
+    <footer>...</footer>
   </div>
 </body>
 ```

@@ -13,6 +13,11 @@ Cómo usar cada `layout-*` dentro de `<article class="slide-body ...">`, combin�
 - `layout-code`: explicación + código. Izquierda texto, derecha `<pre class="code-block">`. Ej: `examples/code/code.html`.
 - `layout-bento`: grid 2x2 (colapsa a 1xN en mobile). Usa `.card`/`.content-box` y utilidades `.span-row`/`.span-col` según necesites. Ej: `examples/bento/bento.html`.
 - `layout-intro`: centro único, buena para mensajes cortos o creativos. Ej: `examples/intro/creative-intro*.html`.
+- `layout-text-analysis`: cuerpo + sidebar (`.text-analysis-content` + `.analysis-sidebar`). Ideal para 250-500 palabras con hallazgos.
+- `layout-timeline`: nodos conectados; usa `.timeline-container`, `.timeline-item`, `.timeline-connector`.
+- `layout-process-detailed`: pasos con imagen/texto; usa `.process-detailed-step`.
+- `layout-process-flow`: pasos verticales con `.process-step` + `.step-number` y cards internas.
+- `layout-timeline-curved`: nodos `.timeline-curved-node` sobre curva SVG.
 
 ## Layouts creativos (`sapiens-components.css` + layouts)
 - `layout-timeline`: nodos lineales conectados con `.timeline-container`, `.timeline-item`, `.timeline-connector`. Ej: `examples/timeline/timeline.html`.
@@ -23,9 +28,10 @@ Cómo usar cada `layout-*` dentro de `<article class="slide-body ...">`, combin�
 - `layout-feature-grid`: cuadrícula de features con `feature-card`. Ej: `examples/feature-grid/feature-grid.html`.
 - `layout-smart-grid`: grid adaptativo (usa `.layout-smart-grid` dentro de hero/intro). Ej: `examples/smart-grid/smart-grid.html`.
 - Text-heavy especiales (`docs/ADAPTIVE_LAYOUTS.md`):
-  - `layout-text-analysis`: cuerpo + sidebar con hallazgos. Ej: `examples/text-heavy/layout-text-analysis.html`.
-  - `layout-timeline-curved`: versión curva con SVG de fondo. Ej: `examples/text-heavy/layout-timeline-curved.html`.
-  - `layout-process-detailed`: pasos con imagen + texto. Ej: `examples/text-heavy/layout-process-detailed.html`.
+- `layout-text-analysis`: cuerpo + sidebar con hallazgos. Ej: `examples/text-heavy/layout-text-analysis.html`.
+- `layout-timeline-curved`: versión curva con SVG de fondo. Ej: `examples/text-heavy/layout-timeline-curved.html`.
+- `layout-process-detailed`: pasos con imagen + texto. Ej: `examples/text-heavy/layout-process-detailed.html`.
+- `layout-process-flow`: pasos verticales con cards internas. Ej: `examples/process-flow/process-flow.html`.
 
 ## Componentes frecuentes
 - `content-box` / `card`: contenedores base con padding y borde suave.
@@ -56,6 +62,7 @@ Cómo usar cada `layout-*` dentro de `<article class="slide-body ...">`, combin�
 - Overlays: declara `grid-lines`, `orb`, `decorative-shape`, `watermark` al inicio del shell para que queden debajo de `slide-body`.
 - Temas y fondos: aplica `theme-*` y opcionalmente `bg-*` en `<body>`. No mezclar colores manuales con inline styles.
 - Responsivo: los layouts usan Container Queries (`slideBody`) y `sapiens.js` añade `.is-overflowing`/`.has-extra-space`. No desactives `container-type` en `slide-body`.
+- Densidad automática (sapiens.js + sapiens-layouts.css): intro/hero (`intro-*`), split/code (`split-*`), stats (`stats-*`), timeline/process/flow (`timeline-*`), text-analysis/comparison (`analysis-*`), circular (`circular-*`), bento/smart-grid (`grid-*`). Ajustan padding/gaps/typo según ratio/nº de nodos/texto; tablet/móvil compactan más y móviles muy pequeños activan scroll interno oculto.
 
 ## Ejemplo mínimo (hero)
 ```html

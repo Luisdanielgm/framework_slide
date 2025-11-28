@@ -66,6 +66,19 @@ Componentes sensibles a tokens:
 - `content-box is-ghost`/`surface-transparent`: desactiva el fondo/sombra pero conserva padding/alineacion (usa los tokens de texto vigentes).
 - Superficies/bordes/pills/badges leen sus tokens específicos.
 
+## Tipografia y texto
+- Cambia las fuentes redefiniendo `--font-body` y `--font-head`; puedes enlazar una CDN (ej. Google Fonts) y luego sobrescribir los tokens en `:root`/`body`/`#sapiens-slide`.
+```html
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@700&display=swap">
+<style>
+:root {
+  --font-body: 'Inter', sans-serif;
+  --font-head: 'Space Grotesk', sans-serif;
+}
+</style>
+```
+- Utilidades de texto: `text-lead` (parrafo grande), `text-hero` (titulos grandes), `text-title`/`text-desc` (pares titulo/descripcion compactos), `text-muted`/`text-strong`/`text-accent` para tono/contraste.
+
 ## Orden de carga recomendado
 ```
 sapiens-core.css

@@ -31,6 +31,12 @@
 ## Anti-patrones
 - No mezclar tarjetas sin clase `stat-card` (perderás estilos y auto-espaciado).
 - Evita párrafos largos dentro de cada tarjeta.
+
+## Buenas practicas y variaciones
+- Usa 4-6 `stat-card` balanceadas; si hay más métricas, divide en dos slides o usa `stats-tight` para compactar (auto).
+- Mantén los valores cortos y legibles; apóyate en `badge`/`icon-circle` solo si aportan contexto.
+- Si necesitas narrativa o explicación extensa sobre las métricas, combina con `layout-split` o `layout-text-analysis` en otra slide.
+- Ajusta jerarquía con `text-lead`/`text-caption` dentro de la tarjeta en lugar de estilos inline.
 ## Fondos y estilo
 - Para quitar fondo/sombra pero mantener padding y alineacion, usa `content-box is-ghost` (o `content-box surface-transparent`).
 - Para contraste, combina un `content-box` normal (`surface-2`/`surface-3` + `border-soft`) con otro `is-ghost`/`surface-0` segun necesidad.

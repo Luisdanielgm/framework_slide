@@ -38,6 +38,15 @@
 ## Anti-patrones
 - No eliminar conectores/bullets (rompe la línea visual).
 - Evita más de 7 items; se vuelve ilegible en mobile.
+- No inventes wrappers custom (`.timeline`, `.timeline-step`, etc.); usa `timeline-container` con `timeline-item` y `timeline-connector` para mantener el grid y la línea.
 ## Fondos y estilo
 - Para quitar fondo/sombra pero mantener padding y alineacion, usa `content-box is-ghost` (o `content-box surface-transparent`).
 - Para contraste, combina un `content-box` normal (`surface-2`/`surface-3` + `border-soft`) con otro `is-ghost`/`surface-0` segun necesidad.
+## Buenas practicas y variaciones
+
+- Respeta la capacidad sugerida: si el texto/elementos exceden, divide en dos slides o migra a layouts mas text-heavy (`layout-split`/`layout-text-analysis`).
+- Ajusta jerarquias con utilidades de texto (`text-lead`, `text-caption`, `text-hero`) en lugar de estilos inline; evita a?adir mas `content-box`/`card` de los que el layout soporta.
+- Usa `timeline-container` con 4-6 `timeline-item` y `timeline-connector`; agrega `icon-circle` + `badge` para jerarquia.
+- Mant?n 15-25 palabras por item (`text-caption` ayuda a compactar).
+- Si necesitas mas texto por paso, cambia a `layout-process-flow` o divide en dos slides.
+- Para mas de 7 items, separa en varias slides o usa la version curva solo si cabe el texto.

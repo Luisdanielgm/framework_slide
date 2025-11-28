@@ -41,7 +41,13 @@ Cómo usar cada `layout-*` dentro de `<article class="slide-body ...">`, combin�
 - `icon-circle` (`icon-sm|md|lg|xl` + `icon-*` color): para nodos o acentos (ver `sapiens-components.css`).
 - `layout-smart-grid`: para cards repetidas; agregar `is-condensed` para compactar.
 - `code-block`: usa dentro de `layout-code` o donde necesites bloque monoespaciado.
-- Utilidades: `mt-*`, `mb-*`, `gap-*`, `text-muted`, `text-lead`, `border-soft`, `surface-*`.
+- Tipografia/texto: `text-lead` (parrafos mas grandes), `text-hero` (titulos grandes), `text-title`/`text-desc` (pares titulo/descripcion compactos), `text-muted`/`text-strong`/`text-accent` para ajustar tono/contraste.
+- Utilidades: `mt-*`, `mb-*`, `gap-*`, `border-soft`, `surface-*`.
+
+## Elección de layout y capacidad (recordatorio rápido)
+- Respeta la capacidad sugerida de cada layout; si el contenido excede, divide en dos slides o migra a layouts más text-heavy (`layout-split`, `layout-text-analysis`, `layout-code` según caso).
+- Usa las utilidades de texto (`text-lead`, `text-caption`, `text-hero`) para jerarquía sin estilos inline; evita multiplicar `content-box`/`card` más allá de lo recomendado por el layout.
+- Para listas largas o pasos + código, prioriza `layout-code`/`layout-split`; para 3-4 bloques breves usa `layout-bento`; para análisis denso, `layout-text-analysis`.
 
 ## Comportamiento inteligente en Intro/Hero
 - Densidad automática: `sapiens.js` asigna `intro-dense`, `intro-tight`, `intro-cozy`, `intro-loose` según ratio ocupado, número de bloques y densidad de texto en `.content-box`. Histéresis evita saltos entre estados.

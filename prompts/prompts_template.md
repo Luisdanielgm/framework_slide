@@ -13,11 +13,11 @@ PLANTILLA BASE (usa variables/tokens del plan: `{{theme}}`, `{{layoutClass}}`, `
 <head>
   <meta charset="UTF-8">
   <title>Sapiens Slide</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@ae81a1d0cf8d0c65661ce63c05c7dcded9f53bd2/sapiens-core.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@ae81a1d0cf8d0c65661ce63c05c7dcded9f53bd2/sapiens-themes.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@ae81a1d0cf8d0c65661ce63c05c7dcded9f53bd2/sapiens-decor.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@ae81a1d0cf8d0c65661ce63c05c7dcded9f53bd2/sapiens-layouts.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@ae81a1d0cf8d0c65661ce63c05c7dcded9f53bd2/sapiens-components.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@d7f8e5cbf68ca48512b8c1d5e1df5bfdcb9ca9d8/sapiens-core.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@d7f8e5cbf68ca48512b8c1d5e1df5bfdcb9ca9d8/sapiens-themes.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@d7f8e5cbf68ca48512b8c1d5e1df5bfdcb9ca9d8/sapiens-decor.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@d7f8e5cbf68ca48512b8c1d5e1df5bfdcb9ca9d8/sapiens-layouts.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@d7f8e5cbf68ca48512b8c1d5e1df5bfdcb9ca9d8/sapiens-components.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body class="{{theme}}">
@@ -38,7 +38,7 @@ PLANTILLA BASE (usa variables/tokens del plan: `{{theme}}`, `{{layoutClass}}`, `
       <span>{{footerRight}}</span>
     </footer>
   </div>
-  <script src="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@ae81a1d0cf8d0c65661ce63c05c7dcded9f53bd2/sapiens.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@d7f8e5cbf68ca48512b8c1d5e1df5bfdcb9ca9d8/sapiens.js"></script>
 </body>
 </html>
 ```

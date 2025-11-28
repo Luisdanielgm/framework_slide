@@ -4,7 +4,7 @@ Puntos esenciales para montar una slide con el framework Sapiens sin romper la d
 
 ## Orden de carga (CSS)
 - Carga en este orden: `sapiens-core.css` → `sapiens-themes.css` → `sapiens-decor.css` → `sapiens-layouts.css` → `sapiens-components.css`.
-- Si usas CDN, fija commit/tag para evitar cambios inesperados (ejemplo: `@ae81a1d0cf8d0c65661ce63c05c7dcded9f53bd2`).
+- Si usas CDN, fija commit/tag para evitar cambios inesperados (ejemplo: `@d7f8e5cbf68ca48512b8c1d5e1df5bfdcb9ca9d8`).
 
 ## Body
 - Aplica un tema: `class="theme-*"` (ej: `theme-tech-future-neon`, `theme-ocean`, `theme-zen`).
@@ -57,7 +57,7 @@ Puntos esenciales para montar una slide con el framework Sapiens sin romper la d
 
     <footer><span>Izq</span><span>Der</span></footer>
   </div>
-  <script src="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@ae81a1d0cf8d0c65661ce63c05c7dcded9f53bd2/sapiens.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/Luisdanielgm/framework_slide@d7f8e5cbf68ca48512b8c1d5e1df5bfdcb9ca9d8/sapiens.js"></script>
 </body>
 ```
 

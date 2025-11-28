@@ -37,3 +37,11 @@
 ## Fondos y estilo
 - Para quitar fondo/sombra pero mantener padding y alineacion, usa `content-box is-ghost` (o `content-box surface-transparent`).
 - Para contraste, combina un `content-box` normal (`surface-2`/`surface-3` + `border-soft`) con otro `is-ghost`/`surface-0` segun necesidad.
+## Buenas practicas y variaciones
+
+- Respeta la capacidad sugerida: si el texto/elementos exceden, divide en dos slides o migra a layouts mas text-heavy (`layout-split`/`layout-text-analysis`).
+- Ajusta jerarquias con utilidades de texto (`text-lead`, `text-caption`, `text-hero`) en lugar de estilos inline; evita a?adir mas `content-box`/`card` de los que el layout soporta.
+- Usa el cuerpo (`text-analysis-content`) para 200-350 palabras y la sidebar (`analysis-sidebar`) para 3-5 bullets/hallazgos.
+- Emplea `feature-list`, `badge` o `stat-card` pequeno en la sidebar; evita bloques largos ahi.
+- Si el cuerpo supera 500 palabras, divide en dos slides o usa `layout-split` para distribuir.
+- Para resaltar un hallazgo, usa `text-lead` en el cuerpo y badges en la sidebar.

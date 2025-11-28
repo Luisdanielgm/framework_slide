@@ -37,3 +37,11 @@
 ## Fondos y estilo
 - Para quitar fondo/sombra pero mantener padding y alineacion, usa `content-box is-ghost` (o `content-box surface-transparent`).
 - Para contraste, combina un `content-box` normal (`surface-2`/`surface-3` + `border-soft`) con otro `is-ghost`/`surface-0` segun necesidad.
+## Buenas practicas y variaciones
+
+- Respeta la capacidad sugerida: si el texto/elementos exceden, divide en dos slides o migra a layouts mas text-heavy (`layout-split`/`layout-text-analysis`).
+- Ajusta jerarquias con utilidades de texto (`text-lead`, `text-caption`, `text-hero`) en lugar de estilos inline; evita a?adir mas `content-box`/`card` de los que el layout soporta.
+- Ideal para muchos items breves; usa `is-condensed` si falta espacio y limita cada card a un titulo + 1-2 lineas.
+- Balancea 6-12 items; si el texto crece, reduce a 6-8 o divide en dos slides.
+- Mezcla `icon-circle`/badges para jerarquia visual; evita listas largas dentro de cada card.
+- Para explicar detalles de unos pocos items, cambia a `layout-split` o `layout-feature-grid`.

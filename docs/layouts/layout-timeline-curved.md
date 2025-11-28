@@ -40,3 +40,11 @@
 ## Fondos y estilo
 - Para quitar fondo/sombra pero mantener padding y alineacion, usa `content-box is-ghost` (o `content-box surface-transparent`).
 - Para contraste, combina un `content-box` normal (`surface-2`/`surface-3` + `border-soft`) con otro `is-ghost`/`surface-0` segun necesidad.
+## Buenas practicas y variaciones
+
+- Respeta la capacidad sugerida: si el texto/elementos exceden, divide en dos slides o migra a layouts mas text-heavy (`layout-split`/`layout-text-analysis`).
+- Ajusta jerarquias con utilidades de texto (`text-lead`, `text-caption`, `text-hero`) en lugar de estilos inline; evita a?adir mas `content-box`/`card` de los que el layout soporta.
+- Limita a 5 nodos (`timeline-curved-node`) con titulos de 2-4 palabras y texto corto.
+- Usa `icon-circle`/badges para identificar cada nodo; evita parrafos largos.
+- Si necesitas mas detalle o mas de 5 pasos, usa `layout-timeline` lineal o `process-flow`.
+- Ajusta densidad con `timeline-tight`/`timeline-loose` (auto) y revisa mobile (se vuelve lista).

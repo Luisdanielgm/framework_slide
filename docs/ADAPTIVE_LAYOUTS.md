@@ -75,6 +75,7 @@ En `sapiens-components.css` + `sapiens.js`:
 ## 7. Buenas prácticas
 - No toques `sapiens-core.css` para responsivo; usa `sapiens-layouts.css` y `sapiens-components.css`.
 - Activa decoraciones con clases (`bg-*`, `grid-lines`, `orb`) sin mezclar con temas.
+- Si necesitas una columna sin fondo pero alineada con el grid, usa `content-box is-ghost`/`surface-transparent` en ese bloque en vez de quitar padding con estilos inline.
 - Si un bloque específico debe dividirse, añade una clase opt-in y usa `.force-columns`.
 - Comprueba soporte de Container Queries; hay fallbacks `@supports not (container-type: size)` para layouts críticos.
 

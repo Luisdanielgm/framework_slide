@@ -66,6 +66,7 @@ Cómo armar una slide desde `<body>` hasta `<article>`/header/footer. El conteni
 - `layout-*` proviene de `sapiens-layouts.css` (hero/split/code/bento/intro) o de `sapiens-components.css` para creativos (timeline, comparison, etc.).
 - El contenido interno se documenta aparte; aquí solo se define el contenedor/layout.
 - Si usas overlays, no los metas dentro de `<article>`; deben ir fuera para no interferir con la lógica de overflow.
+- Para columnas sin fondo pero con padding/alineacion intactos, usa `content-box is-ghost` (o `surface-transparent`) en lugar de estilos inline.
 
 ## Notas
 - Añade overlays al inicio del shell para mantener el stacking; solo `torn-edge` puede ir al final si buscas ese efecto.

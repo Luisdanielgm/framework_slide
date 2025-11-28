@@ -59,3 +59,4 @@ Clases disponibles (overlays):
 - Fondos (`bg-*`) se aplican en `body` o en el shell como textura de fondo.
 - Overlays (`grid-lines`, `orb`, `watermark`, `shape-*`, `torn-edge`) van dentro del shell; usan `position:absolute` y consumen tokens del tema.
 - El orden de carga recomendado se mantiene: core → themes → decor → layouts → components. 
+- Si quieres dejar un panel sin superficie sobre la decoracion, usa `content-box is-ghost`/`surface-transparent` en ese bloque en vez de remover padding con estilos inline.

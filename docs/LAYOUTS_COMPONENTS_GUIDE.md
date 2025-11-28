@@ -35,6 +35,7 @@ CÃ³mo usar cada `layout-*` dentro de `<article class="slide-body ...">`, combinÃ
 
 ## Componentes frecuentes
 - `content-box` / `card`: contenedores base con padding y borde suave.
+- `content-box is-ghost` / `surface-transparent`: variante sin fondo ni sombra que conserva padding/alineacion (ï¿½ï¿½til para una columna limpia cuando la otra usa `surface-2`/`surface-3`).
 - `feature-list`: lista de bullets estilizados (`li` internos).
 - `badge`, `header-badge`, `pill`: chips cortas para estado/etiqueta.
 - `icon-circle` (`icon-sm|md|lg|xl` + `icon-*` color): para nodos o acentos (ver `sapiens-components.css`).

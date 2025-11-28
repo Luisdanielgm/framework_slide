@@ -52,6 +52,7 @@ Incluye grids principales, densidades responsivas y ajustes container-aware.
 Propósito: componentes UI y layouts creativos (evolutivo).
 
 Incluye timelines, diagramas circulares, comparaciones, stats, process flow, isometric, feature grid, header logos, smart grid y utilidades visuales.
+Nueva utilidad: `content-box is-ghost`/`surface-transparent` para quitar fondo/sombra en un bloque manteniendo padding y alineacion (util en columnas split/code/comparison).
 
 ---
 

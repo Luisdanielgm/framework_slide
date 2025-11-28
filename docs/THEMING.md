@@ -63,6 +63,7 @@ Componentes sensibles a tokens:
 - Header `h1`: degradado con `--text-main`/`--text-muted`.
 - `code-block`: fondo y texto ligados a `--bg-*`, `--text-*`, `--border-strong`.
 - `content-box`: fondo mezclado con `--bg-1`/`--bg-2` y textos con `--text-*`.
+- `content-box is-ghost`/`surface-transparent`: desactiva el fondo/sombra pero conserva padding/alineacion (usa los tokens de texto vigentes).
 - Superficies/bordes/pills/badges leen sus tokens específicos.
 
 ## Orden de carga recomendado

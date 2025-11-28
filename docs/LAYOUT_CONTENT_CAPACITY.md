@@ -230,6 +230,7 @@ El Sapiens Framework utiliza un **sistema de adaptación automática** en 3 nive
 4. **Aprovecha los sidebars** (Text Analysis) para información secundaria
 5. **Usa énfasis visual** (`<strong>`, `.accent-1`) para destacar puntos clave
 6. **Incluye "respiro visual"** con gráficos, iconos o espaciado
+7. **Alterna superficies**: si quieres una columna sin fondo pero alineada, usa `content-box is-ghost`/`surface-transparent` en ese bloque y deja el otro con `surface-2`/`surface-3` + `border-soft` para contraste controlado.
 
 ### ❌ Evitar
 

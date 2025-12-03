@@ -13,6 +13,7 @@ Cómo usar cada `layout-*` dentro de `<article class="slide-body ...">`, combin�
 - `layout-code`: explicación + código. Izquierda texto, derecha `<pre class="code-block">`. Ej: `examples/code/code.html`.
 - `layout-bento`: grid 2x2 (colapsa a 1xN en mobile). Usa `.card`/`.content-box` y utilidades `.span-row`/`.span-col` según necesites. Ej: `examples/bento/bento.html`.
 - `layout-intro`: centro único, buena para mensajes cortos o creativos. Ej: `examples/intro/creative-intro*.html`.
+- `layout-embed`: contenedor para iframes de contenido interactivo (juegos, simulaciones, artefactos). Centra y ocupa todo el espacio disponible. Variantes: `.embed-padded` (con padding), `.embed-full` (sin bordes redondeados). Ver `docs/layouts/layout-embed.md`.
 - `layout-text-analysis`: cuerpo + sidebar (`.text-analysis-content` + `.analysis-sidebar`). Ideal para 250-500 palabras con hallazgos.
 - `layout-timeline`: nodos conectados; usa `.timeline-container`, `.timeline-item`, `.timeline-connector`.
 - `layout-process-detailed`: pasos con imagen/texto; usa `.process-detailed-step`.
@@ -96,6 +97,30 @@ Cómo usar cada `layout-*` dentro de `<article class="slide-body ...">`, combin�
       <div class="node-label">Cloud API</div>
     </div>
     <!-- hasta 6 nodos -->
+  </div>
+</article>
+```
+
+## Ejemplo mínimo (embed)
+```html
+<article class="slide-body layout-embed">
+  <iframe 
+    sandbox="allow-scripts allow-same-origin"
+    srcdoc="<!DOCTYPE html><html>...contenido interactivo...</html>"
+    title="Contenido interactivo">
+  </iframe>
+</article>
+```
+
+O con contenedor:
+```html
+<article class="slide-body layout-embed embed-padded">
+  <div class="embed-container">
+    <iframe 
+      sandbox="allow-scripts allow-same-origin"
+      srcdoc="<!DOCTYPE html><html>...contenido interactivo...</html>"
+      title="Juego educativo">
+    </iframe>
   </div>
 </article>
 ```

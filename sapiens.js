@@ -277,13 +277,51 @@ function applyIntroDensity(slideBody) {
 
         if (nextState === 'overflow') {
             requestAnimationFrame(() => {
+                // Intento 1: Forzar columnas
                 const remeasure = measureContent(slideBody).contentHeight;
                 if (remeasure > bodyHeight + 2) {
                     const target = pickForceColumnsTarget(slideBody);
                     if (target) target.classList.add('force-columns');
+
+                    // Intento 2: Auto-Fit (Escalado de fuente)
+                    // Si aun con columnas desborda, reducir escala
+                    requestAnimationFrame(() => {
+                        const finalMeasure = measureContent(slideBody).contentHeight;
+                        if (finalMeasure > bodyHeight + 2) {
+                            applyAutoFit(slideBody, bodyHeight);
+                        }
+                    });
                 }
             });
         }
+    }
+
+    /**
+     * Reduce iterativamente el tamaño de fuente hasta que el contenido encaje o llegue a un mínimo.
+     */
+    function applyAutoFit(slideBody, availableHeight) {
+        let currentScale = 100;
+        const minScale = 85; // No reducir a menos del 85% para mantener legibilidad
+
+        function tryShrink() {
+            if (currentScale <= minScale) {
+                // Si llegamos al límite y sigue desbordando, asegurar scroll
+                slideBody.style.overflowY = 'auto';
+                slideBody.style.alignContent = 'flex-start';
+                return;
+            }
+
+            const { contentHeight } = measureContent(slideBody);
+            if (contentHeight <= availableHeight + 2) return; // Ya cabe
+
+            currentScale -= 2;
+            slideBody.style.fontSize = `${currentScale}%`;
+
+            // Re-chequear en el siguiente frame para dar tiempo al renderizado
+            requestAnimationFrame(tryShrink);
+        }
+
+        tryShrink();
     }
 
     /**

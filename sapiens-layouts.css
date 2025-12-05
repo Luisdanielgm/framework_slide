@@ -1269,14 +1269,18 @@
    ================================================== */
 .layout-smart-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    /* Reducido minmax a 200px para evitar overflow horizontal en densidades altas */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: var(--gap);
     width: 100%;
     transition: all 0.3s ease;
+    /* Evitar que grid se desborde del contenedor padre */
+    min-height: 0;
+    min-width: 0;
 }
 
 .layout-smart-grid.is-compact {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
 }
 
 .heading-section {
@@ -1360,11 +1364,9 @@
     align-content: flex-start;
     padding-bottom: clamp(0.75rem, 1.5vh, 1.25rem);
     overflow-y: auto;
-    -ms-overflow-style: none; /* ocultar scroll en IE/Edge antiguo */
-    scrollbar-width: none;    /* ocultar scroll en Firefox */
-}
-.slide-shell.is-overflowing .slide-body::-webkit-scrollbar {
-    display: none; /* ocultar scroll en WebKit */
+    /* Mostrar scrollbar si es necesario para que el usuario sepa que hay más contenido */
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-strong) transparent;
 }
 
 .slide-shell.is-overflowing .content-box {
